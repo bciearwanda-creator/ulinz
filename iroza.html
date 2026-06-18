@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>IROZA — BCIEA Digital Health Assistant | Ulinzi 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+/* ─── RESET & ROOT ─── */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --rose:#d4446b;
+  --rose-light:#f9e8ee;
+  --rose-mid:#f0b8c8;
+  --teal:#1a9e7e;
+  --teal-light:#e6f7f3;
+  --teal-mid:#8dd4c0;
+  --sage:#5a8a7a;
+  --cream:#faf9f7;
+  --white:#ffffff;
+  --ink:#1a1a2e;
+  --ink2:#2d2d44;
+  --gray:#6b7280;
+  --gray-light:#9ca3af;
+  --border:#e5e7eb;
+  --border-rose:rgba(212,68,107,.18);
+  --shadow-sm:0 2px 8px rgba(26,26,46,.06);
+  --shadow:0 8px 32px rgba(26,26,46,.10);
+  --shadow-lg:0 20px 60px rgba(26,26,46,.14);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+
+/* ─── LANGUAGE SWITCHER ─── */
+.lang-bar{background:var(--ink);padding:10px 0;font-size:11px;letter-spacing:.5px}
+.lang-bar-inner{max-width:1220px;margin:auto;padding:0 28px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.lang-bar span{color:rgba(255,255,255,.55)}
+.lang-switcher{display:flex;gap:4px;align-items:center}
+.lang-btn{background:none;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.65);border-radius:4px;padding:4px 10px;font-size:10px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;font-family:'Inter',sans-serif;font-weight:600;transition:.2s}
+.lang-btn:hover,.lang-btn.active{background:var(--rose);border-color:var(--rose);color:#fff}
+
+/* ─── NAV ─── */
+nav{position:fixed;top:36px;left:0;right:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:.3s}
+nav.scrolled{top:0;box-shadow:var(--shadow-sm)}
+.nav-inner{max-width:1220px;margin:auto;padding:0 28px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logo strong{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--rose);font-weight:700;letter-spacing:.5px}
+.logo span{font-size:9px;text-transform:uppercase;letter-spacing:2.5px;color:var(--gray);margin-top:3px}
+.nav-links{display:flex;gap:2px;list-style:none}
+.nav-links a{font-size:12px;font-weight:600;letter-spacing:.4px;color:var(--gray);padding:7px 14px;border-radius:8px;transition:.2s;text-transform:uppercase}
+.nav-links a:hover,.nav-links a.active{color:var(--rose);background:var(--rose-light)}
+.nav-cta{display:flex;gap:8px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border-radius:10px;padding:11px 20px;font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;transition:.22s;border:1.5px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap}
+.btn-rose{background:var(--rose);color:#fff;border-color:var(--rose)}
+.btn-rose:hover{background:#c23860;transform:translateY(-1px);box-shadow:0 6px 20px rgba(212,68,107,.3)}
+.btn-ghost{background:transparent;color:var(--rose);border-color:var(--border-rose)}
+.btn-ghost:hover{background:var(--rose-light);transform:translateY(-1px)}
+.btn-teal{background:var(--teal);color:#fff;border-color:var(--teal)}
+.btn-teal:hover{background:#158a6c;transform:translateY(-1px)}
+.btn-wa{background:#25D366;color:#fff;border-color:#25D366;border-radius:50px}
+.btn-wa:hover{background:#1ebe59;transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,211,102,.3)}
+.menu-toggle{display:none;background:none;border:none;font-size:24px;color:var(--ink);cursor:pointer;padding:4px}
+
+/* ─── MOBILE NAV DRAWER ─── */
+.nav-drawer{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:200;background:rgba(26,26,46,.5);backdrop-filter:blur(4px)}
+.nav-drawer.open{display:flex;justify-content:flex-end}
+.drawer-panel{background:#fff;width:min(320px,90vw);height:100%;padding:28px;display:flex;flex-direction:column;gap:6px;overflow-y:auto;box-shadow:-20px 0 60px rgba(0,0,0,.15)}
+.drawer-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.drawer-close{background:none;border:none;font-size:26px;cursor:pointer;color:var(--gray)}
+.drawer-panel a{font-size:15px;font-weight:600;color:var(--ink2);padding:13px 16px;border-radius:10px;display:block;transition:.2s}
+.drawer-panel a:hover{background:var(--rose-light);color:var(--rose)}
+.drawer-lang{margin-top:auto;padding-top:20px;border-top:1px solid var(--border)}
+.drawer-lang p{font-size:11px;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;font-weight:600}
+.drawer-lang-btns{display:flex;flex-wrap:wrap;gap:6px}
+.drawer-lang-btns button{background:var(--border);border:none;color:var(--ink2);border-radius:6px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;transition:.2s;font-family:'Inter',sans-serif;letter-spacing:.5px}
+.drawer-lang-btns button.active{background:var(--rose);color:#fff}
+
+/* ─── HERO ─── */
+.hero{padding:160px 0 100px;background:linear-gradient(150deg,var(--cream) 0%,#fff 40%,var(--teal-light) 100%);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60px;right:-80px;width:550px;height:550px;border-radius:50%;background:radial-gradient(circle,rgba(212,68,107,.07),transparent 70%);pointer-events:none}
+.hero::after{content:"";position:absolute;bottom:-100px;left:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(26,158,126,.08),transparent 70%);pointer-events:none}
+.hero-grid{max-width:1220px;margin:auto;padding:0 28px;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;position:relative;z-index:2}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--rose-light);color:var(--rose);padding:7px 14px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:22px;border:1px solid var(--border-rose)}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:72px;line-height:1.02;color:var(--ink);margin-bottom:22px;font-weight:700}
+.hero h1 em{color:var(--teal);font-style:italic}
+.hero h1 mark{color:var(--rose);background:none;font-style:normal}
+.hero-desc{font-size:17px;line-height:1.75;color:var(--gray);max-width:540px;margin-bottom:34px}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px}
+.stat-chip{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow-sm)}
+.stat-chip b{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--rose);font-weight:700;display:block}
+.stat-chip span{font-size:11px;color:var(--gray);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-top:2px;display:block}
+
+/* ─── CHAT WIDGET ─── */
+.chat-card{background:var(--white);border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow-lg);overflow:hidden;max-width:400px;margin-left:auto}
+.chat-topbar{background:linear-gradient(135deg,var(--teal),var(--sage));padding:18px 20px;display:flex;align-items:center;gap:14px}
+.chat-avatar{width:44px;height:44px;background:rgba(255,255,255,.2);border-radius:50%;display:grid;place-items:center;font-size:22px;color:#fff;flex-shrink:0}
+.chat-id strong{color:#fff;font-size:15px;font-weight:700;display:block}
+.chat-id span{color:rgba(255,255,255,.75);font-size:11px}
+.online-dot{width:8px;height:8px;background:#5af272;border-radius:50%;display:inline-block;margin-right:5px}
+.chat-messages{padding:20px;display:flex;flex-direction:column;gap:12px;min-height:200px;background:#f8fffe}
+.bubble{max-width:85%;padding:12px 16px;border-radius:18px;font-size:14px;line-height:1.55;position:relative}
+.bubble.bot{background:var(--white);border:1px solid var(--border);color:var(--ink2);align-self:flex-start;border-bottom-left-radius:4px}
+.bubble.bot::before{content:"";position:absolute;left:-1px;bottom:-8px;border:8px solid transparent;border-top-color:var(--border);border-right-color:var(--border);display:none}
+.bubble.user{background:var(--teal);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.bubble-time{font-size:10px;color:var(--gray-light);margin-top:4px}
+.chat-inputbar{display:flex;gap:8px;padding:14px 16px;border-top:1px solid var(--border);background:var(--white);align-items:center}
+.chat-inputbar input{flex:1;border:1.5px solid var(--border);background:var(--cream);color:var(--ink);border-radius:50px;padding:11px 16px;font-size:13px;font-family:'Inter',sans-serif;outline:none;transition:.2s}
+.chat-inputbar input:focus{border-color:var(--teal);background:var(--white)}
+.chat-inputbar button{background:var(--teal);border:none;border-radius:50%;width:40px;height:40px;display:grid;place-items:center;cursor:pointer;flex-shrink:0;transition:.2s;color:#fff;font-size:18px}
+.chat-inputbar button:hover{background:var(--sage)}
+.chat-footer-note{padding:10px 16px;background:var(--cream);text-align:center;border-top:1px solid var(--border)}
+.chat-footer-note a{font-size:11px;color:var(--teal);font-weight:700;display:inline-flex;align-items:center;gap:5px}
+
+/* ─── SECTIONS ─── */
+.section{padding:90px 0}
+.container{max-width:1220px;margin:auto;padding:0 28px}
+.sec-label{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--rose);font-weight:700;margin-bottom:12px}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:48px;line-height:1.06;color:var(--ink);margin-bottom:16px;font-weight:700}
+.sec-desc{color:var(--gray);line-height:1.75;font-size:16px;max-width:620px}
+.section-alt{background:var(--cream)}
+
+/* ─── CARDS ─── */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.feature-card{background:var(--white);border:1.5px solid var(--border);border-radius:20px;padding:28px;transition:.25s;position:relative;overflow:hidden}
+.feature-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--rose),var(--teal));opacity:0;transition:.25s}
+.feature-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:rgba(212,68,107,.2)}
+.feature-card:hover::before{opacity:1}
+.card-icon{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:24px;margin-bottom:18px}
+.icon-rose{background:var(--rose-light);color:var(--rose)}
+.icon-teal{background:var(--teal-light);color:var(--teal)}
+.icon-sage{background:#e8f3ef;color:var(--sage)}
+.feature-card h3{font-size:19px;font-weight:700;margin-bottom:9px;color:var(--ink)}
+.feature-card p{color:var(--gray);line-height:1.65;font-size:14px}
+
+/* ─── SPLIT SECTIONS ─── */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.split-visual{border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.panel{background:var(--white);border:1.5px solid var(--border);border-radius:22px;padding:32px}
+.lang-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+.lang-chip{padding:18px 12px;border-radius:14px;background:var(--teal-light);border:1.5px solid rgba(26,158,126,.2);text-align:center;transition:.2s;cursor:pointer}
+.lang-chip:hover,.lang-chip.active-lang{background:var(--teal);border-color:var(--teal)}
+.lang-chip:hover b,.lang-chip.active-lang b,.lang-chip:hover span,.lang-chip.active-lang span{color:#fff}
+.lang-chip b{display:block;color:var(--teal);font-size:20px;font-family:'Cormorant Garamond',serif;font-weight:700}
+.lang-chip span{color:var(--gray);font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:600;display:block;margin-top:3px}
+.feature-list{display:grid;gap:14px;margin-top:22px}
+.feat-row{display:flex;gap:14px;padding:16px;border:1.5px solid var(--border);border-radius:16px;background:var(--cream);transition:.2s}
+.feat-row:hover{border-color:var(--rose-mid);background:var(--rose-light)}
+.feat-row i{color:var(--teal);font-size:22px;flex-shrink:0;margin-top:1px}
+.feat-row strong{display:block;font-size:14px;color:var(--ink);margin-bottom:4px}
+.feat-row p{font-size:13px;color:var(--gray);line-height:1.55}
+
+/* ─── IMPACT METRICS ─── */
+.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.metric{padding:28px;border:1.5px solid var(--border);border-radius:20px;background:var(--white);text-align:center;transition:.25s}
+.metric:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--rose-mid)}
+.metric b{font-family:'Cormorant Garamond',serif;font-size:42px;color:var(--rose);font-weight:700;display:block}
+.metric span{font-size:13px;color:var(--gray);display:block;margin-top:5px;line-height:1.4}
+
+/* ─── ROADMAP ─── */
+.roadmap{display:grid;gap:0;margin-top:32px;position:relative}
+.roadmap::before{content:"";position:absolute;left:36px;top:24px;bottom:24px;width:2px;background:linear-gradient(to bottom,var(--rose),var(--teal));border-radius:2px}
+.road-step{display:grid;grid-template-columns:72px 1fr;gap:20px;padding:24px 0;align-items:start;position:relative}
+.step-badge{width:52px;height:52px;border-radius:50%;background:var(--white);border:2.5px solid var(--rose);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--shadow-sm);position:relative;z-index:1}
+.step-badge span{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--rose)}
+.step-content{padding:20px;background:var(--white);border:1.5px solid var(--border);border-radius:16px;margin-top:8px}
+.step-content b{font-size:15px;color:var(--ink);font-weight:700;display:block;margin-bottom:6px}
+.step-content p{font-size:13px;color:var(--gray);line-height:1.6}
+
+/* ─── CONTACT/FORM SECTION ─── */
+.form-section{background:linear-gradient(135deg,var(--rose-light),var(--teal-light));padding:90px 0}
+.form-card{background:var(--white);border-radius:28px;box-shadow:var(--shadow-lg);padding:48px;max-width:780px;margin:auto}
+.form-card h2{font-family:'Cormorant Garamond',serif;font-size:46px;margin-bottom:10px;color:var(--ink)}
+.form-card p{color:var(--gray);line-height:1.7;margin-bottom:32px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-field{display:flex;flex-direction:column;gap:7px}
+.form-field.full{grid-column:1/-1}
+.form-field label{font-size:12px;font-weight:700;color:var(--ink2);letter-spacing:.4px;text-transform:uppercase}
+.form-field input,.form-field select,.form-field textarea{border:1.5px solid var(--border);border-radius:12px;padding:13px 16px;font-size:14px;font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);outline:none;transition:.2s}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--teal);background:var(--white)}
+.form-field textarea{resize:vertical;min-height:110px}
+.form-field select{appearance:none;cursor:pointer}
+.form-submit{margin-top:10px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.wa-note{font-size:13px;color:var(--gray);display:flex;align-items:center;gap:6px}
+.wa-note i{color:#25D366;font-size:16px}
+
+/* ─── CTA BANNER ─── */
+.cta-banner{background:linear-gradient(135deg,var(--rose),#a82e53);padding:80px 0}
+.cta-inner{text-align:center;max-width:720px;margin:auto;padding:0 28px}
+.cta-inner h2{font-family:'Cormorant Garamond',serif;font-size:52px;color:#fff;margin-bottom:14px;font-weight:700}
+.cta-inner p{color:rgba(255,255,255,.8);font-size:16px;line-height:1.7;margin-bottom:30px}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ─── FOOTER ─── */
+footer{background:var(--ink);padding:56px 0 28px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:40px}
+.footer-brand .logo strong{color:var(--rose-mid)}
+.footer-brand .logo span{color:rgba(255,255,255,.4)}
+.footer-brand p{color:rgba(255,255,255,.5);font-size:13px;line-height:1.7;margin-top:14px;max-width:300px}
+.footer-col-title{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.35);margin-bottom:16px;font-weight:700}
+.footer-col a{display:block;color:rgba(255,255,255,.6);font-size:13px;padding:5px 0;transition:.2s}
+.footer-col a:hover{color:var(--rose-mid)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;color:rgba(255,255,255,.35);font-size:12px}
+
+/* ─── TYPING ANIMATION ─── */
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.typing-dot{display:inline-block;width:6px;height:6px;background:var(--gray-light);border-radius:50%;margin:0 2px;animation:blink 1.4s infinite}
+.typing-dot:nth-child(2){animation-delay:.2s}
+.typing-dot:nth-child(3){animation-delay:.4s}
+.typing-indicator{display:flex;align-items:center;gap:6px;padding:10px 14px;background:var(--white);border:1px solid var(--border);border-radius:18px;border-bottom-left-radius:4px;max-width:80px;align-self:flex-start}
+
+/* ─── SCROLL REVEAL ─── */
+.reveal{opacity:0;transform:translateY(24px);transition:.6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr}
+  .chat-card{max-width:100%}
+  .hero h1{font-size:58px}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .impact-grid{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+  .nav-links,.nav-cta .btn-ghost{display:none}
+  .menu-toggle{display:block}
+}
+@media(max-width:680px){
+  .lang-bar-inner{flex-direction:column;align-items:flex-start;gap:8px}
+  nav{top:56px}
+  nav.scrolled{top:0}
+  .hero{padding:140px 0 80px}
+  .hero h1{font-size:42px}
+  .sec-title{font-size:36px}
+  .grid-3{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:repeat(3,1fr)}
+  .impact-grid{grid-template-columns:repeat(2,1fr)}
+  .lang-grid{grid-template-columns:repeat(2,1fr)}
+  .form-grid{grid-template-columns:1fr}
+  .form-field.full{grid-column:1}
+  .form-card{padding:28px 20px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .cta-inner h2{font-size:38px}
+  .roadmap::before{left:25px}
+  .road-step{grid-template-columns:50px 1fr;gap:12px}
+  .step-badge{width:40px;height:40px}
+}
+@media(max-width:420px){
+  .hero-stats{grid-template-columns:1fr}
+  .impact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .lang-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <div class="lang-bar-inner">
+    <span id="lang-bar-text">IROZA — BCIEA Digital Health Platform · Ulinzi 2026</span>
+    <div class="lang-switcher" role="group" aria-label="Select language">
+      <button class="lang-btn active" onclick="setLang('en')" data-lang="en">EN</button>
+      <button class="lang-btn" onclick="setLang('rw')" data-lang="rw">RW</button>
+      <button class="lang-btn" onclick="setLang('fr')" data-lang="fr">FR</button>
+      <button class="lang-btn" onclick="setLang('sw')" data-lang="sw">SW</button>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <strong>ULINZI 2026</strong>
+      <span id="nav-tagline">More Than a Walk · BCIEA</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="event.html" data-i18n="nav_walk">The Walk</a></li>
+      <li><a href="register.html" data-i18n="nav_register">Register</a></li>
+      <li><a href="donate.html" data-i18n="nav_donate">Donate</a></li>
+      <li><a href="store.html" data-i18n="nav_store">Store</a></li>
+      <li><a href="iroza.html" class="active" data-i18n="nav_iroza">IROZA</a></li>
+      <li><a href="sponsor.html" data-i18n="nav_sponsors">Sponsors</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="donate.html" data-i18n="nav_donate">Donate</a>
+      <a class="btn btn-rose" href="#ask-iroza" data-i18n="nav_ask">Ask IROZA</a>
+      <button class="menu-toggle" id="menu-btn" aria-label="Open menu"><i class="ti ti-menu-2"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="nav-drawer" id="nav-drawer">
+  <div class="drawer-panel">
+    <div class="drawer-header">
+      <a class="logo" href="index.html"><strong>ULINZI 2026</strong></a>
+      <button class="drawer-close" id="drawer-close-btn"><i class="ti ti-x"></i></button>
+    </div>
+    <a href="event.html" data-i18n="nav_walk">The Walk</a>
+    <a href="register.html" data-i18n="nav_register">Register</a>
+    <a href="donate.html" data-i18n="nav_donate">Donate</a>
+    <a href="store.html" data-i18n="nav_store">Store</a>
+    <a href="iroza.html" data-i18n="nav_iroza">IROZA</a>
+    <a href="sponsor.html" data-i18n="nav_sponsors">Sponsors</a>
+    <div class="drawer-lang">
+      <p>Language / Ururimi / Langue</p>
+      <div class="drawer-lang-btns">
+        <button onclick="setLang('en')" data-drawer-lang="en" class="active">English</button>
+        <button onclick="setLang('rw')" data-drawer-lang="rw">Kinyarwanda</button>
+        <button onclick="setLang('fr')" data-drawer-lang="fr">Français</button>
+        <button onclick="setLang('sw')" data-drawer-lang="sw">Swahili</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid">
+    <div class="reveal">
+      <div class="eyebrow"><i class="ti ti-sparkles"></i><span data-i18n="hero_eyebrow">IROZA Innovation Center</span></div>
+      <h1 data-i18n-html="hero_h1">Ask. Learn.<br><em>Act Earlier.</em></h1>
+      <p class="hero-desc" data-i18n="hero_desc">IROZA is BCIEA's digital education assistant — making breast health information accessible across Rwanda through simple language, mobile-first support, and community-centred guidance.</p>
+      <div class="btn-row">
+        <a class="btn btn-rose" href="#ask-iroza"><i class="ti ti-message-heart"></i><span data-i18n="btn_ask_iroza">Ask IROZA</span></a>
+        <a class="btn btn-teal" href="#impact" data-i18n="btn_view_impact">View Impact</a>
+        <a class="btn btn-ghost" href="sponsor.html" data-i18n="btn_partner">Partner With Us</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-chip"><b>24/7</b><span data-i18n="stat_access">Learning Access</span></div>
+        <div class="stat-chip"><b>3+</b><span data-i18n="stat_langs">Languages</span></div>
+        <div class="stat-chip"><b>Mobile</b><span data-i18n="stat_mobile">First Design</span></div>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay:.15s">
+      <div class="chat-card" id="ask-iroza">
+        <div class="chat-topbar">
+          <div class="chat-avatar"><i class="ti ti-robot"></i></div>
+          <div class="chat-id">
+            <strong>IROZA Assistant</strong>
+            <span><span class="online-dot"></span><span data-i18n="chat_online">Online · Breast health support</span></span>
+          </div>
+        </div>
+        <div class="chat-messages" id="chat-display">
+          <div class="bubble bot" data-i18n="chat_bot1">Muraho. I can help you learn about breast health, early warning signs, and where to seek care. How can I help you today?</div>
+          <div class="bubble user" data-i18n="chat_user1">What should I do if I notice a breast change?</div>
+          <div class="bubble bot" data-i18n="chat_bot2">Please don't panic — but do speak to a trained health worker as soon as possible. Early attention can save lives.</div>
+        </div>
+        <div class="chat-inputbar">
+          <input type="text" id="chat-input" data-i18n-placeholder="chat_placeholder" placeholder="Ask a breast health question…">
+          <button id="chat-send" aria-label="Send"><i class="ti ti-send"></i></button>
+        </div>
+        <div class="chat-footer-note">
+          <a href="https://wa.me/250783438059?text=Hello%20IROZA" target="_blank" rel="noopener">
+            <i class="ti ti-brand-whatsapp"></i>
+            <span data-i18n="chat_wa_link">Continue on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS IROZA -->
+<section class="section" id="what-is-iroza">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label" data-i18n="s1_label">What is IROZA?</div>
+      <h2 class="sec-title" data-i18n="s1_title">A digital bridge between awareness and action.</h2>
+      <p class="sec-desc" data-i18n="s1_desc">IROZA helps communities understand breast health in a simple, respectful, and accessible way — extending BCIEA's education far beyond a single event day.</p>
+    </div>
+    <div class="grid-3">
+      <div class="feature-card reveal">
+        <div class="card-icon icon-rose"><i class="ti ti-message-heart"></i></div>
+        <h3 data-i18n="card1_title">Simple Health Education</h3>
+        <p data-i18n="card1_desc">Clear, compassionate answers about awareness, early detection, screening, survivor support, and where people can seek help.</p>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:.1s">
+        <div class="card-icon icon-teal"><i class="ti ti-language"></i></div>
+        <h3 data-i18n="card2_title">Multi-Language Support</h3>
+        <p data-i18n="card2_desc">Built for Rwanda's real communication needs with Kinyarwanda, English, French, and future Swahili support.</p>
+      </div>
+      <div class="feature-card reveal" style="transition-delay:.2s">
+        <div class="card-icon icon-sage"><i class="ti ti-brand-whatsapp"></i></div>
+        <h3 data-i18n="card3_title">Mobile-First Access</h3>
+        <p data-i18n="card3_desc">Designed for smartphones, WhatsApp interactions, QR codes, and fast access during outreach and campaign events.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY IT MATTERS + LANGUAGES -->
+<section class="section section-alt" id="why">
+  <div class="container">
+    <div class="split">
+      <div class="reveal">
+        <div class="sec-label" data-i18n="s2_label">Why it matters</div>
+        <h2 class="sec-title" data-i18n="s2_title">Awareness must continue after the walk.</h2>
+        <p class="sec-desc" data-i18n="s2_desc">Ulinzi brings people together once a year. IROZA keeps educating all year — especially students, families, village ambassadors, and diaspora supporters.</p>
+        <div class="feature-list" style="margin-top:28px">
+          <div class="feat-row reveal">
+            <i class="ti ti-heart-handshake"></i>
+            <div><strong data-i18n="feat1_title">Supports community ambassadors</strong><p data-i18n="feat1_desc">Gives outreach teams a simple tool for common questions during village visits and campaigns.</p></div>
+          </div>
+          <div class="feat-row reveal" style="transition-delay:.1s">
+            <i class="ti ti-school"></i>
+            <div><strong data-i18n="feat2_title">Helps students learn</strong><p data-i18n="feat2_desc">Young people can ask questions privately and understand how awareness protects families.</p></div>
+          </div>
+          <div class="feat-row reveal" style="transition-delay:.2s">
+            <i class="ti ti-map-2"></i>
+            <div><strong data-i18n="feat3_title">Reaches beyond Kigali</strong><p data-i18n="feat3_desc">Supports rural education and people who cannot attend physical events.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:.15s">
+        <div class="panel">
+          <div class="sec-label" data-i18n="s3_label">Languages Supported</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:32px;margin-bottom:10px;color:var(--ink)" data-i18n="s3_title">Built for Rwanda and the diaspora.</h3>
+          <p style="color:var(--gray);font-size:14px;line-height:1.65" data-i18n="s3_desc">Language access makes health education more human and more effective.</p>
+          <div class="lang-grid">
+            <div class="lang-chip active-lang" onclick="setLang('rw')"><b>RW</b><span>Kinyarwanda</span></div>
+            <div class="lang-chip" onclick="setLang('en')"><b>EN</b><span>English</span></div>
+            <div class="lang-chip" onclick="setLang('fr')"><b>FR</b><span>Français</span></div>
+            <div class="lang-chip"><b>SW</b><span>Coming Soon</span></div>
+          </div>
+          <div style="margin-top:22px;background:var(--teal-light);border:1.5px solid rgba(26,158,126,.2);border-radius:16px;padding:20px">
+            <strong style="font-size:14px;color:var(--ink)" data-i18n="qr_title">Example QR Use</strong>
+            <p style="color:var(--gray);font-size:13px;line-height:1.65;margin-top:8px" data-i18n="qr_desc">A participant scans a QR code on a Ulinzi shirt, event banner, or survivor card and opens IROZA to learn, donate, or connect with BCIEA.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT METRICS -->
+<section class="section" id="impact">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label" data-i18n="s4_label">Impact Dashboard</div>
+      <h2 class="sec-title" data-i18n="s4_title">What IROZA helps BCIEA measure.</h2>
+      <p class="sec-desc" data-i18n="s4_desc">Partners and sponsors need clear results. IROZA tracks education reach, common questions, language usage, and outreach performance.</p>
+    </div>
+    <div class="impact-grid">
+      <div class="metric reveal"><b>12K+</b><span data-i18n="m1">Target users reached in launch year</span></div>
+      <div class="metric reveal" style="transition-delay:.08s"><b>40+</b><span data-i18n="m2">Community outreach events supported</span></div>
+      <div class="metric reveal" style="transition-delay:.16s"><b>3</b><span data-i18n="m3">Core languages for public education</span></div>
+      <div class="metric reveal" style="transition-delay:.24s"><b>100+</b><span data-i18n="m4">Village ambassadors supported</span></div>
+    </div>
+    <!-- Roadmap -->
+    <div style="margin-top:60px">
+      <div class="sec-label" data-i18n="road_label">Rollout Roadmap</div>
+      <div class="roadmap">
+        <div class="road-step reveal">
+          <div><div class="step-badge"><span>1</span></div></div>
+          <div class="step-content"><b data-i18n="road1_title">Phase 1 — Launch</b><p data-i18n="road1_desc">Deploy IROZA demo on the Ulinzi website with basic Q&A, education cards, and WhatsApp CTA.</p></div>
+        </div>
+        <div class="road-step reveal" style="transition-delay:.1s">
+          <div><div class="step-badge"><span>2</span></div></div>
+          <div class="step-content"><b data-i18n="road2_title">Phase 2 — Connect</b><p data-i18n="road2_desc">Integrate IROZA with BCIEA campaigns, QR codes, survivor support, and event registration journeys.</p></div>
+        </div>
+        <div class="road-step reveal" style="transition-delay:.2s">
+          <div><div class="step-badge"><span>3</span></div></div>
+          <div class="step-content"><b data-i18n="road3_title">Phase 3 — Dashboard</b><p data-i18n="road3_desc">Build a partner dashboard with reach numbers, language analytics, and outreach reports.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ASK / PARTNER -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="split">
+      <div class="panel reveal">
+        <div class="sec-label" data-i18n="s5_label">Ask IROZA</div>
+        <h2 class="sec-title" style="font-size:34px" data-i18n="s5_title">Questions people ask.</h2>
+        <div class="feature-list">
+          <div class="feat-row">
+            <i class="ti ti-circle-check"></i>
+            <div><strong data-i18n="q1_title">What are common breast cancer warning signs?</strong><p data-i18n="q1_desc">Simple awareness education with a reminder to seek professional care.</p></div>
+          </div>
+          <div class="feat-row">
+            <i class="ti ti-circle-check"></i>
+            <div><strong data-i18n="q2_title">Where can I find support?</strong><p data-i18n="q2_desc">Directs users to BCIEA, health workers, and official support pathways.</p></div>
+          </div>
+          <div class="feat-row">
+            <i class="ti ti-circle-check"></i>
+            <div><strong data-i18n="q3_title">How can I help?</strong><p data-i18n="q3_desc">Connects users to donate, volunteer, sponsor, register, or buy impact products.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="panel reveal" style="transition-delay:.15s">
+        <div class="sec-label" data-i18n="s6_label">Partner Opportunity</div>
+        <h2 class="sec-title" style="font-size:34px" data-i18n="s6_title">Support innovation with impact.</h2>
+        <p style="color:var(--gray);font-size:14px;line-height:1.7;margin-bottom:20px" data-i18n="s6_desc">Sponsors help BCIEA expand digital education, translate content, train ambassadors, and bring awareness to more communities.</p>
+        <ul style="list-style:none;display:grid;gap:10px;margin-bottom:24px">
+          <li style="display:flex;gap:10px;align-items:flex-start;color:var(--gray);font-size:14px"><i class="ti ti-check" style="color:var(--teal);flex-shrink:0;margin-top:1px"></i><span data-i18n="sp1">Sponsor IROZA language expansion</span></li>
+          <li style="display:flex;gap:10px;align-items:flex-start;color:var(--gray);font-size:14px"><i class="ti ti-check" style="color:var(--teal);flex-shrink:0;margin-top:1px"></i><span data-i18n="sp2">Sponsor a village ambassador toolkit</span></li>
+          <li style="display:flex;gap:10px;align-items:flex-start;color:var(--gray);font-size:14px"><i class="ti ti-check" style="color:var(--teal);flex-shrink:0;margin-top:1px"></i><span data-i18n="sp3">Sponsor QR education campaigns</span></li>
+          <li style="display:flex;gap:10px;align-items:flex-start;color:var(--gray);font-size:14px"><i class="ti ti-check" style="color:var(--teal);flex-shrink:0;margin-top:1px"></i><span data-i18n="sp4">Sponsor public awareness analytics</span></li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn btn-rose" href="sponsor.html" data-i18n="btn_become_partner">Become a Partner</a>
+          <a class="btn btn-ghost" href="donate.html" data-i18n="btn_fund_iroza">Fund IROZA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM → WHATSAPP -->
+<section class="form-section" id="contact">
+  <div class="container">
+    <div class="form-card reveal">
+      <div class="sec-label" data-i18n="form_label">Get in Touch</div>
+      <h2 data-i18n="form_title">Send us a message.</h2>
+      <p data-i18n="form_desc">Have a question about IROZA, BCIEA, or Ulinzi 2026? Fill out the form below. Your message will be sent directly to our team via WhatsApp for a fast, personal response.</p>
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="f-name" data-i18n="lbl_name">Full Name</label>
+          <input id="f-name" type="text" data-i18n-placeholder="ph_name" placeholder="Your full name">
+        </div>
+        <div class="form-field">
+          <label for="f-phone" data-i18n="lbl_phone">Phone / WhatsApp</label>
+          <input id="f-phone" type="tel" data-i18n-placeholder="ph_phone" placeholder="+250 7XX XXX XXX">
+        </div>
+        <div class="form-field">
+          <label for="f-email" data-i18n="lbl_email">Email Address</label>
+          <input id="f-email" type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-field">
+          <label for="f-topic" data-i18n="lbl_topic">Topic</label>
+          <select id="f-topic">
+            <option value="" data-i18n="opt_select">Select a topic…</option>
+            <option value="general" data-i18n="opt_general">General Question</option>
+            <option value="education" data-i18n="opt_education">Health Education</option>
+            <option value="sponsor" data-i18n="opt_sponsor">Sponsorship / Partnership</option>
+            <option value="volunteer" data-i18n="opt_volunteer">Volunteer</option>
+            <option value="media" data-i18n="opt_media">Media / Press</option>
+          </select>
+        </div>
+        <div class="form-field full">
+          <label for="f-message" data-i18n="lbl_message">Message</label>
+          <textarea id="f-message" data-i18n-placeholder="ph_message" placeholder="Type your message here…"></textarea>
+        </div>
+      </div>
+      <div class="form-submit">
+        <button class="btn btn-wa" onclick="sendToWhatsApp()">
+          <i class="ti ti-brand-whatsapp"></i>
+          <span data-i18n="btn_send_wa">Send via WhatsApp</span>
+        </button>
+        <p class="wa-note"><i class="ti ti-shield-check"></i><span data-i18n="wa_note">Opens WhatsApp with your message pre-filled</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-inner">
+    <div class="eyebrow" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.3);margin-bottom:20px"><i class="ti ti-heart"></i><span data-i18n="cta_eyebrow">Every question matters</span></div>
+    <h2 data-i18n="cta_title">Every question can become early action.</h2>
+    <p data-i18n="cta_desc">Help BCIEA turn IROZA into a year-round education engine for Rwanda, survivors, families, students, and communities.</p>
+    <div class="cta-btns">
+      <a class="btn btn-teal" href="donate.html"><i class="ti ti-heart"></i><span data-i18n="btn_donate_iroza">Donate to IROZA</span></a>
+      <a class="btn" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.4)" href="register.html" data-i18n="btn_join_ulinzi">Join Ulinzi 2026</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="index.html"><strong>ULINZI 2026</strong><span>BCIEA Movement Platform</span></a>
+        <p>Ulinzi.org is where people join a movement — to walk, give, buy, volunteer, sponsor, learn, and build impact year-round.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-i18n="footer_platform">Platform</div>
+        <a href="event.html" data-i18n="nav_walk">The Walk</a>
+        <a href="register.html" data-i18n="nav_register">Register</a>
+        <a href="donate.html" data-i18n="nav_donate">Donate</a>
+        <a href="store.html" data-i18n="nav_store">Store</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-i18n="footer_movement">Movement</div>
+        <a href="volunteer.html" data-i18n="nav_volunteer">Volunteer</a>
+        <a href="sponsor.html" data-i18n="nav_sponsors">Sponsors</a>
+        <a href="iroza.html" data-i18n="nav_iroza">IROZA</a>
+        <a href="impact.html" data-i18n="nav_impact">Impact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title" data-i18n="footer_community">Community</div>
+        <a href="media.html" data-i18n="nav_media">Media</a>
+        <a href="diaspora.html" data-i18n="nav_diaspora">Diaspora</a>
+        <a href="wall-of-honor.html" data-i18n="nav_wall">Wall of Honor</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ulinzi · Breast Cancer Initiative East Africa</span>
+      <span>English · Kinyarwanda · Français</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════
+   TRANSLATIONS
+═══════════════════════════════════════════ */
+const translations = {
+  en: {
+    hero_eyebrow:"IROZA Innovation Center",
+    hero_h1:"Ask. Learn.<br><em>Act Earlier.</em>",
+    hero_desc:"IROZA is BCIEA's digital education assistant — making breast health information accessible across Rwanda through simple language, mobile-first support, and community-centred guidance.",
+    btn_ask_iroza:"Ask IROZA",btn_view_impact:"View Impact",btn_partner:"Partner With Us",
+    stat_access:"Learning Access",stat_langs:"Languages",stat_mobile:"First Design",
+    chat_online:"Online · Breast health support",
+    chat_bot1:"Hello. I can help you learn about breast health, early warning signs, and where to seek care. How can I help you today?",
+    chat_user1:"What should I do if I notice a breast change?",
+    chat_bot2:"Please don't panic — speak to a trained health worker as soon as possible. Early attention can save lives.",
+    chat_placeholder:"Ask a breast health question…",chat_wa_link:"Continue on WhatsApp",
+    s1_label:"What is IROZA?",s1_title:"A digital bridge between awareness and action.",s1_desc:"IROZA helps communities understand breast health in a simple, respectful way — extending BCIEA's education far beyond a single event day.",
+    card1_title:"Simple Health Education",card1_desc:"Clear, compassionate answers about awareness, early detection, screening, survivor support, and where people can seek help.",
+    card2_title:"Multi-Language Support",card2_desc:"Built for Rwanda's real communication needs with Kinyarwanda, English, French, and future Swahili support.",
+    card3_title:"Mobile-First Access",card3_desc:"Designed for smartphones, WhatsApp interactions, QR codes, and fast access during outreach events.",
+    s2_label:"Why it matters",s2_title:"Awareness must continue after the walk.",s2_desc:"Ulinzi brings people together once a year. IROZA keeps educating all year — especially students, families, and village ambassadors.",
+    feat1_title:"Supports community ambassadors",feat1_desc:"Gives outreach teams a simple tool for common questions during village visits and campaigns.",
+    feat2_title:"Helps students learn",feat2_desc:"Young people can ask questions privately and understand how awareness protects families.",
+    feat3_title:"Reaches beyond Kigali",feat3_desc:"Supports rural education and people who cannot attend physical events.",
+    s3_label:"Languages Supported",s3_title:"Built for Rwanda and the diaspora.",s3_desc:"Language access makes health education more human and more effective.",
+    qr_title:"Example QR Use",qr_desc:"A participant scans a QR code on a Ulinzi shirt or survivor card and opens IROZA to learn, donate, or connect with BCIEA.",
+    s4_label:"Impact Dashboard",s4_title:"What IROZA helps BCIEA measure.",s4_desc:"Partners and sponsors need clear results. IROZA tracks education reach, language usage, and outreach performance.",
+    m1:"Target users reached in launch year",m2:"Community outreach events supported",m3:"Core languages for public education",m4:"Village ambassadors supported",
+    road_label:"Rollout Roadmap",
+    road1_title:"Phase 1 — Launch",road1_desc:"Deploy IROZA demo with basic Q&A, education cards, and WhatsApp CTA.",
+    road2_title:"Phase 2 — Connect",road2_desc:"Integrate with BCIEA campaigns, QR codes, survivor support, and event registrations.",
+    road3_title:"Phase 3 — Dashboard",road3_desc:"Build a partner dashboard with reach numbers, language analytics, and outreach reports.",
+    s5_label:"Ask IROZA",s5_title:"Questions people ask.",
+    q1_title:"What are common breast cancer warning signs?",q1_desc:"Simple awareness education with a reminder to seek professional care.",
+    q2_title:"Where can I find support?",q2_desc:"Directs users to BCIEA, health workers, and official support pathways.",
+    q3_title:"How can I help?",q3_desc:"Connects users to donate, volunteer, sponsor, or register.",
+    s6_label:"Partner Opportunity",s6_title:"Support innovation with impact.",s6_desc:"Sponsors help BCIEA expand digital education, translate content, train ambassadors, and bring awareness to more communities.",
+    sp1:"Sponsor IROZA language expansion",sp2:"Sponsor a village ambassador toolkit",sp3:"Sponsor QR education campaigns",sp4:"Sponsor public awareness analytics",
+    btn_become_partner:"Become a Partner",btn_fund_iroza:"Fund IROZA",
+    form_label:"Get in Touch",form_title:"Send us a message.",form_desc:"Have a question about IROZA, BCIEA, or Ulinzi 2026? Fill out the form. Your message will be sent directly to our team via WhatsApp for a fast, personal response.",
+    lbl_name:"Full Name",lbl_phone:"Phone / WhatsApp",lbl_email:"Email Address",lbl_topic:"Topic",lbl_message:"Message",
+    ph_name:"Your full name",ph_phone:"+250 7XX XXX XXX",ph_message:"Type your message here…",
+    opt_select:"Select a topic…",opt_general:"General Question",opt_education:"Health Education",opt_sponsor:"Sponsorship / Partnership",opt_volunteer:"Volunteer",opt_media:"Media / Press",
+    btn_send_wa:"Send via WhatsApp",wa_note:"Opens WhatsApp with your message pre-filled",
+    cta_eyebrow:"Every question matters",cta_title:"Every question can become early action.",cta_desc:"Help BCIEA turn IROZA into a year-round education engine for Rwanda, survivors, families, students, and communities.",
+    btn_donate_iroza:"Donate to IROZA",btn_join_ulinzi:"Join Ulinzi 2026",
+    nav_walk:"The Walk",nav_register:"Register",nav_donate:"Donate",nav_store:"Store",nav_iroza:"IROZA",nav_sponsors:"Sponsors",nav_volunteer:"Volunteer",nav_impact:"Impact",nav_media:"Media",nav_diaspora:"Diaspora",nav_wall:"Wall of Honor",nav_contact:"Contact",nav_ask:"Ask IROZA",
+    footer_platform:"Platform",footer_movement:"Movement",footer_community:"Community",
+    nav_tagline:"More Than a Walk · BCIEA",
+    lang_bar:"IROZA — BCIEA Digital Health Platform · Ulinzi 2026"
+  },
+  rw: {
+    hero_eyebrow:"Ikigo cy'Ubwihindurize IROZA",
+    hero_h1:"Baza. Iga.<br><em>Kora Vuba.</em>",
+    hero_desc:"IROZA ni umufasha wa dijitali wa BCIEA — gutuma amakuru y'ubuzima bw'amabere aboneka mu Rwanda hose binyuze mu rurimi rworoshye, serivisi zihuye na telefoni, no gutekereza ku muryango.",
+    btn_ask_iroza:"Baza IROZA",btn_view_impact:"Reba Ingaruka",btn_partner:"Tuvugane",
+    stat_access:"Kwiga Igihe Cyose",stat_langs:"Indimi",stat_mobile:"Telefoni Mbere",
+    chat_online:"Online · Ubufasha bw'ubuzima bw'amabere",
+    chat_bot1:"Muraho. Nshobora kukubwira amakuru y'ubuzima bw'amabere, ibimenyetso bya mbere, n'aho ushaka ubufasha. Nagufasha ute uyu munsi?",
+    chat_user1:"Ndagira ikibazo gikurikiye amabere. Nakora iki?",
+    chat_bot2:"Ntugira ubwoba — ariko vugana na muganwa w'ubuzima vuba bishoboka. Gupima vuba bishobora gukiza ubuzima.",
+    chat_placeholder:"Baza ikibazo cy'ubuzima bw'amabere…",chat_wa_link:"Komeza kuri WhatsApp",
+    s1_label:"IROZA ni iki?",s1_title:"Ubuhuza bwa dijitali hagati y'uburyo no gutekereza.",s1_desc:"IROZA ifasha imiryango gusobanukirwa ubuzima bw'amabere mu buryo bworoshye kandi buhumuriza.",
+    card1_title:"Inyigisho Zoroshye z'Ubuzima",card1_desc:"Ibisubizo byoroshye n'imbabazi ku birebana n'imenyesha, kumenya vuba, iSikrimento, ubufasha bw'abapfuye, n'aho abantu bashobora gushaka ubufasha.",
+    card2_title:"Inkunga y'Indimi Nyinshi",card2_desc:"Yakozwe ku bikenera bya nyuma by'itumanahame rya Rwanda hamwe na Kinyarwanda, Icyongereza, Igifaransa, no guterwa Kiswahili.",
+    card3_title:"Gutumanahana Hatugarukiye Kuri Telefoni",card3_desc:"Yakozwe kuri telefoni, itumanahame rya WhatsApp, imibare ya QR, no kwinjira vuba mu gihe cy'imisi yo gukurura no kwamamaza.",
+    s2_label:"Impamvu birebwa",s2_title:"Imenyesha igomba gukomeza nyuma ya igendo.",s2_desc:"Ulinzi abitangarije rimwe mu mwaka. IROZA iguma inyigisha umwaka wose — cyane cyane abanyeshuri, imiryango, n'intumwa z'inzibacyuho.",
+    feat1_title:"Ishyigikira intumwa z'umuryango",feat1_desc:"Iha itsinda ry'imuhana ibikorwa biroroshye by'ibibazo bikunze kuririmba mu birori no mu bikorwa.",
+    feat2_title:"Ifasha abanyeshuri kwiga",feat2_desc:"Urubyiruko rushobora kubaza ibibazo mu mwiherezo no gusobanukirwa uburyo imenyesha irinda imiryango.",
+    feat3_title:"Igera hirya ya Kigali",feat3_desc:"Ishyigikira inyigisho zo mu cyaro n'abantu batashobora kujya mu bikorwa by'umubiri.",
+    s3_label:"Indimi Zishyigikiwe",s3_title:"Yakozwe ku Rwanda no mu diaspora.",s3_desc:"Kubona amakuru mu rurimi rwawe bituma inyigisho z'ubuzima zishimwa no kugira akamaro.",
+    qr_title:"Ingero y'Ikoreshwa rya QR",qr_desc:"Umunyamuryango asoma imibare ya QR ku ishati rya Ulinzi cyangwa ikarita y'umurokotsi maze afungure IROZA kugira ngo yige, gutera inkunga, cyangwa guhuza na BCIEA.",
+    s4_label:"Igipimo cy'Ingaruka",s4_title:"IROZA ifasha BCIEA gupima iki.",s4_desc:"Abapiganyi n'abashyigikira bagomba ibisubizo bisobanutse. IROZA ikurikirana uburambe bw'inyigisho, ikoreshwa ry'indimi, no gukurura.",
+    m1:"Abakoresha bagenwe bagerwaho mu mwaka wo gutangira",m2:"Ibimenyetso by'umuryango bishyigikiwe",m3:"Indimi zikomeye zo gutumanahana rusange",m4:"Intumwa z'inzibacyuho zishyigikiwe",
+    road_label:"Gahunda y'Igihe",
+    road1_title:"Icyiciro 1 — Gutangira",road1_desc:"Shyiraho Demo ya IROZA hamwe n'ibibazo, ikarita z'inyigisho, na CTA ya WhatsApp.",
+    road2_title:"Icyiciro 2 — Guhuza",road2_desc:"Huza IROZA n'imari za BCIEA, imibare ya QR, inkunga y'umurokotsi, no kwiyandikisha.",
+    road3_title:"Icyiciro 3 — Igipimo",road3_desc:"Senga igipimo cy'umupiganyi hamwe n'imibare igaragara, isesengura ry'indimi, n'ingezo.",
+    s5_label:"Baza IROZA",s5_title:"Ibibazo abantu babaza.",
+    q1_title:"Ibimenyetso bikunze kugaragara bya kanseri y'amabere ni ibihe?",q1_desc:"Inyigisho zoroshye hamwe na gutumanahama gushaka ubufasha bw'inzobere.",
+    q2_title:"Nshobora gushaka ubufasha he?",q2_desc:"Yohereza abakoresha kuri BCIEA, abarezi b'ubuzima, n'inzira z'inkunga z'uburenganzira.",
+    q3_title:"Nshobora gufasha nte?",q3_desc:"Huza abakoresha gutera inkunga, kwiyandikisha nk'inkunga, guteraniriza, kwiyandikisha, cyangwa kugura ibicuruzwa bitera ingaruka.",
+    s6_label:"Amahirwe y'Umupiganyi",s6_title:"Shyigikira ubwihindurize hamwe n'ingaruka.",s6_desc:"Abashyigikira bafasha BCIEA kwagura inyigisho za dijitali, guhindura ibiri mu buyobozi, gutoza intumwa, no kuzana imenyesha mu muryango.",
+    sp1:"Shyigikira Kwagura Indimi za IROZA",sp2:"Shyigikira Ikibahasha cy'Intumwa y'Umugi",sp3:"Shyigikira Imari ya QR z'Inyigisho",sp4:"Shyigikira Isesengura ry'Imenyesha rusange",
+    btn_become_partner:"Bana Umupiganyi",btn_fund_iroza:"Tuura IROZA",
+    form_label:"Dutumanahame",form_title:"Tuhereza ubutumwa.",form_desc:"Ufite ikibazo ku IROZA, BCIEA, cyangwa Ulinzi 2026? Uzuza uru rupapuro. Ubutumwa bwawe buzohererezwa itsinda ryacu binyuze kuri WhatsApp.",
+    lbl_name:"Amazina Yose",lbl_phone:"Telefoni / WhatsApp",lbl_email:"Aderesi y'Imeri",lbl_topic:"Insanganyamatsiko",lbl_message:"Ubutumwa",
+    ph_name:"Amazina yawe yose",ph_phone:"+250 7XX XXX XXX",ph_message:"Andika ubutumwa bwawe hano…",
+    opt_select:"Hitamo insanganyamatsiko…",opt_general:"Ikibazo Rusange",opt_education:"Inyigisho z'Ubuzima",opt_sponsor:"Guteraniriza / Ubufatanye",opt_volunteer:"Inkunga",opt_media:"Amakuru / Impapuro",
+    btn_send_wa:"Ohereza binyuze kuri WhatsApp",wa_note:"Ifungura WhatsApp hamwe n'ubutumwa bwawe butaremezwa",
+    cta_eyebrow:"Buri kibazo gifite akamaro",cta_title:"Buri kibazo gishobora guhinduka gukora vuba.",cta_desc:"Fasha BCIEA guhindura IROZA mu ntambi zo gutumanahana umwaka wose ku Rwanda, abarokotsi, imiryango, abanyeshuri, n'imidugudu.",
+    btn_donate_iroza:"Tuura IROZA",btn_join_ulinzi:"Injira Ulinzi 2026",
+    nav_walk:"Igendo",nav_register:"Iyandikishe",nav_donate:"Tuura",nav_store:"Isoko",nav_iroza:"IROZA",nav_sponsors:"Abashyigikira",nav_volunteer:"Inkunga",nav_impact:"Ingaruka",nav_media:"Amakuru",nav_diaspora:"Diaspora",nav_wall:"Inkuta y'Icyubahiro",nav_contact:"Tumanahana",nav_ask:"Baza IROZA",
+    footer_platform:"Urubuga",footer_movement:"Umuryango",footer_community:"Sosiyete",
+    nav_tagline:"Kuruta Igendo · BCIEA",
+    lang_bar:"IROZA — Urubuga rwa BCIEA · Ulinzi 2026"
+  },
+  fr: {
+    hero_eyebrow:"Centre d'Innovation IROZA",
+    hero_h1:"Demandez. Apprenez.<br><em>Agissez Plus Tôt.</em>",
+    hero_desc:"IROZA est l'assistant d'éducation numérique de BCIEA — rendant les informations sur la santé du sein accessibles dans tout le Rwanda grâce à un langage simple, un soutien mobile-first et des conseils centrés sur la communauté.",
+    btn_ask_iroza:"Demandez à IROZA",btn_view_impact:"Voir l'Impact",btn_partner:"Partenariat",
+    stat_access:"Accès Continu",stat_langs:"Langues",stat_mobile:"Mobile d'Abord",
+    chat_online:"En ligne · Soutien santé du sein",
+    chat_bot1:"Bonjour. Je peux vous aider à vous renseigner sur la santé du sein, les signes d'alerte précoces et où trouver de l'aide. Comment puis-je vous aider aujourd'hui?",
+    chat_user1:"Que faire si je remarque un changement au niveau du sein?",
+    chat_bot2:"Ne paniquez pas — mais consultez un professionnel de santé dès que possible. Une consultation précoce peut sauver des vies.",
+    chat_placeholder:"Posez une question sur la santé du sein…",chat_wa_link:"Continuer sur WhatsApp",
+    s1_label:"Qu'est-ce qu'IROZA?",s1_title:"Un pont numérique entre la sensibilisation et l'action.",s1_desc:"IROZA aide les communautés à comprendre la santé du sein de manière simple et respectueuse, prolongeant l'éducation de BCIEA bien au-delà d'une seule journée d'événement.",
+    card1_title:"Éducation Sanitaire Simple",card1_desc:"Des réponses claires et compatissantes sur la sensibilisation, la détection précoce, le dépistage et le soutien aux survivantes.",
+    card2_title:"Soutien Multilingue",card2_desc:"Conçu pour les besoins réels de communication du Rwanda avec le kinyarwanda, l'anglais, le français et le swahili.",
+    card3_title:"Accès Mobile-First",card3_desc:"Conçu pour les smartphones, les interactions WhatsApp, les codes QR et un accès rapide lors des campagnes.",
+    s2_label:"Pourquoi c'est important",s2_title:"La sensibilisation doit continuer après la marche.",s2_desc:"Ulinzi rassemble les gens une fois par an. IROZA continue d'éduquer toute l'année — notamment les étudiants, les familles et les ambassadeurs.",
+    feat1_title:"Soutient les ambassadeurs communautaires",feat1_desc:"Donne aux équipes de terrain un outil simple pour répondre aux questions courantes lors des visites villageoises.",
+    feat2_title:"Aide les étudiants à apprendre",feat2_desc:"Les jeunes peuvent poser des questions en privé et comprendre comment la sensibilisation protège les familles.",
+    feat3_title:"Atteint au-delà de Kigali",feat3_desc:"Soutient l'éducation rurale et les personnes qui ne peuvent pas assister aux événements.",
+    s3_label:"Langues Soutenues",s3_title:"Conçu pour le Rwanda et la diaspora.",s3_desc:"L'accès linguistique rend l'éducation sanitaire plus humaine et plus efficace.",
+    qr_title:"Exemple d'utilisation du code QR",qr_desc:"Un participant scanne un code QR sur un maillot Ulinzi ou une carte de survivant et ouvre IROZA pour apprendre, faire un don ou se connecter à BCIEA.",
+    s4_label:"Tableau de Bord d'Impact",s4_title:"Ce qu'IROZA aide BCIEA à mesurer.",s4_desc:"Les partenaires et sponsors ont besoin de résultats clairs. IROZA suit la portée de l'éducation, l'utilisation des langues et les performances de sensibilisation.",
+    m1:"Utilisateurs ciblés atteints lors de l'année de lancement",m2:"Événements de sensibilisation communautaires soutenus",m3:"Langues principales pour l'éducation publique",m4:"Ambassadeurs villageois soutenus",
+    road_label:"Feuille de Route",
+    road1_title:"Phase 1 — Lancement",road1_desc:"Déployer la démo IROZA avec des Q&R basiques, des fiches éducatives et un CTA WhatsApp.",
+    road2_title:"Phase 2 — Connexion",road2_desc:"Intégrer avec les campagnes BCIEA, codes QR, soutien aux survivants et inscriptions aux événements.",
+    road3_title:"Phase 3 — Tableau de Bord",road3_desc:"Construire un tableau de bord partenaire avec des chiffres de portée, des analyses linguistiques et des rapports de sensibilisation.",
+    s5_label:"Demandez à IROZA",s5_title:"Questions que les gens posent.",
+    q1_title:"Quels sont les signes courants du cancer du sein?",q1_desc:"Éducation simple à la sensibilisation avec un rappel de consulter un professionnel.",
+    q2_title:"Où puis-je trouver du soutien?",q2_desc:"Oriente les utilisateurs vers BCIEA, les agents de santé et les voies de soutien officielles.",
+    q3_title:"Comment puis-je aider?",q3_desc:"Connecte les utilisateurs pour faire des dons, du bénévolat, du parrainage ou s'inscrire.",
+    s6_label:"Opportunité Partenaire",s6_title:"Soutenez l'innovation avec impact.",s6_desc:"Les sponsors aident BCIEA à développer l'éducation numérique, traduire le contenu, former des ambassadeurs et sensibiliser davantage de communautés.",
+    sp1:"Parrainer l'expansion des langues IROZA",sp2:"Parrainer une boîte à outils d'ambassadeur villageois",sp3:"Parrainer des campagnes éducatives QR",sp4:"Parrainer l'analyse de sensibilisation publique",
+    btn_become_partner:"Devenir Partenaire",btn_fund_iroza:"Financer IROZA",
+    form_label:"Contactez-Nous",form_title:"Envoyez-nous un message.",form_desc:"Vous avez une question sur IROZA, BCIEA ou Ulinzi 2026? Remplissez le formulaire. Votre message sera envoyé directement à notre équipe via WhatsApp.",
+    lbl_name:"Nom Complet",lbl_phone:"Téléphone / WhatsApp",lbl_email:"Adresse E-mail",lbl_topic:"Sujet",lbl_message:"Message",
+    ph_name:"Votre nom complet",ph_phone:"+250 7XX XXX XXX",ph_message:"Tapez votre message ici…",
+    opt_select:"Sélectionner un sujet…",opt_general:"Question Générale",opt_education:"Éducation Sanitaire",opt_sponsor:"Parrainage / Partenariat",opt_volunteer:"Bénévolat",opt_media:"Médias / Presse",
+    btn_send_wa:"Envoyer via WhatsApp",wa_note:"Ouvre WhatsApp avec votre message pré-rempli",
+    cta_eyebrow:"Chaque question compte",cta_title:"Chaque question peut devenir une action précoce.",cta_desc:"Aidez BCIEA à transformer IROZA en moteur éducatif annuel pour le Rwanda, les survivantes, les familles, les étudiants et les communautés.",
+    btn_donate_iroza:"Faire un Don à IROZA",btn_join_ulinzi:"Rejoindre Ulinzi 2026",
+    nav_walk:"La Marche",nav_register:"S'inscrire",nav_donate:"Faire un Don",nav_store:"Boutique",nav_iroza:"IROZA",nav_sponsors:"Sponsors",nav_volunteer:"Bénévolat",nav_impact:"Impact",nav_media:"Médias",nav_diaspora:"Diaspora",nav_wall:"Mur d'Honneur",nav_contact:"Contact",nav_ask:"Demandez à IROZA",
+    footer_platform:"Plateforme",footer_movement:"Mouvement",footer_community:"Communauté",
+    nav_tagline:"Plus Qu'une Marche · BCIEA",
+    lang_bar:"IROZA — Plateforme de Santé Numérique BCIEA · Ulinzi 2026"
+  },
+  sw: {
+    hero_eyebrow:"Kituo cha Ubunifu cha IROZA",
+    hero_h1:"Uliza. Jifunze.<br><em>Chukua Hatua Mapema.</em>",
+    hero_desc:"IROZA ni msaidizi wa elimu ya kidijitali wa BCIEA — kuufanya habari ya afya ya matiti kuwa rahisi kupata Rwanda nzima kupitia lugha rahisi, msaada wa simu za mkononi, na mwongozo unaozingatia jamii.",
+    btn_ask_iroza:"Uliza IROZA",btn_view_impact:"Ona Athari",btn_partner:"Shirikiana Nasi",
+    stat_access:"Ufikiaji wa Masaa 24",stat_langs:"Lugha",stat_mobile:"Simu Kwanza",
+    chat_online:"Mtandaoni · Msaada wa afya ya matiti",
+    chat_bot1:"Habari. Ninaweza kukusaidia kujifunza kuhusu afya ya matiti, dalili za awali, na mahali pa kutafuta msaada. Ninaweza kukusaidiaje leo?",
+    chat_user1:"Nifanye nini nikigundua mabadiliko katika matiti?",
+    chat_bot2:"Tafadhali usijali — lakini zungumza na mtaalamu wa afya haraka iwezekanavyo. Kuchunguza mapema kunaweza kuokoa maisha.",
+    chat_placeholder:"Uliza swali kuhusu afya ya matiti…",chat_wa_link:"Endelea kwenye WhatsApp",
+    s1_label:"IROZA ni nini?",s1_title:"Daraja la kidijitali kati ya uhamasishaji na hatua.",s1_desc:"IROZA husaidia jamii kuelewa afya ya matiti kwa njia rahisi na ya kuheshimu.",
+    card1_title:"Elimu Rahisi ya Afya",card1_desc:"Majibu wazi na ya huruma kuhusu uhamasishaji, ugunduzi wa mapema, uchunguzi, msaada wa waokoka, na mahali pa kutafuta msaada.",
+    card2_title:"Msaada wa Lugha Nyingi",card2_desc:"Imeundwa kwa mahitaji halisi ya mawasiliano ya Rwanda na Kinyarwanda, Kiingereza, Kifaransa, na Kiswahili.",
+    card3_title:"Ufikiaji wa Simu Kwanza",card3_desc:"Imeundwa kwa simu za mkononi, mazungumzo ya WhatsApp, misimbo ya QR, na ufikiaji wa haraka wakati wa matukio ya uhamasishaji.",
+    s2_label:"Kwa nini ni muhimu",s2_title:"Uhamasishaji lazima uendelee baada ya mwendo.",s2_desc:"Ulinzi hukusanya watu mara moja kwa mwaka. IROZA inaendelea kufundisha mwaka mzima — hasa wanafunzi, familia, na mabalozi wa vijiji.",
+    feat1_title:"Inasaidia mabalozi wa jamii",feat1_desc:"Inapa timu za ufikiaji zana rahisi kwa maswali ya kawaida wakati wa ziara za vijiji.",
+    feat2_title:"Inasaidia wanafunzi kujifunza",feat2_desc:"Vijana wanaweza kuuliza maswali kwa faragha na kuelewa jinsi uhamasishaji unavyolinda familia.",
+    feat3_title:"Inafikia zaidi ya Kigali",feat3_desc:"Inasaidia elimu ya vijijini na watu ambao hawawezi kuhudhuria matukio ya kimwili.",
+    s3_label:"Lugha Zinazosaidiwa",s3_title:"Imeundwa kwa Rwanda na diaspora.",s3_desc:"Ufikiaji wa lugha hufanya elimu ya afya kuwa ya kibinadamu zaidi na yenye ufanisi zaidi.",
+    qr_title:"Mfano wa Matumizi ya QR",qr_desc:"Mshiriki anasoma msimbo wa QR kwenye shati la Ulinzi au kadi ya msalimwa na kufungua IROZA kujifunza, kutoa mchango, au kuungana na BCIEA.",
+    s4_label:"Dashibodi ya Athari",s4_title:"Nini IROZA inasaidia BCIEA kupima.",s4_desc:"Washirika na wafadhili wanahitaji matokeo wazi. IROZA inafuatilia ufikiaji wa elimu, matumizi ya lugha, na utendaji wa uhamasishaji.",
+    m1:"Watumiaji wanaolengwa waliofikia katika mwaka wa uzinduzi",m2:"Matukio ya uhamasishaji ya jamii yanayosaidiwa",m3:"Lugha kuu za elimu ya umma",m4:"Mabalozi wa vijiji wanaosaidiwa",
+    road_label:"Ramani ya Barabara",
+    road1_title:"Awamu 1 — Uzinduzi",road1_desc:"Peleka demo ya IROZA na Q&A za msingi, kadi za elimu, na CTA ya WhatsApp.",
+    road2_title:"Awamu 2 — Uunganisho",road2_desc:"Unganisha na kampeni za BCIEA, misimbo ya QR, msaada wa waokoka, na usajili wa matukio.",
+    road3_title:"Awamu 3 — Dashibodi",road3_desc:"Jenga dashibodi ya washirika na nambari za ufikiaji, uchambuzi wa lugha, na ripoti za uhamasishaji.",
+    s5_label:"Uliza IROZA",s5_title:"Maswali ambayo watu wanauliza.",
+    q1_title:"Ni dalili gani za kawaida za saratani ya matiti?",q1_desc:"Elimu rahisi ya uhamasishaji na ukumbusho wa kutafuta huduma ya kitaalamu.",
+    q2_title:"Ninaweza kupata msaada wapi?",q2_desc:"Inaelekeza watumiaji kwa BCIEA, wafanyakazi wa afya, na njia rasmi za msaada.",
+    q3_title:"Ninaweza kusaidiaje?",q3_desc:"Inaunganisha watumiaji kutoa mchango, kujitolea, kufadhili, kusajiliwa, au kununua bidhaa zenye athari.",
+    s6_label:"Fursa ya Ushirika",s6_title:"Saidia ubunifu wenye athari.",s6_desc:"Wafadhili husaidia BCIEA kupanua elimu ya kidijitali, kutafsiri maudhui, kufundisha mabalozi, na kuleta uhamasishaji kwa jamii zaidi.",
+    sp1:"Fadhili Upanishaji wa Lugha za IROZA",sp2:"Fadhili Kifurushi cha Zana za Balozi wa Kijiji",sp3:"Fadhili Kampeni za Elimu za QR",sp4:"Fadhili Uchambuzi wa Uhamasishaji wa Umma",
+    btn_become_partner:"Kuwa Mshirika",btn_fund_iroza:"Fadhili IROZA",
+    form_label:"Wasiliana Nasi",form_title:"Tutumie ujumbe.",form_desc:"Una swali kuhusu IROZA, BCIEA, au Ulinzi 2026? Jaza fomu. Ujumbe wako utatumwa moja kwa moja kwa timu yetu kupitia WhatsApp.",
+    lbl_name:"Jina Kamili",lbl_phone:"Simu / WhatsApp",lbl_email:"Anwani ya Barua Pepe",lbl_topic:"Mada",lbl_message:"Ujumbe",
+    ph_name:"Jina lako kamili",ph_phone:"+250 7XX XXX XXX",ph_message:"Andika ujumbe wako hapa…",
+    opt_select:"Chagua mada…",opt_general:"Swali la Jumla",opt_education:"Elimu ya Afya",opt_sponsor:"Ufadhili / Ushirika",opt_volunteer:"Kujitolea",opt_media:"Vyombo vya Habari",
+    btn_send_wa:"Tuma kupitia WhatsApp",wa_note:"Inafungua WhatsApp na ujumbe wako umejazwa awali",
+    cta_eyebrow:"Kila swali linamaanisha",cta_title:"Kila swali linaweza kuwa hatua ya mapema.",cta_desc:"Saidia BCIEA kuigeuza IROZA kuwa injini ya elimu ya mwaka mzima kwa Rwanda, waokoka, familia, wanafunzi, na jamii.",
+    btn_donate_iroza:"Toa Mchango kwa IROZA",btn_join_ulinzi:"Jiunge na Ulinzi 2026",
+    nav_walk:"Mwendo",nav_register:"Sajili",nav_donate:"Toa Mchango",nav_store:"Duka",nav_iroza:"IROZA",nav_sponsors:"Wafadhili",nav_volunteer:"Kujitolea",nav_impact:"Athari",nav_media:"Vyombo vya Habari",nav_diaspora:"Diaspora",nav_wall:"Ukuta wa Heshima",nav_contact:"Wasiliana",nav_ask:"Uliza IROZA",
+    footer_platform:"Jukwaa",footer_movement:"Harakati",footer_community:"Jamii",
+    nav_tagline:"Zaidi ya Mwendo · BCIEA",
+    lang_bar:"IROZA — Jukwaa la Afya la Kidijitali BCIEA · Ulinzi 2026"
+  }
+};
+
+/* ═══════════════════════════════════════════
+   LANGUAGE ENGINE
+═══════════════════════════════════════════ */
+let currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  const t = translations[lang] || translations.en;
+
+  // Update lang bar
+  document.getElementById('lang-bar-text').textContent = t.lang_bar;
+
+  // Update all data-i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.textContent = t[key];
+  });
+
+  // Update innerHTML elements (allows em tags etc)
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (t[key]) el.innerHTML = t[key];
+  });
+
+  // Update placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key]) el.placeholder = t[key];
+  });
+
+  // Update nav tagline
+  const nt = document.getElementById('nav-tagline');
+  if (nt && t.nav_tagline) nt.textContent = t.nav_tagline;
+
+  // Update chat bubbles content
+  const chatDisplay = document.getElementById('chat-display');
+  if (chatDisplay) {
+    const bubbles = chatDisplay.querySelectorAll('.bubble');
+    const keys = ['chat_bot1','chat_user1','chat_bot2'];
+    bubbles.forEach((b,i) => { if(t[keys[i]]) b.textContent = t[keys[i]]; });
+  }
+
+  // Sync lang buttons (top bar)
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+
+  // Sync drawer buttons
+  document.querySelectorAll('[data-drawer-lang]').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-drawer-lang') === lang);
+  });
+
+  // Sync lang chips
+  document.querySelectorAll('.lang-chip').forEach(chip => {
+    const chipLang = chip.getAttribute('onclick') || '';
+    chip.classList.toggle('active-lang', chipLang.includes(`'${lang}'`));
+  });
+
+  // Update html lang attr
+  document.documentElement.lang = lang;
+}
+
+/* ═══════════════════════════════════════════
+   NAV SCROLL BEHAVIOR
+═══════════════════════════════════════════ */
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, {passive:true});
+
+/* ═══════════════════════════════════════════
+   MOBILE DRAWER
+═══════════════════════════════════════════ */
+const menuBtn = document.getElementById('menu-btn');
+const drawer = document.getElementById('nav-drawer');
+const drawerClose = document.getElementById('drawer-close-btn');
+
+menuBtn.addEventListener('click', () => { drawer.classList.add('open'); document.body.style.overflow='hidden'; });
+drawerClose.addEventListener('click', closeDrawer);
+drawer.addEventListener('click', e => { if(e.target===drawer) closeDrawer(); });
+function closeDrawer(){ drawer.classList.remove('open'); document.body.style.overflow=''; }
+
+/* ═══════════════════════════════════════════
+   LIVE CHAT WIDGET
+═══════════════════════════════════════════ */
+const chatInput = document.getElementById('chat-input');
+const chatSend = document.getElementById('chat-send');
+const chatDisplay = document.getElementById('chat-display');
+
+const chatResponses = {
+  en: [
+    "For any breast change, please consult a health worker as soon as possible. Early action saves lives.",
+    "BCIEA has resources and trained health workers who can support you. You can contact them through the Ulinzi platform.",
+    "Common signs include a new lump, skin changes, nipple discharge, or pain. Always seek professional advice.",
+    "You can support BCIEA by donating, volunteering, attending the Ulinzi walk, or sharing health information.",
+    "IROZA is designed to help, but always consult a qualified health professional for personal medical advice."
+  ],
+  rw: [
+    "Kuri bimwe byose by'amabere, baza umuganga vuba bishoboka. Gukora vuba bitera ubuzima.",
+    "BCIEA ifite abarezi b'ubuzima bashobora gukufasha. Bahuza na bo binyuze kuri Ulinzi.",
+    "Ibimenyetso bikunze kugaragara birimo: igisimba gishya, impinduka z'uruhu, insoro zo mu mabere, cyangwa ububabare.",
+    "Ushobora gufasha BCIEA gutera inkunga, gukorera ubunebwe, kujya ku igendo rya Ulinzi, cyangwa gusangira amakuru y'ubuzima.",
+    "IROZA yakozwe gufasha, ariko baza umuganga w'inzobere ku bwite bwawe bw'ubuzima."
+  ],
+  fr: [
+    "Pour tout changement au niveau du sein, consultez un professionnel de santé dès que possible.",
+    "BCIEA dispose de ressources et d'agents de santé formés. Contactez-les via la plateforme Ulinzi.",
+    "Les signes courants incluent une nouvelle boule, des changements cutanés, un écoulement mamelonnaire ou une douleur.",
+    "Vous pouvez soutenir BCIEA en faisant un don, en vous portant volontaire ou en participant à la marche Ulinzi.",
+    "IROZA est conçue pour aider, mais consultez toujours un professionnel de santé qualifié."
+  ],
+  sw: [
+    "Kwa mabadiliko yoyote ya matiti, tafadhali wasiliana na mtaalamu wa afya haraka iwezekanavyo.",
+    "BCIEA ina rasilimali na wafanyakazi wa afya waliofunzwa. Wasiliana nao kupitia jukwaa la Ulinzi.",
+    "Dalili za kawaida ni pamoja na uvimbe mpya, mabadiliko ya ngozi, kutoka kwa chuchu, au maumivu.",
+    "Unaweza kusaidia BCIEA kwa kutoa mchango, kujitolea, kushiriki katika mwendo wa Ulinzi.",
+    "IROZA imeundwa kusaidia, lakini daima wasiliana na mtaalamu wa afya kwa ushauri binafsi."
+  ]
+};
+let responseIndex = 0;
+
+function addBubble(text, type) {
+  const b = document.createElement('div');
+  b.className = `bubble ${type}`;
+  b.textContent = text;
+  chatDisplay.appendChild(b);
+  chatDisplay.scrollTop = chatDisplay.scrollHeight;
+  return b;
+}
+
+function showTyping() {
+  const t = document.createElement('div');
+  t.className = 'typing-indicator';
+  t.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+  chatDisplay.appendChild(t);
+  chatDisplay.scrollTop = chatDisplay.scrollHeight;
+  return t;
+}
+
+chatSend.addEventListener('click', sendChat);
+chatInput.addEventListener('keydown', e => { if(e.key==='Enter') sendChat(); });
+
+function sendChat() {
+  const val = chatInput.value.trim();
+  if(!val) return;
+  addBubble(val, 'user');
+  chatInput.value = '';
+  const typing = showTyping();
+  setTimeout(() => {
+    typing.remove();
+    const responses = chatResponses[currentLang] || chatResponses.en;
+    const reply = responses[responseIndex % responses.length];
+    responseIndex++;
+    const botBubble = addBubble(reply, 'bot');
+    // Add WhatsApp CTA after 2 messages
+    if(responseIndex >= 2) {
+      const wa = document.createElement('a');
+      wa.href = `https://wa.me/250783438059?text=${encodeURIComponent(val)}`;
+      wa.target = '_blank';
+      wa.rel = 'noopener';
+      wa.style.cssText = 'display:inline-flex;align-items:center;gap:6px;color:#25D366;font-size:12px;font-weight:700;margin-top:6px;text-decoration:none';
+      wa.innerHTML = '<i class="ti ti-brand-whatsapp"></i> Continue on WhatsApp →';
+      botBubble.appendChild(document.createElement('br'));
+      botBubble.appendChild(wa);
+    }
+  }, 1200 + Math.random()*600);
+}
+
+/* ═══════════════════════════════════════════
+   WHATSAPP FORM SUBMISSION
+═══════════════════════════════════════════ */
+function sendToWhatsApp() {
+  const name = document.getElementById('f-name').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const topic = document.getElementById('f-topic').value;
+  const message = document.getElementById('f-message').value.trim();
+
+  if(!name || !message) {
+    alert(currentLang==='fr'?'Veuillez remplir au moins votre nom et votre message.':
+          currentLang==='rw'?'Nyamuneka uzuza nibura amazina yawe n\'ubutumwa.':
+          currentLang==='sw'?'Tafadhali jaza angalau jina lako na ujumbe.':
+          'Please fill in at least your name and message.');
+    return;
+  }
+
+  const waNumber = '250783438059'; // Replace with real BCIEA WhatsApp number
+  const topicLabels = {general:'General Question',education:'Health Education',sponsor:'Sponsorship',volunteer:'Volunteer',media:'Media','':"(not specified)"};
+  const text = [
+    `*IROZA Website Enquiry*`,
+    `Name: ${name}`,
+    phone ? `Phone: ${phone}` : null,
+    email ? `Email: ${email}` : null,
+    `Topic: ${topicLabels[topic]||topic}`,
+    `\nMessage:\n${message}`,
+    `\n_Sent from iroza.bciea.org_`
+  ].filter(Boolean).join('\n');
+
+  window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+}
+
+/* ═══════════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════════ */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ═══════════════════════════════════════════
+   SMOOTH ANCHOR NAV
+═══════════════════════════════════════════ */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if(target){e.preventDefault();closeDrawer();target.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
+</body>
+</html>

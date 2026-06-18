@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About BCIEA — Ulinzi 2026</title>
+  <meta name="description" content="Breast Cancer Initiative East Africa — the force behind Ulinzi. Building awareness, supporting survivors, educating communities, and bringing innovation to women and families across Rwanda." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+  <style>
+    /* ══ TOKENS ══════════════════════════════════════════════════════════ */
+    :root {
+      --pink:    #e8567e;
+      --pink-2:  #ff8fb0;
+      --pink-3:  #fff0f5;
+      --rose:    #c93f69;
+      --green:   #20b486;
+      --gold:    #f7b84b;
+      --ink:     #18101a;
+      --ink-2:   #2e1e32;
+      --muted:   #7a6b76;
+      --faint:   #b8a8b5;
+      --white:   #ffffff;
+      --soft:    #fdf8fb;
+      --soft-2:  #f9f2f6;
+      --line:    rgba(30,12,30,.09);
+      --line-2:  rgba(232,86,126,.18);
+      --shadow:  0 20px 70px rgba(181,31,90,.12);
+      --shadow-sm: 0 8px 28px rgba(0,0,0,.07);
+      --radius:  28px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--white); color: var(--ink); overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    .container { width: min(1180px, calc(100% - 40px)); margin: auto; }
+    .section    { padding: 90px 0; }
+
+    /* ══ TYPE ════════════════════════════════════════════════════════════ */
+    .label {
+      font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--pink); font-weight: 800; margin-bottom: 14px; display: block;
+    }
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5.5vw, 68px);
+      line-height: .93; letter-spacing: -.048em; margin-bottom: 20px;
+    }
+    .title em  { color: var(--pink); font-style: italic; }
+    .title span{ color: var(--pink); }
+    .sec-h {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: .98; letter-spacing: -.038em; margin-bottom: 16px;
+    }
+    .sec-h em { color: var(--pink); font-style: italic; }
+    .desc  { color: var(--muted); font-size: 16px; line-height: 1.82; max-width: 700px; }
+    .desc-sm { color: var(--muted); font-size: 15px; line-height: 1.75; }
+
+    /* ══ EYEBROW PILL ════════════════════════════════════════════════════ */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 8px 16px; border: 1px solid var(--line-2);
+      background: var(--pink-3); border-radius: 999px;
+      color: var(--rose); font-size: 11px; font-weight: 800;
+      letter-spacing: .16em; text-transform: uppercase; margin-bottom: 22px;
+    }
+    .eyebrow .dot {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--pink);
+      animation: blink 2.4s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+    /* ══ BUTTONS ═════════════════════════════════════════════════════════ */
+    .btn-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 14px 24px; border-radius: 999px;
+      font-size: 13px; font-weight: 800; letter-spacing: .04em;
+      border: 1.5px solid transparent;
+      transition: all .24s cubic-bezier(.34,1.56,.64,1); cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-primary { background: var(--pink); color: #fff; box-shadow: 0 12px 34px rgba(232,86,126,.28); }
+    .btn-primary:hover { background: var(--rose); transform: translateY(-3px); box-shadow: 0 20px 48px rgba(201,63,105,.36); }
+    .btn-outline { border-color: var(--line); color: var(--ink); background: var(--white); }
+    .btn-outline:hover { border-color: var(--line-2); color: var(--rose); transform: translateY(-3px); background: var(--pink-3); }
+    .btn-white { background: #fff; color: var(--rose); border-color: transparent; box-shadow: 0 10px 28px rgba(0,0,0,.14); }
+    .btn-white:hover { transform: translateY(-3px); box-shadow: 0 18px 42px rgba(0,0,0,.18); }
+
+    /* ══ LANG SWITCHER ═══════════════════════════════════════════════════ */
+    .lang-wrap { position: relative; }
+    .lang-btn {
+      display: flex; align-items: center; gap: 7px; padding: 9px 14px;
+      border-radius: 999px; background: var(--white); border: 1.5px solid var(--line);
+      font-size: 12px; font-weight: 800; color: var(--muted); cursor: pointer; transition: .2s;
+    }
+    .lang-btn:hover { border-color: var(--line-2); color: var(--rose); }
+    .lang-drop {
+      position: absolute; top: calc(100% + 10px); right: 0;
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: 22px; box-shadow: 0 22px 65px rgba(0,0,0,.13);
+      overflow: hidden; min-width: 172px;
+      opacity: 0; pointer-events: none;
+      transform: translateY(-10px) scale(.97);
+      transition: all .22s cubic-bezier(.34,1.2,.64,1);
+    }
+    .lang-drop.open { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
+    .lang-opt {
+      display: flex; align-items: center; gap: 10px;
+      padding: 13px 18px; font-size: 13px; font-weight: 700;
+      cursor: pointer; border: none; background: none; width: 100%;
+      text-align: left; color: var(--ink); transition: .15s;
+    }
+    .lang-opt:hover  { background: var(--pink-3); color: var(--rose); }
+    .lang-opt.active { color: var(--pink); background: var(--pink-3); }
+
+    /* ══ NAV ════════════════════════════════════════════════════════════ */
+    .nav {
+      position: fixed; top: 14px; left: 0; right: 0; z-index: 999;
+      width: min(1240px, calc(100% - 28px)); margin: auto;
+      background: rgba(255,255,255,.90); backdrop-filter: blur(26px) saturate(1.6);
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 999px; box-shadow: 0 4px 28px rgba(0,0,0,.08);
+      transition: top .3s, box-shadow .3s;
+    }
+    .nav.scrolled { top: 8px; box-shadow: 0 10px 55px rgba(0,0,0,.12); }
+    .nav-inner { height: 70px; display: flex; align-items: center; justify-content: space-between; padding: 0 12px 0 22px; gap: 14px; }
+
+    .brand { display: flex; flex-direction: column; flex-shrink: 0; line-height: 1; }
+    .brand strong { font-family: 'Playfair Display', serif; color: var(--rose); font-size: 20px; letter-spacing: .02em; }
+    .brand span   { font-size: 9px; letter-spacing: .22em; color: var(--faint); text-transform: uppercase; margin-top: 2px; }
+
+    .nav-links { display: flex; gap: 4px; align-items: center; }
+    .nav-links a { font-size: 12px; font-weight: 700; color: var(--muted); padding: 8px 11px; border-radius: 999px; transition: .18s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--rose); background: var(--pink-3); }
+
+    .nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+
+    .menu-btn {
+      display: none; width: 46px; height: 46px; border-radius: 50%;
+      border: 0; background: var(--ink); color: #fff; font-size: 22px;
+      cursor: pointer; align-items: center; justify-content: center; transition: .2s;
+    }
+    .menu-btn:hover { background: var(--rose); }
+
+    /* Mobile menu */
+    .mob-menu {
+      display: none; position: fixed; inset: 0; z-index: 998;
+      background: rgba(255,255,255,.97); backdrop-filter: blur(24px);
+      padding: 100px 28px 40px; overflow-y: auto;
+    }
+    .mob-menu.open { display: block; }
+    .mob-menu a {
+      display: flex; align-items: center; gap: 14px;
+      color: var(--ink); font-size: 22px; font-weight: 800;
+      padding: 16px 0; border-bottom: 1px solid var(--line); transition: color .18s;
+    }
+    .mob-menu a i  { color: var(--pink); width: 28px; font-size: 22px; flex-shrink: 0; }
+    .mob-menu a:hover { color: var(--rose); }
+    .mob-lang { margin-top: 30px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .mob-lang-btn {
+      padding: 10px 18px; border-radius: 999px; font-size: 13px; font-weight: 800;
+      background: var(--soft-2); border: 1.5px solid var(--line);
+      color: var(--ink); cursor: pointer; transition: .2s;
+    }
+    .mob-lang-btn.active { background: var(--pink); border-color: var(--pink); color: #fff; }
+
+    /* ══ HERO ════════════════════════════════════════════════════════════ */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 140px 0 80px; position: relative; overflow: hidden;
+      background:
+        radial-gradient(ellipse 55% 55% at 75% 18%, rgba(232,86,126,.18), transparent),
+        radial-gradient(ellipse 45% 40% at 10% 75%, rgba(32,180,134,.10), transparent),
+        linear-gradient(150deg, var(--white) 0%, #fff3f7 55%, #f4fff9 100%);
+    }
+    .hero-grid-bg {
+      position: absolute; inset: 0; opacity: .32;
+      background-image:
+        linear-gradient(rgba(232,86,126,.11) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232,86,126,.11) 1px, transparent 1px);
+      background-size: 50px 50px;
+      mask-image: radial-gradient(ellipse 85% 70% at 50% 0%, #000 40%, transparent);
+    }
+    .hero-orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; }
+    .hero-orb-1 { width: 500px; height: 500px; background: rgba(232,86,126,.14); top: -120px; right: -100px; }
+    .hero-orb-2 { width: 320px; height: 320px; background: rgba(32,180,134,.10); bottom: -70px; left: -70px; }
+    .hero-word {
+      position: absolute; right: -20px; bottom: 30px; pointer-events: none;
+      font-family: 'Playfair Display', serif; font-size: clamp(100px, 16vw, 200px);
+      font-weight: 900; color: rgba(232,86,126,.055); line-height: 1; letter-spacing: -.06em;
+    }
+
+    .hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr .9fr; gap: 52px; align-items: center; }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(52px, 8vw, 100px);
+      line-height: .86; letter-spacing: -.07em; margin-bottom: 24px;
+    }
+    .hero h1 em { color: var(--pink); font-style: italic; }
+
+    /* Hero Panel */
+    .hero-panel {
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: 34px; overflow: hidden; box-shadow: var(--shadow);
+    }
+    .panel-img {
+      height: 340px; position: relative; overflow: hidden;
+      background: linear-gradient(140deg, rgba(232,86,126,.32), rgba(32,180,134,.18)),
+                  url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&q=80') center/cover;
+    }
+    .panel-img::after {
+      content: 'BCIEA'; position: absolute; right: 18px; bottom: 10px;
+      font-family: 'Playfair Display', serif; font-size: 72px; font-weight: 900;
+      color: rgba(255,255,255,.15); line-height: 1; pointer-events: none;
+    }
+    .panel-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(24,16,26,.70), rgba(24,16,26,.04)); }
+    .panel-img-caption {
+      position: absolute; left: 20px; right: 20px; bottom: 20px; z-index: 2;
+      color: #fff; font-family: 'Playfair Display', serif; font-size: 22px;
+    }
+    .panel-img-caption span { display: block; font-family: 'DM Sans', sans-serif; font-size: 13px; color: rgba(255,255,255,.76); font-weight: 500; margin-top: 5px; }
+    .mini-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; padding: 18px; }
+    .mini {
+      background: var(--soft-2); border: 1px solid var(--line);
+      border-radius: 18px; padding: 18px; text-align: center; transition: .2s;
+    }
+    .mini:hover { background: var(--pink-3); border-color: var(--line-2); }
+    .mini strong { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--rose); display: block; }
+    .mini span   { font-size: 10px; letter-spacing: .13em; text-transform: uppercase; color: var(--faint); margin-top: 5px; display: block; }
+
+    /* ══ WHO WE ARE ══════════════════════════════════════════════════════ */
+    .who-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: start; }
+    .mission-card {
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 34px; box-shadow: var(--shadow-sm);
+      position: relative; overflow: hidden;
+    }
+    .mission-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--pink), var(--rose));
+    }
+    .m-icon { width: 60px; height: 60px; border-radius: 20px; background: var(--pink-3); display: grid; place-items: center; margin-bottom: 22px; }
+    .m-icon i { font-size: 32px; color: var(--pink); }
+    .mission-card h3 { font-size: 22px; margin-bottom: 12px; font-weight: 800; }
+
+    /* ══ IMPACT STRIP ════════════════════════════════════════════════════ */
+    .impact-strip {
+      background: linear-gradient(140deg, var(--pink), var(--rose));
+      padding: 56px 0; position: relative; overflow: hidden;
+    }
+    .impact-strip::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='52' height='52' viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='26' cy='26' r='1.5' fill='rgba(255,255,255,.14)'/%3E%3C/svg%3E") repeat;
+    }
+    .impact-grid { position: relative; display: grid; grid-template-columns: repeat(5,1fr); gap: 0; }
+    .impact-item {
+      padding: 24px; text-align: center;
+      border-right: 1px solid rgba(255,255,255,.18);
+      transition: .2s;
+    }
+    .impact-item:last-child { border-right: 0; }
+    .impact-item:hover { background: rgba(255,255,255,.08); }
+    .impact-item strong { font-family: 'Playfair Display', serif; color: #fff; font-size: 42px; display: block; }
+    .impact-item span   { display: block; color: rgba(255,255,255,.76); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; margin-top: 8px; font-weight: 800; }
+
+    /* ══ PROGRAMS ════════════════════════════════════════════════════════ */
+    .programs { background: var(--soft); }
+    .prog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 36px; }
+    .prog-card {
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow-sm);
+      transition: .26s cubic-bezier(.34,1.2,.64,1);
+    }
+    .prog-card:hover { transform: translateY(-7px); box-shadow: var(--shadow); border-color: var(--line-2); }
+    .p-icon { width: 54px; height: 54px; border-radius: 18px; background: var(--pink-3); display: grid; place-items: center; margin-bottom: 20px; }
+    .p-icon i { font-size: 28px; color: var(--pink); }
+    .prog-card h3 { font-size: 18px; margin-bottom: 10px; font-weight: 800; }
+    .prog-card p  { color: var(--muted); line-height: 1.72; font-size: 14px; }
+
+    /* ══ HOW SUPPORT MOVES ═══════════════════════════════════════════════ */
+    .support-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 44px; align-items: start; }
+    .prog-list { display: grid; gap: 14px; }
+    .prog-item {
+      display: flex; gap: 18px; align-items: flex-start;
+      padding: 22px; border: 1px solid var(--line); border-radius: 22px;
+      background: var(--white); box-shadow: var(--shadow-sm); transition: .22s;
+    }
+    .prog-item:hover { border-color: var(--line-2); background: var(--pink-3); transform: translateX(6px); }
+    .prog-item i { color: var(--pink); font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+    .prog-item strong { display: block; margin-bottom: 6px; font-size: 16px; }
+    .prog-item span   { color: var(--muted); font-size: 14px; line-height: 1.65; }
+
+    /* Support visual */
+    .support-visual {
+      border-radius: 34px; overflow: hidden; position: relative;
+      min-height: 480px; background:
+        linear-gradient(160deg, rgba(232,86,126,.88), rgba(24,16,26,.96)),
+        url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80') center/cover;
+      color: #fff; padding: 34px; display: flex; flex-direction: column; justify-content: space-between;
+      box-shadow: var(--shadow);
+    }
+    .sv-tag { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.22); font-size: 12px; font-weight: 800; letter-spacing: .06em; }
+    .sv-h { font-family: 'Playfair Display', serif; font-size: 36px; line-height: 1.05; margin: 20px 0 12px; }
+    .sv-p { color: rgba(255,255,255,.78); line-height: 1.72; font-size: 15px; }
+    .sv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 22px; }
+    .sv-item { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); border-radius: 18px; padding: 16px; font-weight: 800; font-size: 14px; display: flex; gap: 8px; align-items: center; transition: .2s; }
+    .sv-item:hover { background: rgba(255,255,255,.22); }
+
+    /* ══ ROADMAP ═════════════════════════════════════════════════════════ */
+    .roadmap-bg { background: var(--soft-2); }
+    .roadmap-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start; }
+    .timeline { position: relative; display: grid; gap: 14px; }
+    .timeline::before {
+      content: ''; position: absolute; left: 25px; top: 12px; bottom: 12px; width: 2px;
+      background: linear-gradient(to bottom, var(--pink), rgba(232,86,126,.12));
+    }
+    .step { display: grid; grid-template-columns: 54px 1fr; gap: 18px; }
+    .step-dot {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--white); border: 2px solid var(--line-2);
+      display: grid; place-items: center; color: var(--pink); font-weight: 900;
+      font-family: 'Playfair Display', serif; font-size: 18px; z-index: 1;
+      box-shadow: 0 6px 20px rgba(232,86,126,.16);
+      transition: .22s; flex-shrink: 0;
+    }
+    .step:hover .step-dot { background: var(--pink); color: #fff; border-color: var(--pink); }
+    .step-body {
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: 22px; padding: 22px; box-shadow: var(--shadow-sm); transition: .22s;
+    }
+    .step:hover .step-body { border-color: var(--line-2); background: var(--pink-3); }
+    .step-body h3 { font-size: 17px; margin-bottom: 8px; font-weight: 800; }
+    .step-body p  { color: var(--muted); line-height: 1.68; font-size: 14px; }
+
+    /* Vision card */
+    .vision-card {
+      background: linear-gradient(150deg, var(--ink), var(--ink-2));
+      border-radius: 34px; padding: 40px; color: #fff;
+      box-shadow: 0 30px 80px rgba(0,0,0,.22); position: sticky; top: 100px;
+    }
+    .vc-icon { width: 60px; height: 60px; border-radius: 20px; background: rgba(232,86,126,.18); display: grid; place-items: center; margin-bottom: 24px; }
+    .vc-icon i { font-size: 32px; color: var(--pink-2); }
+    .vc-h { font-family: 'Playfair Display', serif; font-size: 32px; line-height: 1.05; margin-bottom: 16px; }
+    .vc-p { color: rgba(255,255,255,.72); line-height: 1.78; }
+    .vc-milestones { margin-top: 28px; display: grid; gap: 10px; }
+    .vc-m { display: flex; gap: 12px; align-items: center; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: 16px; padding: 14px 18px; font-size: 14px; font-weight: 700; transition: .2s; }
+    .vc-m:hover { background: rgba(232,86,126,.18); }
+    .vc-m i { color: var(--pink-2); font-size: 20px; flex-shrink: 0; }
+
+    /* ══ PARTNERS ════════════════════════════════════════════════════════ */
+    .partner-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 34px; }
+    .partner {
+      min-height: 100px; border: 1.5px dashed var(--line-2); border-radius: 22px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--faint); font-weight: 800; font-size: 14px; text-align: center;
+      padding: 20px; background: var(--soft-2); transition: .24s;
+    }
+    .partner:hover { background: var(--pink-3); color: var(--rose); border-color: var(--line-2); transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+
+    /* ══ CTA SECTION ══════════════════════════════════════════════════════ */
+    .cta-section {
+      background: linear-gradient(140deg, var(--pink), var(--rose));
+      text-align: center; padding: 100px 28px; position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='52' height='52' viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='26' cy='26' r='1.5' fill='rgba(255,255,255,.12)'/%3E%3C/svg%3E") repeat;
+    }
+    .cta-inner { position: relative; }
+    .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5.5vw, 68px); line-height: .92; letter-spacing: -.04em; color: #fff; }
+    .cta-section p  { max-width: 640px; margin: 18px auto 0; color: rgba(255,255,255,.84); line-height: 1.72; font-size: 17px; }
+
+    /* ══ FOOTER ══════════════════════════════════════════════════════════ */
+    footer { background: var(--ink); color: #fff; padding: 60px 0 28px; }
+    .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 30px; }
+    .footer-brand { font-family: 'Playfair Display', serif; color: var(--pink-2); font-size: 24px; font-weight: 900; margin-bottom: 12px; }
+    .footer-col h4 { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.38); margin-bottom: 16px; }
+    .footer-col a, .footer-col p { display: block; color: rgba(255,255,255,.58); font-size: 14px; line-height: 2; transition: .15s; }
+    .footer-col a:hover { color: var(--pink-2); }
+    .footer-bottom {
+      margin-top: 40px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.09);
+      display: flex; justify-content: space-between; color: rgba(255,255,255,.36);
+      font-size: 12px; flex-wrap: wrap; gap: 10px;
+    }
+
+    /* ══ SCROLL REVEAL ═══════════════════════════════════════════════════ */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ══ RESPONSIVE ══════════════════════════════════════════════════════ */
+    @media (max-width: 1100px) {
+      .nav-links { display: none; }
+      .menu-btn { display: flex; }
+      .hero-grid, .who-grid, .support-grid, .roadmap-grid { grid-template-columns: 1fr; }
+      .prog-grid { grid-template-columns: repeat(2,1fr); }
+      .impact-grid { grid-template-columns: repeat(3,1fr); }
+      .partner-grid { grid-template-columns: repeat(2,1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .vision-card { position: static; }
+    }
+    @media (max-width: 680px) {
+      .nav { top: 8px; width: calc(100% - 14px); }
+      .hero { padding: 120px 0 60px; }
+      .section { padding: 64px 0; }
+      .prog-grid, .impact-grid, .partner-grid,
+      .footer-grid, .mini-stats, .sv-grid { grid-template-columns: 1fr; }
+      .impact-item { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.15); }
+      .impact-item:last-child { border-bottom: 0; }
+      .cta-section { padding: 72px 18px; }
+      .btn-row .btn { width: 100%; justify-content: center; }
+      .lang-btn span.lang-label { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+   TRANSLATIONS
+══════════════════════════════════════════════════════════════════════════ -->
+<script>
+const T = {
+  en: {
+    nav_ulinzi:"Ulinzi", nav_walk:"Walk", nav_register:"Register", nav_donate:"Donate",
+    nav_store:"Store", nav_impact:"Impact", nav_contact:"Contact",
+    nav_donate_btn:"Donate",
+
+    hero_eye:"Behind the Movement",
+    hero_h1a:"About", hero_h1em:"BCIEA",
+    hero_desc:"Breast Cancer Initiative East Africa is the force behind Ulinzi — building awareness, supporting survivors, educating communities, and bringing innovation closer to women and families across Rwanda.",
+    hero_btn1:"About Ulinzi", hero_btn2:"View Impact", hero_btn3:"Volunteer",
+    hero_cap:"Breast Cancer Initiative East Africa",
+    hero_cap_sub:"Awareness · Survivors · Education · Innovation · Community",
+    stat1_v:"10+", stat1_l:"Years Service",
+    stat2_v:"8",   stat2_l:"Districts",
+    stat3_v:"2030",stat3_l:"Roadmap",
+
+    who_eye:"Who We Are",
+    who_h:"A survivor-centered movement for breast health, <em>dignity, and hope.</em>",
+    who_desc:"BCIEA works to reduce fear, silence, misinformation, and late action around breast cancer. Through community outreach, survivor support, education, partnerships, and digital tools like IROZA, BCIEA helps people understand breast health and seek support earlier.",
+    mission_h:"Our Mission",
+    mission_p:"To increase breast cancer awareness, promote early detection, support survivors, and mobilise communities through education, compassion, and innovation.",
+
+    imp_eye:"By The Numbers",
+    i1_v:"100k+", i1_l:"People Reached",
+    i2_v:"200+",  i2_l:"Survivors Served",
+    i3_v:"30+",   i3_l:"Villages Reached",
+    i4_v:"50+",   i4_l:"Workshops",
+    i5_v:"1",     i5_l:"Movement",
+
+    prog_eye:"What BCIEA Does",
+    prog_h:"Programs that turn <em>awareness into action.</em>",
+    prog_desc:"These program areas connect directly to Ulinzi fundraising, sponsor support, volunteer work, and year-round community engagement.",
+    p1_h:"Community Education", p1_p:"Breast health conversations, awareness workshops, village outreach, and myth-breaking education for families and communities.",
+    p2_h:"Survivor Support",    p2_p:"Safe spaces, survivor group meetings, emotional support, practical guidance, and dignity-centered care for women and families.",
+    p3_h:"IROZA Innovation",    p3_p:"A multilingual AI education companion designed to help people ask questions and learn about breast health in accessible language.",
+    p4_h:"Wearables for Impact",p4_p:"Ulinzi and IKUNDE products that help raise funds and spread awareness through purpose-driven fashion.",
+    p5_h:"Partnerships",        p5_p:"Collaboration with health institutions, sponsors, volunteers, media, and community leaders to increase reach and trust.",
+    p6_h:"Ulinzi Walk",         p6_p:"The annual public movement that brings people together to register, donate, volunteer, sponsor, and walk for life.",
+
+    sup_eye:"How Support Moves",
+    sup_h:"From donation to <em>real community impact.</em>",
+    sup_desc:"Every registration, product purchase, and sponsor package should connect back to clear impact. This is why Ulinzi is built as a fundraising, commerce, and community platform.",
+    s1_h:"Funds Raised",       s1_p:"Support awareness campaigns, survivor programs, and education materials.",
+    s2_h:"Communities Reached",s2_p:"Village ambassadors, workshops, and local outreach help breast health information reach more families.",
+    s3_h:"Survivors Supported",s3_p:"Survivors receive connection, dignity, visibility, and stronger community support.",
+    s4_h:"Education Scaled",   s4_p:"IROZA helps extend health education through mobile-first, multilingual support.",
+    sv_tag:"Impact in Action",
+    sv_h:"Where every franc goes further.",
+    sv_p:"Donor funds flow directly into survivor support, community education, IROZA access, and walk-day logistics — creating visible impact year-round.",
+    sv1:"Survivor Care", sv2:"Village Outreach", sv3:"IROZA Access", sv4:"Walk-Day Events",
+
+    road_eye:"Roadmap",
+    road_h:"BCIEA Roadmap <em>to 2030</em>",
+    road_desc:"A future-facing plan for awareness, survivor support, digital education, and stronger national and diaspora participation.",
+    r1_h:"2026 — Ulinzi Platform Launch",   r1_p:"Register walkers, raise funds, sell wearables, recruit volunteers, attract sponsors, and collect stories.",
+    r2_h:"2027 — Community Expansion",      r2_p:"Grow outreach through more villages, schools, workplaces, and regional ambassadors.",
+    r3_h:"2028 — IROZA Scale-Up",           r3_p:"Expand digital breast health education through local languages and mobile-first access.",
+    r4_h:"2030 — Stronger National Movement",r4_p:"Build a trusted, year-round movement that supports early action, survivor dignity, and community awareness.",
+    vc_h:"Our Vision for 2030",
+    vc_p:"A Rwanda where every person understands breast health, every family knows where to seek support, and every survivor receives dignity, care, and hope.",
+    vc1:"10,000 annual walkers", vc2:"500+ survivors served", vc3:"IROZA in 8+ languages", vc4:"30+ district coverage",
+
+    part_eye:"Partnership Network",
+    part_h:"Built through <em>collaboration.</em>",
+    part_desc:"This area can later hold official partner logos and links for health institutions, sponsors, NGOs, media houses, and community organizations.",
+    pt1:"Health Partners", pt2:"Corporate Sponsors", pt3:"Media Partners", pt4:"Community Leaders",
+    pt5:"Hospitals", pt6:"Schools", pt7:"Diaspora Groups", pt8:"Volunteers",
+
+    cta_h:"Support the work behind Ulinzi.",
+    cta_p:"Join BCIEA in building a Rwanda where breast health education, early action, survivor dignity, and community support continue all year.",
+    cta_btn1:"Donate", cta_btn2:"Sponsor", cta_btn3:"Volunteer",
+
+    ft_more:"More than a walk — a year-round movement for awareness, fundraising, commerce, innovation, and community.",
+    ft_platform:"Platform", ft_movement:"Movement", ft_contact:"Contact",
+    ft_copy:"© 2026 Ulinzi · BCIEA", ft_note:"More Than a Walk. A Movement for Life.",
+  },
+
+  rw: {
+    nav_ulinzi:"Ulinzi", nav_walk:"Kugenda", nav_register:"Kwiyandikisha", nav_donate:"Gutunga",
+    nav_store:"Iduka", nav_impact:"Ingaruka", nav_contact:"Twandikire",
+    nav_donate_btn:"Tunga",
+
+    hero_eye:"Inyuma y'Icyimuka",
+    hero_h1a:"Ku Byerekeye", hero_h1em:"BCIEA",
+    hero_desc:"Breast Cancer Initiative East Africa ni imbaraga inyuma ya Ulinzi — ishyiraho ubumenyi, igafasha abagira bira, ikiga imyryango, kandi igereranije ikoranabuhanga hafi y'abagore n'imiryango mu Rwanda.",
+    hero_btn1:"Ku Byerekeye Ulinzi", hero_btn2:"Reba Ingaruka", hero_btn3:"Kora Ubusabane",
+    hero_cap:"Breast Cancer Initiative East Africa",
+    hero_cap_sub:"Ubumenyi · Abagira Bira · Kwiga · Ikoranabuhanga · Umuryango",
+    stat1_v:"10+", stat1_l:"Imyaka y'Akazi",
+    stat2_v:"8",   stat2_l:"Akarere",
+    stat3_v:"2030",stat3_l:"Inzira ya Kure",
+
+    who_eye:"Abo Turi Bo",
+    who_h:"Icyimuka gishingiye ku bagira bira kugirango ubuzima bw'amabere, <em>ikuzo, n'ibyiringiro.</em>",
+    who_desc:"BCIEA ikora kugabanya ubwoba, ukumama, amakuru atari yo, n'igikorwa gihuriwe ku bira ry'amabere. Binyuze mu bikorwa byo guhuza imyryango, gufasha abagira bira, kwiga, inzira za IROZA, BCIEA ifasha abantu gusobanukirwa ubuzima bw'amabere no gushaka ubufasha hakiri kare.",
+    mission_h:"Intego Yacu",
+    mission_p:"Kuzamura ubumenyi bw'ibira ry'amabere, guteza imbere gutahura hakiri kare, gufasha abagira bira, no guhuza imyryango binyuze mu burezi, imbabazi, n'ikoranabuhanga.",
+
+    imp_eye:"Mu Mibare",
+    i1_v:"100k+", i1_l:"Abantu Bagezeho",
+    i2_v:"200+",  i2_l:"Abagira Bira Bafashijwe",
+    i3_v:"30+",   i3_l:"Imyryango Bahawe Serivisi",
+    i4_v:"50+",   i4_l:"Amahugurwa",
+    i5_v:"1",     i5_l:"Icyimuka",
+
+    prog_eye:"Icyo BCIEA Ikora",
+    prog_h:"Porogaramu zihindura <em>ubumenyi gukora.</em>",
+    prog_desc:"Izi porogaramu zifatanye na Ulinzi mu gushyira inkunga, inkunga y'abafatanyabikorwa, akazi k'abafashanyigisho, no kuhuza umuryango mwaka wose.",
+    p1_h:"Kwiga Umuryango",    p1_p:"Ibiganiro ku bw'ubuzima bw'amabere, amahugurwa y'ubumenyi, gushakira imyryango mu bigo, no kwiga ukuri ku miryango.",
+    p2_h:"Gufasha Abagira Bira",p2_p:"Ahantu heza, ibibazo by'itsinda ry'abagira bira, inkunga y'imbabazi, ubuyobozi bw'akamaro, no kwita ku bantu ku bagore n'imiryango.",
+    p3_h:"Ubushakashatsi IROZA",p3_p:"Inshuti y'inyigisho ya AI mu ndimi nyinshi yakozwe gufasha abantu kubaza ibibazo no kwiga ku buzima bw'amabere mu rurimi rusobanuye.",
+    p4_h:"Imyambaro y'Ingaruka",p4_p:"Ibicuruzwa bya Ulinzi na IKUNDE bifasha gushyira inkunga no gutangaza ubumenyi binyuze mu myambaro ifite intego.",
+    p5_h:"Inzira za Gukorana",  p5_p:"Gukorana n'ibigo by'ubuzima, abatera inkunga, abafashanyigisho, amakuru, n'abayobozi b'umuryango kugirango bagere abantu benshi bakizwe.",
+    p6_h:"Kugenda kwa Ulinzi",  p6_p:"Icyimuka cya buri mwaka gihura abantu kugirango biyandikishe, batunga, bakore ubusabane, baha inkunga, kandi bagenda bakiza.",
+
+    sup_eye:"Inzira y'Inkunga",
+    sup_h:"Kuva ku ngufu kugeza ku <em>ngaruka y'umuryango.</em>",
+    sup_desc:"Kwiyandikisha kwose, kugura ibicuruzwa, na pake ya abafatanyabikorwa bikwiye gufatanizwa n'ingaruka zisobanutse. Ni yo mpamvu Ulinzi yakozwe nk'urubuga rwo gushyira inkunga, ubucuruzi, n'umuryango.",
+    s1_h:"Inkunga Zishyinguwe",s1_p:"Gufasha ingamba zo kuzamura ubumenyi, porogaramu z'abagira bira, n'ibikoresho by'inyigisho.",
+    s2_h:"Imyryango Bahawe Serivisi",s2_p:"Intumwa z'imyryango, amahugurwa, no gushakira imyryango bifasha amakuru y'ubuzima bw'amabere kugera ku miryango myinshi.",
+    s3_h:"Abagira Bira Bafashijwe",s3_p:"Abagira bira bahabwa itumanaho, ikuzo, kugaragara, n'inkunga ikomeye y'umuryango.",
+    s4_h:"Inyigisho Zagutse",s4_p:"IROZA ifasha kurungika inyigisho y'ubuzima binyuze muri telefone, mu ndimi nyinshi.",
+    sv_tag:"Ingaruka mu Bikorwa",
+    sv_h:"Aho amafaranga yose agera hejuru.",
+    sv_p:"Amafaranga y'abatanga inkunga ajya mu bufasha bw'abagira bira, inyigisho z'umuryango, uburenganzira bwa IROZA, n'ibikorwa byo kugenda mu gihe cy'ibikorwa — bitera ingaruka ziboneka mwaka wose.",
+    sv1:"Kubungabunga Abagira Bira", sv2:"Gushakira Imyryango", sv3:"Ubwisanzure bwa IROZA", sv4:"Ibikorwa byo Kugenda",
+
+    road_eye:"Inzira ya Kure",
+    road_h:"Inzira ya BCIEA <em>kugeza 2030</em>",
+    road_desc:"Gahunda igamije ejo hazaza ku bw'ubumenyi, gufasha abagira bira, inyigisho za dijitale, n'iyongerwa ry'amatsinda y'igihugu n'abaharanye ubumwe batuye mahanga.",
+    r1_h:"2026 — Urubuga rwa Ulinzi Rufunguwe", r1_p:"Iyandikisha ab'ingendo, gushyira inkunga, kugurisha imyambaro, gushaka abafashanyigisho, kwegura abafatanyabikorwa, no gukusanya inkuru.",
+    r2_h:"2027 — Iterambere ry'Umuryango",       r2_p:"Kongera gushakira imyryango mu bigo byinshi, amashuri, aho bakorera, n'intumwa z'akarere.",
+    r3_h:"2028 — Kwagura IROZA",                  r3_p:"Kongera inyigisho za dijitale z'ubuzima bw'amabere binyuze mu ndimi z'akarere no kubona ubwisanzure bwa telefone.",
+    r4_h:"2030 — Icyimuka Gikomeye cy'Igihugu",  r4_p:"Kubaka icyimuka cy'ukuri, cya mwaka wose gifasha gutera intambwe hakiri kare, ikuzo ry'abagira bira, n'ubumenyi bw'umuryango.",
+    vc_h:"Inzozi Zacu za 2030",
+    vc_p:"Rwanda aho umuntu wese asobanukiwe ubuzima bw'amabere, imiryango yose izi aho gushaka inkunga, kandi abagira bira bose babona ikuzo, ubufasha, n'ibyiringiro.",
+    vc1:"Abagenda 10,000 buri mwaka", vc2:"Abagira bira 500+ bafashijwe", vc3:"IROZA mu ndimi 8+", vc4:"Buri karere 30+ kahawe serivisi",
+
+    part_eye:"Inzira za Gukorana",
+    part_h:"Yakozwe binyuze mu <em>gukorana.</em>",
+    part_desc:"Aha nyuma hazashyirwamo logos n'ibihuza ibigo by'ubuzima, abatera inkunga, amashyirahamwe, amakuru, n'imiryango ya guhugu.",
+    pt1:"Inzira z'Ubuzima", pt2:"Abafatanyabikorwa b'Ubucuruzi", pt3:"Inzira z'Amakuru", pt4:"Abayobozi b'Umuryango",
+    pt5:"Ibitaro", pt6:"Amashuri", pt7:"Amatsinda ya Diaspora", pt8:"Abafashanyigisho",
+
+    cta_h:"Shyigikira akazi inyuma ya Ulinzi.",
+    cta_p:"Jya mu BCIEA mu kubaka Rwanda aho inyigisho z'ubuzima bw'amabere, gutera intambwe hakiri kare, ikuzo ry'abagira bira, n'inkunga y'umuryango bikomeza mwaka wose.",
+    cta_btn1:"Tunga", cta_btn2:"Tera Inkunga", cta_btn3:"Kora Ubusabane",
+
+    ft_more:"Benshi kuruta kugenda — icyimuka cya mwaka wose cyo kuzamura ubumenyi, gushyira inkunga, ubucuruzi, ikoranabuhanga, n'umuryango.",
+    ft_platform:"Urubuga", ft_movement:"Icyimuka", ft_contact:"Twandikire",
+    ft_copy:"© 2026 Ulinzi · BCIEA", ft_note:"Benshi Kuruta Kugenda. Icyimuka cy'Ubuzima.",
+  },
+
+  fr: {
+    nav_ulinzi:"Ulinzi", nav_walk:"Marche", nav_register:"S'inscrire", nav_donate:"Donner",
+    nav_store:"Boutique", nav_impact:"Impact", nav_contact:"Contact",
+    nav_donate_btn:"Faire un Don",
+
+    hero_eye:"Derrière le Mouvement",
+    hero_h1a:"À propos de", hero_h1em:"BCIEA",
+    hero_desc:"Breast Cancer Initiative East Africa est la force derrière Ulinzi — développer la sensibilisation, soutenir les survivantes, éduquer les communautés et rapprocher l'innovation des femmes et des familles à travers le Rwanda.",
+    hero_btn1:"À propos d'Ulinzi", hero_btn2:"Voir l'Impact", hero_btn3:"Bénévolat",
+    hero_cap:"Breast Cancer Initiative East Africa",
+    hero_cap_sub:"Sensibilisation · Survivantes · Éducation · Innovation · Communauté",
+    stat1_v:"10+", stat1_l:"Ans de Service",
+    stat2_v:"8",   stat2_l:"Districts",
+    stat3_v:"2030",stat3_l:"Feuille de route",
+
+    who_eye:"Qui Nous Sommes",
+    who_h:"Un mouvement centré sur les survivantes pour la santé du sein, <em>la dignité et l'espoir.</em>",
+    who_desc:"BCIEA travaille à réduire la peur, le silence, la désinformation et les actions tardives autour du cancer du sein. À travers la sensibilisation communautaire, le soutien aux survivantes, l'éducation, les partenariats et les outils numériques comme IROZA, BCIEA aide les gens à comprendre la santé du sein et à chercher du soutien plus tôt.",
+    mission_h:"Notre Mission",
+    mission_p:"Augmenter la sensibilisation au cancer du sein, promouvoir la détection précoce, soutenir les survivantes et mobiliser les communautés à travers l'éducation, la compassion et l'innovation.",
+
+    imp_eye:"En Chiffres",
+    i1_v:"100k+", i1_l:"Personnes Atteintes",
+    i2_v:"200+",  i2_l:"Survivantes Soutenues",
+    i3_v:"30+",   i3_l:"Villages Atteints",
+    i4_v:"50+",   i4_l:"Ateliers",
+    i5_v:"1",     i5_l:"Mouvement",
+
+    prog_eye:"Ce que Fait BCIEA",
+    prog_h:"Des programmes qui transforment <em>la sensibilisation en action.</em>",
+    prog_desc:"Ces domaines de programme se connectent directement au financement participatif Ulinzi, au soutien des sponsors, au travail des bénévoles et à l'engagement communautaire annuel.",
+    p1_h:"Éducation Communautaire",p1_p:"Conversations sur la santé du sein, ateliers de sensibilisation, sensibilisation villageoise et éducation brise-mythes pour les familles et les communautés.",
+    p2_h:"Soutien aux Survivantes",p2_p:"Espaces sûrs, réunions de groupes de survivantes, soutien émotionnel, conseils pratiques et soins centrés sur la dignité.",
+    p3_h:"Innovation IROZA",       p3_p:"Un compagnon éducatif IA multilingue conçu pour aider les gens à poser des questions et à apprendre sur la santé du sein en langage accessible.",
+    p4_h:"Vêtements pour l'Impact",p4_p:"Les produits Ulinzi et IKUNDE aident à collecter des fonds et à diffuser la sensibilisation grâce à la mode engagée.",
+    p5_h:"Partenariats",           p5_p:"Collaboration avec des institutions de santé, des sponsors, des bénévoles, des médias et des leaders communautaires pour accroître la portée et la confiance.",
+    p6_h:"Marche Ulinzi",          p6_p:"Le mouvement public annuel qui rassemble les gens pour s'inscrire, donner, faire du bénévolat, parrainer et marcher pour la vie.",
+
+    sup_eye:"Comment le Soutien Circule",
+    sup_h:"Du don à <em>l'impact communautaire réel.</em>",
+    sup_desc:"Chaque inscription, achat de produit et forfait sponsor doit se connecter à un impact clair. C'est pourquoi Ulinzi est construit comme une plateforme de collecte de fonds, de commerce et de communauté.",
+    s1_h:"Fonds Collectés",         s1_p:"Soutenir les campagnes de sensibilisation, les programmes de survivantes et les matériaux éducatifs.",
+    s2_h:"Communautés Atteintes",   s2_p:"Les ambassadeurs villageois, ateliers et sensibilisation locale aident les informations sur la santé du sein à atteindre plus de familles.",
+    s3_h:"Survivantes Soutenues",   s3_p:"Les survivantes reçoivent connection, dignité, visibilité et un soutien communautaire plus fort.",
+    s4_h:"Éducation à Grande Échelle",s4_p:"IROZA aide à étendre l'éducation à la santé grâce à un accès mobile-first et multilingue.",
+    sv_tag:"Impact en Action",
+    sv_h:"Où chaque franc va plus loin.",
+    sv_p:"Les fonds des donateurs vont directement dans le soutien aux survivantes, l'éducation communautaire, l'accès IROZA et la logistique du jour de marche.",
+    sv1:"Soins aux Survivantes", sv2:"Sensibilisation Villageoise", sv3:"Accès IROZA", sv4:"Événements de Marche",
+
+    road_eye:"Feuille de Route",
+    road_h:"Feuille de Route BCIEA <em>vers 2030</em>",
+    road_desc:"Un plan tourné vers l'avenir pour la sensibilisation, le soutien aux survivantes, l'éducation numérique et une participation nationale et diaspora plus forte.",
+    r1_h:"2026 — Lancement de la Plateforme Ulinzi",r1_p:"Inscrire des marcheurs, collecter des fonds, vendre des vêtements, recruter des bénévoles, attirer des sponsors et collecter des histoires.",
+    r2_h:"2027 — Expansion Communautaire",          r2_p:"Développer la sensibilisation à travers plus de villages, écoles, lieux de travail et ambassadeurs régionaux.",
+    r3_h:"2028 — Montée en Puissance d'IROZA",      r3_p:"Étendre l'éducation numérique à la santé du sein à travers les langues locales et l'accès mobile-first.",
+    r4_h:"2030 — Mouvement National Plus Fort",     r4_p:"Construire un mouvement annuel de confiance qui soutient l'action précoce, la dignité des survivantes et la sensibilisation communautaire.",
+    vc_h:"Notre Vision pour 2030",
+    vc_p:"Un Rwanda où chaque personne comprend la santé du sein, chaque famille sait où chercher du soutien, et chaque survivante reçoit dignité, soins et espoir.",
+    vc1:"10 000 marcheurs annuels", vc2:"500+ survivantes soutenues", vc3:"IROZA en 8+ langues", vc4:"Couverture de 30+ districts",
+
+    part_eye:"Réseau de Partenariats",
+    part_h:"Construit grâce à la <em>collaboration.</em>",
+    part_desc:"Cet espace peut contenir des logos et liens officiels de partenaires pour les institutions de santé, sponsors, ONG, médias et organisations communautaires.",
+    pt1:"Partenaires Santé", pt2:"Sponsors Corporate", pt3:"Partenaires Médias", pt4:"Leaders Communautaires",
+    pt5:"Hôpitaux", pt6:"Écoles", pt7:"Groupes Diaspora", pt8:"Bénévoles",
+
+    cta_h:"Soutenez le travail derrière Ulinzi.",
+    cta_p:"Rejoignez BCIEA dans la construction d'un Rwanda où l'éducation à la santé du sein, l'action précoce, la dignité des survivantes et le soutien communautaire continuent toute l'année.",
+    cta_btn1:"Faire un Don", cta_btn2:"Parrainer", cta_btn3:"Bénévolat",
+
+    ft_more:"Plus qu'une marche — un mouvement annuel pour la sensibilisation, la collecte de fonds, le commerce, l'innovation et la communauté.",
+    ft_platform:"Plateforme", ft_movement:"Mouvement", ft_contact:"Contact",
+    ft_copy:"© 2026 Ulinzi · BCIEA", ft_note:"Plus Qu'une Marche. Un Mouvement pour la Vie.",
+  }
+};
+
+let lang = 'en';
+function t(k) { return T[lang][k] || T.en[k] || k; }
+
+function applyLang(l) {
+  if (!T[l]) return;
+  lang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = t(el.dataset.i18n);
+    if (v !== undefined) el.innerHTML = v;
+  });
+  const flags  = { en:'🇬🇧', rw:'🇷🇼', fr:'🇫🇷' };
+  const labels = { en:'EN',   rw:'RW',   fr:'FR'   };
+  document.getElementById('langFlag').textContent  = flags[l];
+  document.getElementById('langLabel').textContent = labels[l];
+  document.querySelectorAll('.lang-opt').forEach(b  => b.classList.toggle('active', b.dataset.lang === l));
+  document.querySelectorAll('.mlb').forEach(b => b.classList.toggle('active', b.dataset.lang === l));
+  document.getElementById('langDrop').classList.remove('open');
+  try { localStorage.setItem('ulinzi_lang', l); } catch(e) {}
+}
+</script>
+
+<!-- ══ MOBILE MENU ════════════════════════════════════════════════════════ -->
+<div class="mob-menu" id="mobMenu">
+  <a href="about-ulinzi.html"><i class="ti ti-ribbon-health"></i><span data-i18n="nav_ulinzi">Ulinzi</span></a>
+  <a href="event.html"><i class="ti ti-route"></i><span data-i18n="nav_walk">Walk</span></a>
+  <a href="register.html"><i class="ti ti-ticket"></i><span data-i18n="nav_register">Register</span></a>
+  <a href="donate.html"><i class="ti ti-heart-dollar"></i><span data-i18n="nav_donate">Donate</span></a>
+  <a href="store.html"><i class="ti ti-shopping-bag"></i><span data-i18n="nav_store">Store</span></a>
+  <a href="impact.html"><i class="ti ti-chart-bar"></i><span data-i18n="nav_impact">Impact</span></a>
+  <a href="contact.html"><i class="ti ti-mail"></i><span data-i18n="nav_contact">Contact</span></a>
+  <div class="mob-lang">
+    <button class="mlb active" data-lang="en" onclick="applyLang('en')">🇬🇧 EN</button>
+    <button class="mlb" data-lang="rw" onclick="applyLang('rw')">🇷🇼 RW</button>
+    <button class="mlb" data-lang="fr" onclick="applyLang('fr')">🇫🇷 FR</button>
+  </div>
+</div>
+
+<!-- ══ NAV ════════════════════════════════════════════════════════════════ -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <strong>ULINZI 2026</strong>
+      <span>Rwanda Breast Cancer Walk · BCIEA</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="about-ulinzi.html" data-i18n="nav_ulinzi">Ulinzi</a>
+      <a href="event.html" data-i18n="nav_walk">Walk</a>
+      <a href="register.html" data-i18n="nav_register">Register</a>
+      <a href="donate.html" data-i18n="nav_donate">Donate</a>
+      <a href="store.html" data-i18n="nav_store">Store</a>
+      <a href="impact.html" data-i18n="nav_impact">Impact</a>
+      <a href="about-bciea.html" class="active">BCIEA</a>
+    </div>
+
+    <div class="nav-right">
+      <!-- Language Switcher -->
+      <div class="lang-wrap">
+        <button class="lang-btn" id="langToggle" aria-label="Change language">
+          <span id="langFlag">🇬🇧</span>
+          <span id="langLabel" class="lang-label">EN</span>
+          <i class="ti ti-chevron-down" style="font-size:13px"></i>
+        </button>
+        <div class="lang-drop" id="langDrop">
+          <button class="lang-opt active" data-lang="en" onclick="applyLang('en')">🇬🇧 English</button>
+          <button class="lang-opt" data-lang="rw" onclick="applyLang('rw')">🇷🇼 Kinyarwanda</button>
+          <button class="lang-opt" data-lang="fr" onclick="applyLang('fr')">🇫🇷 Français</button>
+        </div>
+      </div>
+
+      <a class="btn btn-primary" href="donate.html" style="padding:11px 20px;font-size:12px" data-i18n="nav_donate_btn">Donate</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu"><i class="ti ti-menu-2"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ════════════════════════════════════════════════════════════════ -->
+<header class="hero" id="home">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-word">BCIEA</div>
+
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="eyebrow"><span class="dot"></span> <span data-i18n="hero_eye">Behind the Movement</span></div>
+      <h1><span data-i18n="hero_h1a">About</span><br><em data-i18n="hero_h1em">BCIEA</em></h1>
+      <p class="desc" data-i18n="hero_desc">Breast Cancer Initiative East Africa is the force behind Ulinzi.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="about-ulinzi.html"><i class="ti ti-ribbon-health"></i><span data-i18n="hero_btn1">About Ulinzi</span></a>
+        <a class="btn btn-outline" href="impact.html"><i class="ti ti-chart-bar"></i><span data-i18n="hero_btn2">View Impact</span></a>
+        <a class="btn btn-outline" href="volunteer.html"><i class="ti ti-users"></i><span data-i18n="hero_btn3">Volunteer</span></a>
+      </div>
+    </div>
+
+    <div class="hero-panel reveal" style="transition-delay:.14s">
+      <div class="panel-img">
+        <div class="panel-img-overlay"></div>
+        <div class="panel-img-caption">
+          <strong data-i18n="hero_cap">Breast Cancer Initiative East Africa</strong>
+          <span data-i18n="hero_cap_sub">Awareness · Survivors · Education · Innovation · Community</span>
+        </div>
+      </div>
+      <div class="mini-stats">
+        <div class="mini"><strong data-i18n="stat1_v">10+</strong><span data-i18n="stat1_l">Years Service</span></div>
+        <div class="mini"><strong data-i18n="stat2_v">8</strong><span data-i18n="stat2_l">Districts</span></div>
+        <div class="mini"><strong data-i18n="stat3_v">2030</strong><span data-i18n="stat3_l">Roadmap</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══ WHO WE ARE ══════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container who-grid">
+    <div class="reveal">
+      <span class="label" data-i18n="who_eye">Who We Are</span>
+      <h2 class="sec-h" data-i18n="who_h">A survivor-centered movement for breast health, <em>dignity, and hope.</em></h2>
+      <p class="desc" data-i18n="who_desc">BCIEA works to reduce fear, silence, misinformation, and late action around breast cancer.</p>
+    </div>
+    <div class="mission-card reveal" style="transition-delay:.12s">
+      <div class="m-icon"><i class="ti ti-target-arrow"></i></div>
+      <h3 data-i18n="mission_h">Our Mission</h3>
+      <p class="desc-sm" data-i18n="mission_p">To increase breast cancer awareness, promote early detection, support survivors, and mobilise communities through education, compassion, and innovation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ IMPACT STRIP ════════════════════════════════════════════════════════ -->
+<div class="impact-strip">
+  <div class="container">
+    <span class="label" style="color:rgba(255,255,255,.72)" data-i18n="imp_eye">By The Numbers</span>
+    <div class="impact-grid" style="margin-top:20px">
+      <div class="impact-item"><strong data-i18n="i1_v">100k+</strong><span data-i18n="i1_l">People Reached</span></div>
+      <div class="impact-item"><strong data-i18n="i2_v">200+</strong><span data-i18n="i2_l">Survivors Served</span></div>
+      <div class="impact-item"><strong data-i18n="i3_v">30+</strong><span data-i18n="i3_l">Villages Reached</span></div>
+      <div class="impact-item"><strong data-i18n="i4_v">50+</strong><span data-i18n="i4_l">Workshops</span></div>
+      <div class="impact-item"><strong data-i18n="i5_v">1</strong><span data-i18n="i5_l">Movement</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PROGRAMS ════════════════════════════════════════════════════════════ -->
+<section class="section programs">
+  <div class="container">
+    <span class="label" data-i18n="prog_eye">What BCIEA Does</span>
+    <h2 class="sec-h reveal" data-i18n="prog_h">Programs that turn <em>awareness into action.</em></h2>
+    <p class="desc reveal" data-i18n="prog_desc">These program areas connect directly to Ulinzi fundraising, sponsor support, volunteer work, and year-round community engagement.</p>
+    <div class="prog-grid">
+      <div class="prog-card reveal"><div class="p-icon"><i class="ti ti-messages"></i></div><h3 data-i18n="p1_h">Community Education</h3><p data-i18n="p1_p">Breast health conversations, awareness workshops, village outreach, and myth-breaking education for families and communities.</p></div>
+      <div class="prog-card reveal" style="transition-delay:.07s"><div class="p-icon"><i class="ti ti-home-heart"></i></div><h3 data-i18n="p2_h">Survivor Support</h3><p data-i18n="p2_p">Safe spaces, survivor group meetings, emotional support, practical guidance, and dignity-centered care for women and families.</p></div>
+      <div class="prog-card reveal" style="transition-delay:.14s"><div class="p-icon"><i class="ti ti-robot"></i></div><h3 data-i18n="p3_h">IROZA Innovation</h3><p data-i18n="p3_p">A multilingual AI education companion designed to help people ask questions and learn about breast health in accessible language.</p></div>
+      <div class="prog-card reveal" style="transition-delay:.07s"><div class="p-icon"><i class="ti ti-shirt"></i></div><h3 data-i18n="p4_h">Wearables for Impact</h3><p data-i18n="p4_p">Ulinzi and IKUNDE products that help raise funds and spread awareness through purpose-driven fashion.</p></div>
+      <div class="prog-card reveal" style="transition-delay:.14s"><div class="p-icon"><i class="ti ti-building-community"></i></div><h3 data-i18n="p5_h">Partnerships</h3><p data-i18n="p5_p">Collaboration with health institutions, sponsors, volunteers, media, and community leaders to increase reach and trust.</p></div>
+      <div class="prog-card reveal" style="transition-delay:.21s"><div class="p-icon"><i class="ti ti-walk"></i></div><h3 data-i18n="p6_h">Ulinzi Walk</h3><p data-i18n="p6_p">The annual public movement that brings people together to register, donate, volunteer, sponsor, and walk for life.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HOW SUPPORT MOVES ═══════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container support-grid">
+    <div class="reveal">
+      <span class="label" data-i18n="sup_eye">How Support Moves</span>
+      <h2 class="sec-h" data-i18n="sup_h">From donation to <em>real community impact.</em></h2>
+      <p class="desc" style="margin-bottom:28px" data-i18n="sup_desc">Every registration, product purchase, and sponsor package connects back to clear impact.</p>
+      <div class="prog-list">
+        <div class="prog-item"><i class="ti ti-coin"></i><div><strong data-i18n="s1_h">Funds Raised</strong><span data-i18n="s1_p">Support awareness campaigns, survivor programs, and education materials.</span></div></div>
+        <div class="prog-item"><i class="ti ti-map-2"></i><div><strong data-i18n="s2_h">Communities Reached</strong><span data-i18n="s2_p">Village ambassadors, workshops, and local outreach help breast health information reach more families.</span></div></div>
+        <div class="prog-item"><i class="ti ti-heart-plus"></i><div><strong data-i18n="s3_h">Survivors Supported</strong><span data-i18n="s3_p">Survivors receive connection, dignity, visibility, and stronger community support.</span></div></div>
+        <div class="prog-item"><i class="ti ti-device-mobile-message"></i><div><strong data-i18n="s4_h">Education Scaled</strong><span data-i18n="s4_p">IROZA helps extend health education through mobile-first, multilingual support.</span></div></div>
+      </div>
+    </div>
+
+    <div class="support-visual reveal" style="transition-delay:.14s">
+      <div>
+        <span class="sv-tag"><i class="ti ti-chart-arrows-vertical"></i> <span data-i18n="sv_tag">Impact in Action</span></span>
+        <h3 class="sv-h" data-i18n="sv_h">Where every franc goes further.</h3>
+        <p class="sv-p" data-i18n="sv_p">Donor funds flow directly into survivor support, community education, IROZA access, and walk-day logistics.</p>
+      </div>
+      <div class="sv-grid">
+        <div class="sv-item"><i class="ti ti-ribbon-health"></i> <span data-i18n="sv1">Survivor Care</span></div>
+        <div class="sv-item"><i class="ti ti-map-pin"></i> <span data-i18n="sv2">Village Outreach</span></div>
+        <div class="sv-item"><i class="ti ti-robot"></i> <span data-i18n="sv3">IROZA Access</span></div>
+        <div class="sv-item"><i class="ti ti-walk"></i> <span data-i18n="sv4">Walk-Day Events</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ROADMAP ═════════════════════════════════════════════════════════════ -->
+<section class="section roadmap-bg">
+  <div class="container roadmap-grid">
+    <div class="reveal">
+      <span class="label" data-i18n="road_eye">Roadmap</span>
+      <h2 class="sec-h" data-i18n="road_h">BCIEA Roadmap <em>to 2030</em></h2>
+      <p class="desc" style="margin-bottom:32px" data-i18n="road_desc">A future-facing plan for awareness, survivor support, digital education, and stronger national and diaspora participation.</p>
+      <div class="timeline">
+        <div class="step reveal"><div class="step-dot">1</div><div class="step-body"><h3 data-i18n="r1_h">2026 — Ulinzi Platform Launch</h3><p data-i18n="r1_p">Register walkers, raise funds, sell wearables, recruit volunteers, attract sponsors, and collect stories.</p></div></div>
+        <div class="step reveal" style="transition-delay:.07s"><div class="step-dot">2</div><div class="step-body"><h3 data-i18n="r2_h">2027 — Community Expansion</h3><p data-i18n="r2_p">Grow outreach through more villages, schools, workplaces, and regional ambassadors.</p></div></div>
+        <div class="step reveal" style="transition-delay:.14s"><div class="step-dot">3</div><div class="step-body"><h3 data-i18n="r3_h">2028 — IROZA Scale-Up</h3><p data-i18n="r3_p">Expand digital breast health education through local languages and mobile-first access.</p></div></div>
+        <div class="step reveal" style="transition-delay:.21s"><div class="step-dot">4</div><div class="step-body"><h3 data-i18n="r4_h">2030 — Stronger National Movement</h3><p data-i18n="r4_p">Build a trusted, year-round movement that supports early action, survivor dignity, and community awareness.</p></div></div>
+      </div>
+    </div>
+
+    <div class="vision-card reveal" style="transition-delay:.16s">
+      <div class="vc-icon"><i class="ti ti-eye-heart"></i></div>
+      <h3 class="vc-h" data-i18n="vc_h">Our Vision for 2030</h3>
+      <p class="vc-p" data-i18n="vc_p">A Rwanda where every person understands breast health, every family knows where to seek support, and every survivor receives dignity, care, and hope.</p>
+      <div class="vc-milestones">
+        <div class="vc-m"><i class="ti ti-users"></i><span data-i18n="vc1">10,000 annual walkers</span></div>
+        <div class="vc-m"><i class="ti ti-ribbon-health"></i><span data-i18n="vc2">500+ survivors served</span></div>
+        <div class="vc-m"><i class="ti ti-robot"></i><span data-i18n="vc3">IROZA in 8+ languages</span></div>
+        <div class="vc-m"><i class="ti ti-map-pin"></i><span data-i18n="vc4">30+ district coverage</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PARTNERS ════════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <span class="label" data-i18n="part_eye">Partnership Network</span>
+    <h2 class="sec-h reveal" data-i18n="part_h">Built through <em>collaboration.</em></h2>
+    <p class="desc reveal" data-i18n="part_desc">This area can later hold official partner logos and links for health institutions, sponsors, NGOs, media houses, and community organizations.</p>
+    <div class="partner-grid">
+      <div class="partner reveal" data-i18n="pt1">Health Partners</div>
+      <div class="partner reveal" style="transition-delay:.06s" data-i18n="pt2">Corporate Sponsors</div>
+      <div class="partner reveal" style="transition-delay:.12s" data-i18n="pt3">Media Partners</div>
+      <div class="partner reveal" style="transition-delay:.18s" data-i18n="pt4">Community Leaders</div>
+      <div class="partner reveal" data-i18n="pt5">Hospitals</div>
+      <div class="partner reveal" style="transition-delay:.06s" data-i18n="pt6">Schools</div>
+      <div class="partner reveal" style="transition-delay:.12s" data-i18n="pt7">Diaspora Groups</div>
+      <div class="partner reveal" style="transition-delay:.18s" data-i18n="pt8">Volunteers</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ═════════════════════════════════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="container cta-inner">
+    <h2 data-i18n="cta_h">Support the work behind Ulinzi.</h2>
+    <p data-i18n="cta_p">Join BCIEA in building a Rwanda where breast health education, early action, survivor dignity, and community support continue all year.</p>
+    <div class="btn-row" style="justify-content:center;margin-top:36px">
+      <a class="btn btn-white" href="donate.html"><i class="ti ti-heart-dollar"></i><span data-i18n="cta_btn1">Donate</span></a>
+      <a class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff;" href="sponsor.html"><i class="ti ti-building"></i><span data-i18n="cta_btn2">Sponsor</span></a>
+      <a class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff;" href="volunteer.html"><i class="ti ti-users"></i><span data-i18n="cta_btn3">Volunteer</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">ULINZI 2026</div>
+        <p class="footer-col" data-i18n="ft_more">More than a walk — a year-round movement for awareness, fundraising, commerce, innovation, and community.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="ft_platform">Platform</h4>
+        <a href="register.html" data-i18n="nav_register">Register</a>
+        <a href="donate.html" data-i18n="nav_donate">Donate</a>
+        <a href="store.html" data-i18n="nav_store">Store</a>
+        <a href="volunteer.html">Volunteer</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="ft_movement">Movement</h4>
+        <a href="about-ulinzi.html" data-i18n="nav_ulinzi">Ulinzi</a>
+        <a href="about-bciea.html">BCIEA</a>
+        <a href="stories.html">Stories</a>
+        <a href="impact.html" data-i18n="nav_impact">Impact</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="ft_contact">Contact</h4>
+        <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
+        <a href="media.html">Media Center</a>
+        <a href="sponsor.html">Sponsors</a>
+        <a href="diaspora.html">Diaspora</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="ft_copy">© 2026 Ulinzi · BCIEA</span>
+      <span data-i18n="ft_note">More Than a Walk. A Movement for Life.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ SCRIPTS ════════════════════════════════════════════════════════════ -->
+<script>
+  /* Nav scroll */
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  /* Language dropdown */
+  document.getElementById('langToggle').addEventListener('click', e => {
+    e.stopPropagation();
+    document.getElementById('langDrop').classList.toggle('open');
+  });
+  document.addEventListener('click', () => document.getElementById('langDrop').classList.remove('open'));
+  document.getElementById('langDrop').addEventListener('click', e => e.stopPropagation());
+
+  /* Mobile menu */
+  const mobMenu = document.getElementById('mobMenu');
+  const menuBtn = document.getElementById('menuBtn');
+  menuBtn.addEventListener('click', () => {
+    const open = mobMenu.classList.toggle('open');
+    menuBtn.innerHTML = open ? '<i class="ti ti-x"></i>' : '<i class="ti ti-menu-2"></i>';
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  mobMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobMenu.classList.remove('open');
+    menuBtn.innerHTML = '<i class="ti ti-menu-2"></i>';
+    document.body.style.overflow = '';
+  }));
+
+  /* Scroll reveal */
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
+  }, { threshold: 0.09, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+  /* Init */
+  (function () {
+    try { const s = localStorage.getItem('ulinzi_lang'); if (s && T[s]) applyLang(s); } catch(e) {}
+  })();
+</script>
+</body>
+</html>

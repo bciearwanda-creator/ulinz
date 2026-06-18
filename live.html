@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ulinzi Live 2026 — Live Event Center | BCIEA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--pink:#e8567e;--pink-dark:#c93f69;--pink-soft:#ffedf4;--green:#3cc8a0;--gold:#f5a623;--bg:#090909;--bg2:#101010;--card:rgba(255,255,255,.035);--line:rgba(255,255,255,.09);--line2:rgba(232,86,126,.26);--text:#fff8f4;--muted:rgba(255,248,244,.67);--faint:rgba(255,248,244,.42)}
+    html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}a{text-decoration:none;color:inherit}.container{max-width:1180px;margin:auto;padding:0 28px}.section{padding:82px 0}.label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:14px}.section-title{font-family:'Playfair Display',serif;font-size:44px;line-height:1.05;margin-bottom:16px}.section-desc{color:var(--muted);font-size:16px;line-height:1.8;max-width:720px}.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:13px 22px;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;font-weight:800;transition:.25s}.btn-primary{background:var(--pink);color:white}.btn-primary:hover{background:var(--pink-dark);transform:translateY(-2px)}.btn-outline{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.025)}.btn-outline:hover{border-color:var(--pink);color:var(--pink);transform:translateY(-2px)}.btn-row{display:flex;gap:12px;flex-wrap:wrap}.chip{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:rgba(255,255,255,.025);color:var(--muted);border-radius:999px;padding:7px 12px;font-size:11px;font-weight:700}.live-dot{width:8px;height:8px;border-radius:50%;background:#ff315f;box-shadow:0 0 0 6px rgba(255,49,95,.12);animation:pulse 1.6s infinite}@keyframes pulse{50%{opacity:.5;transform:scale(1.1)}}
+    nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(9,9,9,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}.logo{display:flex;flex-direction:column}.logo-main{font-family:'Playfair Display',serif;color:var(--pink);font-size:25px;font-weight:900;letter-spacing:1px}.logo-sub{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--faint)}.nav-links{display:flex;gap:22px;list-style:none}.nav-links a{font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);font-weight:700}.nav-links a:hover{color:var(--pink)}.nav-actions{display:flex;gap:10px;align-items:center}
+    .hero{position:relative;min-height:92vh;display:flex;align-items:center;padding-top:90px;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 30%,rgba(232,86,126,.26),transparent 34%),radial-gradient(circle at 15% 70%,rgba(60,200,160,.12),transparent 30%),linear-gradient(135deg,#090909,#160911 55%,#090909)}.hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(to bottom,#000,transparent 88%)}.hero-content{position:relative;z-index:2;display:grid;grid-template-columns:1fr 430px;gap:52px;align-items:center}.hero h1{font-family:'Playfair Display',serif;font-size:74px;line-height:.95;margin:22px 0}.hero h1 span{color:var(--pink)}.hero p{color:var(--muted);font-size:18px;line-height:1.85;max-width:640px;margin-bottom:30px}.live-panel{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));border:1px solid var(--line2);border-radius:28px;padding:22px;box-shadow:0 32px 100px rgba(232,86,126,.14)}.screen{height:250px;border-radius:22px;background:linear-gradient(135deg,rgba(232,86,126,.18),rgba(60,200,160,.08)),#111;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.screen i{font-size:72px;color:rgba(255,255,255,.75)}.screen .status{position:absolute;top:16px;left:16px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:8px 12px;display:flex;gap:8px;align-items:center;font-size:11px;font-weight:800}.watchers{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}.mini-stat{background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:16px;padding:16px}.mini-stat b{font-family:'Playfair Display',serif;font-size:28px;color:var(--pink);display:block}.mini-stat span{font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:1.2px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;transition:.25s}.card:hover{border-color:var(--line2);transform:translateY(-3px)}.card i{font-size:30px;color:var(--pink);margin-bottom:14px}.num{font-family:'Playfair Display',serif;font-size:38px;font-weight:900;margin-bottom:4px}.muted{color:var(--muted);line-height:1.65}.tracker{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}.progress-box{background:linear-gradient(135deg,rgba(232,86,126,.12),rgba(255,255,255,.025));border:1px solid var(--line2);border-radius:28px;padding:30px}.raised{font-family:'Playfair Display',serif;font-size:58px;color:var(--pink);line-height:1}.bar{height:14px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin:22px 0 12px}.fill{height:100%;width:75%;background:linear-gradient(90deg,var(--pink),var(--green));border-radius:999px}.donor-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.timeline{display:flex;flex-direction:column;gap:12px}.time-item{display:flex;gap:16px;padding:16px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.025)}.time{font-family:'Playfair Display',serif;color:var(--pink);font-size:20px;min-width:80px}.time-item.current{border-color:var(--green);background:rgba(60,200,160,.06)}
+    .photo-wall{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.photo{height:138px;border-radius:18px;background:linear-gradient(135deg,rgba(232,86,126,.22),rgba(60,200,160,.12));border:1px solid var(--line);display:flex;align-items:end;padding:12px;color:rgba(255,255,255,.8);font-size:11px;text-transform:uppercase;letter-spacing:1px}.photo:nth-child(even){background:linear-gradient(135deg,rgba(245,166,35,.16),rgba(232,86,126,.18))}.feed{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.post{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px}.post-head{display:flex;justify-content:space-between;color:var(--faint);font-size:11px;margin-bottom:12px}.hashtags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.sponsors{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.sponsor{height:82px;border:1px dashed var(--line);border-radius:18px;display:flex;align-items:center;justify-content:center;color:var(--faint);font-weight:800;background:rgba(255,255,255,.02)}.alerts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.alert{border-radius:20px;padding:22px;border:1px solid var(--line);background:rgba(255,255,255,.025)}.alert strong{display:block;margin-bottom:8px}.alert.medical{border-color:rgba(60,200,160,.32)}.alert.weather{border-color:rgba(245,166,35,.32)}.alert.lost{border-color:rgba(232,86,126,.32)}
+    .cta{background:var(--pink);text-align:center;padding:78px 28px}.cta h2{font-family:'Playfair Display',serif;font-size:52px;color:#fff;margin-bottom:14px}.cta p{color:rgba(255,255,255,.78);max-width:620px;margin:0 auto 28px;line-height:1.8}.cta .btn-outline{border-color:rgba(255,255,255,.45);color:#fff}.footer{background:#050505;border-top:1px solid var(--line);padding:46px 0}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}.footer h4{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--faint);margin-bottom:14px}.footer a,.footer p{display:block;color:var(--muted);font-size:13px;line-height:1.8;margin-bottom:8px}.footer-bottom{border-top:1px solid var(--line);margin-top:30px;padding-top:20px;color:var(--faint);font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    @media(max-width:980px){.hero-content,.tracker{grid-template-columns:1fr}.grid-4{grid-template-columns:1fr 1fr}.photo-wall{grid-template-columns:repeat(3,1fr)}.feed,.alerts{grid-template-columns:1fr}.sponsors{grid-template-columns:repeat(2,1fr)}.nav-links{display:none}.hero h1{font-size:52px}.footer-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.container{padding:0 18px}.hero h1{font-size:40px}.section-title{font-size:34px}.grid-4,.donor-grid{grid-template-columns:1fr}.photo-wall{grid-template-columns:1fr 1fr}.watchers{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.cta h2{font-size:34px}.nav-inner{height:68px}.logo-main{font-size:21px}.nav-actions .btn-outline{display:none}}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a href="index.html" class="logo"><span class="logo-main">ULINZI 2026</span><span class="logo-sub">Live Event Center · BCIEA</span></a>
+      <ul class="nav-links">
+        <li><a href="event.html">The Walk</a></li><li><a href="donate.html">Donate</a></li><li><a href="impact.html">Impact</a></li><li><a href="sponsor.html">Sponsors</a></li><li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+      <div class="nav-actions"><a class="btn btn-outline" href="contact.html">Help</a><a class="btn btn-primary" href="donate.html">Donate Live</a></div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-content">
+      <div>
+        <span class="chip"><span class="live-dot"></span> Live Event Mode</span>
+        <h1>ULINZI <span>LIVE</span><br>2026</h1>
+        <p>Experience the movement in real time. Watch the walk, follow live donations, see event photos, celebrate sponsors, and support breast cancer awareness from anywhere.</p>
+        <div class="btn-row"><a class="btn btn-primary" href="#stream"><i class="ti ti-player-play"></i> Watch Live</a><a class="btn btn-outline" href="donate.html"><i class="ti ti-heart-dollar"></i> Donate Live</a><a class="btn btn-outline" href="#photos"><i class="ti ti-camera-plus"></i> Upload Photos</a><a class="btn btn-outline" href="#social"><i class="ti ti-share"></i> Share Experience</a></div>
+      </div>
+      <div class="live-panel" id="stream">
+        <div class="screen"><div class="status"><span class="live-dot"></span> LIVE NOW · 2,500 WATCHING</div><i class="ti ti-player-play-filled"></i></div>
+        <div class="watchers"><div class="mini-stat"><b>2.5K</b><span>Watching Now</span></div><div class="mini-stat"><b>18K</b><span>Total Views</span></div></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="label">Live Event Statistics</div><h2 class="section-title">Today’s Movement in Numbers</h2>
+      <div class="grid-4" style="margin-top:34px">
+        <div class="card"><i class="ti ti-users"></i><div class="num">6,840</div><p class="muted">Participants checked in</p></div>
+        <div class="card"><i class="ti ti-ribbon-health"></i><div class="num">212</div><p class="muted">Survivors present and honored</p></div>
+        <div class="card"><i class="ti ti-heart-handshake"></i><div class="num">340</div><p class="muted">Volunteers active on site</p></div>
+        <div class="card"><i class="ti ti-building-community"></i><div class="num">48</div><p class="muted">Sponsors and partners participating</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg2)">
+    <div class="container tracker">
+      <div class="progress-box">
+        <div class="label">Live Donation Tracker</div><h2 class="section-title">Support the Movement Right Now</h2><p class="section-desc">Every live donation helps fund survivor support, community outreach, rural awareness, and IROZA education.</p>
+        <div class="raised">$37,450</div><div class="bar"><div class="fill"></div></div><p class="muted"><strong>75% complete</strong> toward today’s $50,000 goal · 684 donors</p>
+        <div class="btn-row" style="margin-top:24px"><a class="btn btn-primary" href="donate.html">Donate Now</a><a class="btn btn-outline" href="diaspora.html">Support From Abroad</a></div>
+      </div>
+      <div class="donor-grid">
+        <div class="card"><i class="ti ti-user-heart"></i><div class="num">126</div><p class="muted">Survivors sponsored</p></div>
+        <div class="card"><i class="ti ti-map-pin-heart"></i><div class="num">18</div><p class="muted">Village ambassadors funded</p></div>
+        <div class="card"><i class="ti ti-robot"></i><div class="num">9K</div><p class="muted">IROZA sessions powered</p></div>
+        <div class="card"><i class="ti ti-school"></i><div class="num">32</div><p class="muted">Outreach events supported</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="label">Event Timeline</div><h2 class="section-title">What’s Happening Now</h2>
+      <div class="timeline" style="margin-top:30px">
+        <div class="time-item"><div class="time">06:00</div><div><strong>Gates Open</strong><p class="muted">Participant check-in, music, warm-up, and breakfast.</p></div></div>
+        <div class="time-item current"><div class="time">07:30</div><div><strong>Walk Start · Live Now</strong><p class="muted">Survivors lead the route as the community walks in solidarity.</p></div></div>
+        <div class="time-item"><div class="time">10:00</div><div><strong>Finish Line Celebration</strong><p class="muted">Awards, survivor recognition, IKUNDE store, and IROZA demos.</p></div></div>
+        <div class="time-item"><div class="time">12:00</div><div><strong>Closing Program</strong><p class="muted">Impact announcement, sponsor recognition, and next-year call to action.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="photos" style="background:var(--bg2)">
+    <div class="container">
+      <div class="label">Live Photo Wall</div><h2 class="section-title">Moments From The Walk</h2><p class="section-desc">Photos uploaded by participants, volunteers, survivors, sponsors, and families during the event.</p>
+      <div class="photo-wall" style="margin-top:32px">
+        <div class="photo">Team Photo</div><div class="photo">Survivor Moment</div><div class="photo">Start Line</div><div class="photo">Volunteer Team</div><div class="photo">Sponsor Booth</div><div class="photo">Finish Line</div>
+      </div>
+      <div class="btn-row" style="margin-top:26px"><a class="btn btn-primary" href="#">Upload Photo</a><a class="btn btn-outline" href="media.html">Open Media Center</a></div>
+    </div>
+  </section>
+
+  <section class="section" id="social">
+    <div class="container">
+      <div class="label">Social Feed</div><h2 class="section-title">Share the Movement</h2>
+      <div class="hashtags"><span class="chip">#Ulinzi2026</span><span class="chip">#WalkForLife</span><span class="chip">#BCIEA</span><span class="chip">#EveryStepCreatesHope</span></div>
+      <div class="feed" style="margin-top:28px">
+        <div class="post"><div class="post-head"><span>@ulinziwalker</span><span>2 min ago</span></div><p class="muted">Walking for my mother and for every woman who deserves early detection and support.</p></div>
+        <div class="post"><div class="post-head"><span>@bciea_volunteer</span><span>8 min ago</span></div><p class="muted">Registration team is active. The energy at Kigali Golf Course is powerful today.</p></div>
+        <div class="post"><div class="post-head"><span>@ikunde_supporter</span><span>15 min ago</span></div><p class="muted">Bought my IKUNDE shoes. Every step creates hope.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg2)">
+    <div class="container">
+      <div class="label">Sponsor Recognition</div><h2 class="section-title">Thank You to Our Partners</h2>
+      <div class="sponsors" style="margin-top:30px"><div class="sponsor">Platinum</div><div class="sponsor">Gold</div><div class="sponsor">Silver</div><div class="sponsor">Bronze</div><div class="sponsor">Media</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="label">Event Day Information</div><h2 class="section-title">Safety, Help & Volunteer Operations</h2>
+      <div class="alerts" style="margin-top:30px">
+        <div class="alert medical"><strong><i class="ti ti-first-aid-kit"></i> Medical Tent</strong><p class="muted">Medical support is available near the main stage and finish line.</p></div>
+        <div class="alert weather"><strong><i class="ti ti-cloud"></i> Weather Updates</strong><p class="muted">Stay hydrated. Water points are available across the route.</p></div>
+        <div class="alert lost"><strong><i class="ti ti-map-search"></i> Lost & Found</strong><p class="muted">Visit the information desk near registration for lost items or assistance.</p></div>
+      </div>
+      <div class="btn-row" style="margin-top:28px"><a class="btn btn-outline" href="volunteer.html">Volunteer Check-In</a><a class="btn btn-outline" href="contact.html">Emergency Contact</a><a class="btn btn-outline" href="event.html">View Event Map</a></div>
+    </div>
+  </section>
+
+  <section class="cta"><h2>Support the Movement Right Now</h2><p>Your support today can help write the next survivor story and expand breast cancer awareness across Rwanda.</p><div class="btn-row" style="justify-content:center"><a class="btn" style="background:#fff;color:var(--pink)" href="donate.html">Donate Live</a><a class="btn btn-outline" href="register.html">Register Next Year</a><a class="btn btn-outline" href="sponsor.html">Become a Sponsor</a></div></section>
+
+  <footer class="footer">
+    <div class="container"><div class="footer-grid"><div><a href="index.html" class="logo"><span class="logo-main">ULINZI 2026</span><span class="logo-sub">More Than a Walk</span></a><p style="margin-top:14px">A BCIEA movement platform for awareness, fundraising, commerce, community, and survivor support.</p></div><div><h4>Movement</h4><a href="event.html">The Walk</a><a href="register.html">Register</a><a href="stories.html">Why I Walk</a><a href="wall-of-honor.html">Wall of Honor</a></div><div><h4>Support</h4><a href="donate.html">Donate</a><a href="store.html">Store</a><a href="volunteer.html">Volunteer</a><a href="sponsor.html">Sponsor</a></div><div><h4>Platform</h4><a href="iroza.html">IROZA</a><a href="impact.html">Impact</a><a href="media.html">Media</a><a href="contact.html">Contact</a></div></div><div class="footer-bottom"><span>© 2026 Ulinzi · BCIEA. All rights reserved.</span><span>Built for Movement + Fundraising + Commerce + Community.</span></div></div>
+  </footer>
+</body>
+</html>

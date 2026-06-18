@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Ulinzi 2026 | BCIEA</title>
+  <meta name="description" content="Reach the BCIEA and Ulinzi team for registration support, donations, sponsorship, volunteering, media, or general questions about the movement." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+  <style>
+    /* ══ TOKENS ══════════════════════════════════════════════════════════ */
+    :root {
+      --pink:    #e8567e;
+      --pink-2:  #ff8fb0;
+      --pink-3:  #fff0f5;
+      --pink-4:  #ffd6e7;
+      --rose:    #c63d67;
+      --green:   #20b486;
+      --gold:    #f7b84b;
+      --ink:     #16101a;
+      --ink-2:   #2b1c2e;
+      --muted:   #7a6b76;
+      --faint:   #b5a5b0;
+      --white:   #ffffff;
+      --soft:    #fdf8fb;
+      --soft-2:  #f9f1f6;
+      --line:    rgba(24,14,26,.09);
+      --line-2:  rgba(232,86,126,.20);
+      --shadow:  0 20px 65px rgba(181,31,90,.12);
+      --shadow-sm: 0 8px 28px rgba(0,0,0,.07);
+      --shadow-card: 0 2px 8px rgba(0,0,0,.055), 0 12px 40px rgba(0,0,0,.06);
+      --radius:  26px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--white); color: var(--ink); overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    .container { width: min(1200px, calc(100% - 40px)); margin: auto; }
+    .section    { padding: 88px 0; }
+
+    /* ══ TYPE ════════════════════════════════════════════════════════════ */
+    .label {
+      font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--pink); font-weight: 800; margin-bottom: 12px; display: block;
+    }
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5.2vw, 64px);
+      line-height: .93; letter-spacing: -.05em; margin-bottom: 18px;
+    }
+    .title em  { color: var(--pink); font-style: italic; }
+    .sec-h {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3.8vw, 46px);
+      line-height: .97; letter-spacing: -.038em; margin-bottom: 14px;
+    }
+    .sec-h em { color: var(--pink); font-style: italic; }
+    .desc   { color: var(--muted); font-size: 16px; line-height: 1.82; max-width: 700px; }
+    .desc-s { color: var(--muted); font-size: 14px; line-height: 1.75; }
+
+    /* ══ EYEBROW ═════════════════════════════════════════════════════════ */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 8px 15px; border: 1px solid var(--line-2);
+      background: var(--pink-3); border-radius: 999px;
+      color: var(--rose); font-size: 11px; font-weight: 800;
+      letter-spacing: .16em; text-transform: uppercase; margin-bottom: 22px;
+    }
+    .eyebrow .pulse {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--pink);
+      animation: blink 2.4s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.28} }
+
+    /* ══ BUTTONS ═════════════════════════════════════════════════════════ */
+    .btn-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      padding: 14px 24px; border-radius: 999px; font-family: inherit;
+      font-size: 13px; font-weight: 800; letter-spacing: .04em;
+      border: 1.5px solid transparent;
+      transition: all .24s cubic-bezier(.34,1.56,.64,1); cursor: pointer; white-space: nowrap;
+    }
+    .btn-primary { background: var(--pink); color: #fff; box-shadow: 0 12px 34px rgba(232,86,126,.28); border-color: var(--pink); }
+    .btn-primary:hover { background: var(--rose); border-color: var(--rose); transform: translateY(-3px); box-shadow: 0 20px 48px rgba(198,61,103,.36); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-outline { border-color: var(--line); color: var(--ink); background: var(--white); }
+    .btn-outline:hover { border-color: var(--line-2); color: var(--rose); transform: translateY(-3px); background: var(--pink-3); }
+    .btn-white { background: #fff; color: var(--rose); border-color: transparent; box-shadow: 0 10px 28px rgba(0,0,0,.13); }
+    .btn-white:hover { transform: translateY(-3px); box-shadow: 0 18px 42px rgba(0,0,0,.18); }
+    .btn-ghost { background: rgba(255,255,255,.14); color: #fff; border-color: rgba(255,255,255,.28); backdrop-filter: blur(10px); }
+    .btn-ghost:hover { background: rgba(255,255,255,.26); transform: translateY(-3px); }
+    .btn-sm { padding: 10px 18px; font-size: 12px; }
+    .btn-full { width: 100%; }
+
+    /* ══ LANGUAGE SWITCHER ═══════════════════════════════════════════════ */
+    .lang-wrap { position: relative; }
+    .lang-btn {
+      display: flex; align-items: center; gap: 7px;
+      padding: 9px 14px; border-radius: 999px;
+      background: var(--white); border: 1.5px solid var(--line);
+      font-size: 12px; font-weight: 800; color: var(--muted); cursor: pointer; transition: .2s;
+    }
+    .lang-btn:hover { border-color: var(--line-2); color: var(--rose); }
+    .lang-drop {
+      position: absolute; top: calc(100% + 10px); right: 0;
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: 22px; box-shadow: 0 22px 65px rgba(0,0,0,.13);
+      overflow: hidden; min-width: 178px;
+      opacity: 0; pointer-events: none;
+      transform: translateY(-10px) scale(.97);
+      transition: all .22s cubic-bezier(.34,1.2,.64,1);
+    }
+    .lang-drop.open { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
+    .lang-opt {
+      display: flex; align-items: center; gap: 10px;
+      padding: 13px 18px; font-size: 13px; font-weight: 700;
+      cursor: pointer; border: none; background: none; width: 100%;
+      text-align: left; color: var(--ink); transition: .15s;
+    }
+    .lang-opt:hover  { background: var(--pink-3); color: var(--rose); }
+    .lang-opt.active { color: var(--pink); background: var(--pink-3); }
+
+    /* ══ NAV ════════════════════════════════════════════════════════════ */
+    .nav {
+      position: fixed; top: 14px; left: 0; right: 0; z-index: 999;
+      width: min(1240px, calc(100% - 28px)); margin: auto;
+      background: rgba(255,255,255,.92); backdrop-filter: blur(28px) saturate(1.7);
+      border: 1px solid rgba(255,255,255,.60);
+      border-radius: 999px; box-shadow: 0 4px 28px rgba(0,0,0,.08);
+      transition: top .3s, box-shadow .3s;
+    }
+    .nav.scrolled { top: 8px; box-shadow: 0 10px 55px rgba(0,0,0,.12); }
+    .nav-inner { height: 70px; display: flex; align-items: center; justify-content: space-between; padding: 0 12px 0 22px; gap: 14px; }
+    .brand { display: flex; flex-direction: column; flex-shrink: 0; line-height: 1; }
+    .brand strong { font-family: 'Playfair Display', serif; color: var(--rose); font-size: 20px; letter-spacing: .02em; }
+    .brand span   { font-size: 9px; letter-spacing: .22em; color: var(--faint); text-transform: uppercase; margin-top: 2px; }
+    .nav-links { display: flex; gap: 4px; align-items: center; }
+    .nav-links a { font-size: 12px; font-weight: 700; color: var(--muted); padding: 8px 11px; border-radius: 999px; transition: .18s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--rose); background: var(--pink-3); }
+    .nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .menu-btn {
+      display: none; width: 46px; height: 46px; border-radius: 50%;
+      border: 0; background: var(--ink); color: #fff; font-size: 22px;
+      cursor: pointer; align-items: center; justify-content: center; transition: .2s;
+    }
+    .menu-btn:hover { background: var(--rose); }
+
+    /* Mobile Menu */
+    .mob-menu {
+      display: none; position: fixed; inset: 0; z-index: 998;
+      background: rgba(255,255,255,.97); backdrop-filter: blur(24px);
+      padding: 100px 28px 40px; overflow-y: auto;
+    }
+    .mob-menu.open { display: block; }
+    .mob-menu a {
+      display: flex; align-items: center; gap: 14px;
+      color: var(--ink); font-size: 22px; font-weight: 800;
+      padding: 16px 0; border-bottom: 1px solid var(--line); transition: color .18s;
+    }
+    .mob-menu a i  { color: var(--pink); width: 28px; font-size: 22px; flex-shrink: 0; }
+    .mob-menu a:hover { color: var(--rose); }
+    .mob-lang { margin-top: 30px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .mlb {
+      padding: 10px 18px; border-radius: 999px; font-size: 13px; font-weight: 800;
+      background: var(--soft-2); border: 1.5px solid var(--line);
+      color: var(--ink); cursor: pointer; transition: .2s;
+    }
+    .mlb.active { background: var(--pink); border-color: var(--pink); color: #fff; }
+
+    /* ══ HERO ════════════════════════════════════════════════════════════ */
+    .hero {
+      min-height: 90vh; display: flex; align-items: center;
+      padding: 140px 0 80px; position: relative; overflow: hidden;
+      background:
+        radial-gradient(ellipse 60% 55% at 80% 15%, rgba(232,86,126,.16), transparent),
+        radial-gradient(ellipse 45% 40% at 10% 80%, rgba(32,180,134,.09), transparent),
+        linear-gradient(150deg, #fff 0%, #fff3f7 55%, #f5fff8 100%);
+    }
+    .hero-grid-bg {
+      position: absolute; inset: 0; opacity: .30;
+      background-image:
+        linear-gradient(rgba(232,86,126,.11) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232,86,126,.11) 1px, transparent 1px);
+      background-size: 50px 50px;
+      mask-image: radial-gradient(ellipse 85% 70% at 50% 0%, #000 40%, transparent);
+    }
+    .hero-orb { position: absolute; border-radius: 50%; filter: blur(85px); pointer-events: none; }
+    .hero-orb-a { width: 520px; height: 520px; background: rgba(232,86,126,.13); top: -130px; right: -100px; }
+    .hero-orb-b { width: 320px; height: 320px; background: rgba(32,180,134,.09); bottom: -80px; left: -80px; }
+    .hero-word {
+      position: absolute; right: -10px; bottom: 20px; pointer-events: none;
+      font-family: 'Playfair Display', serif; font-size: clamp(110px, 18vw, 220px);
+      font-weight: 900; color: rgba(232,86,126,.05); line-height: 1; letter-spacing: -.07em;
+    }
+
+    .hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr .9fr; gap: 52px; align-items: center; }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(50px, 7.5vw, 94px);
+      line-height: .87; letter-spacing: -.068em; margin-bottom: 22px;
+    }
+    .hero h1 em { color: var(--pink); font-style: italic; }
+
+    /* Quick Contact Card */
+    .hero-card {
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: 34px; overflow: hidden;
+      box-shadow: var(--shadow); position: relative;
+    }
+    .hero-card-header {
+      background: linear-gradient(135deg, var(--pink), var(--rose));
+      padding: 26px 28px; color: #fff; position: relative; overflow: hidden;
+    }
+    .hero-card-header::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1.2' fill='rgba(255,255,255,.14)'/%3E%3C/svg%3E") repeat;
+    }
+    .hero-card-header h3 { font-family: 'Playfair Display', serif; font-size: 22px; position: relative; }
+    .hero-card-header p  { color: rgba(255,255,255,.80); font-size: 13px; margin-top: 6px; line-height: 1.6; position: relative; }
+    .quick-list { padding: 18px; display: grid; gap: 10px; }
+    .quick {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: var(--soft-2); border: 1px solid var(--line);
+      border-radius: 18px; padding: 18px; transition: .22s;
+    }
+    .quick:hover { background: var(--pink-3); border-color: var(--line-2); transform: translateX(4px); }
+    .quick i { color: var(--pink); font-size: 26px; flex-shrink: 0; margin-top: 1px; }
+    .quick strong { display: block; margin-bottom: 5px; font-size: 15px; }
+    .quick span   { color: var(--muted); font-size: 13px; line-height: 1.6; }
+
+    /* ══ ROUTE CARDS ═════════════════════════════════════════════════════ */
+    .routes-section { background: var(--soft); }
+    .routes-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-top: 36px; }
+    .route-card {
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 28px;
+      box-shadow: var(--shadow-card); transition: .26s cubic-bezier(.34,1.2,.64,1);
+      display: block;
+    }
+    .route-card:hover { transform: translateY(-7px); border-color: var(--line-2); box-shadow: var(--shadow); }
+    .r-icon {
+      width: 54px; height: 54px; border-radius: 18px;
+      background: var(--pink-3); display: grid; place-items: center;
+      margin-bottom: 20px; color: var(--pink); font-size: 28px;
+      transition: .22s;
+    }
+    .route-card:hover .r-icon { background: var(--pink); color: #fff; }
+    .route-card h3 { font-size: 18px; margin-bottom: 9px; font-weight: 800; }
+    .route-card p  { color: var(--muted); font-size: 14px; line-height: 1.68; }
+    .route-card .r-arrow { margin-top: 18px; color: var(--pink); font-size: 20px; transition: .2s; }
+    .route-card:hover .r-arrow { transform: translateX(5px); }
+
+    /* ══ MAIN CONTACT SECTION ════════════════════════════════════════════ */
+    .contact-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: start; }
+
+    /* ── FORM ─────────────────────────────────────────────────────────── */
+    .form-card {
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: var(--radius); box-shadow: var(--shadow-card); overflow: hidden;
+    }
+    .form-card-head {
+      background: linear-gradient(135deg, var(--pink), var(--rose));
+      padding: 30px 32px; color: #fff; position: relative; overflow: hidden;
+    }
+    .form-card-head::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='46' height='46' viewBox='0 0 46 46' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='23' cy='23' r='1.3' fill='rgba(255,255,255,.12)'/%3E%3C/svg%3E") repeat;
+    }
+    .form-card-head h2 { font-family: 'Playfair Display', serif; font-size: 30px; position: relative; }
+    .form-card-head p  { color: rgba(255,255,255,.80); font-size: 14px; margin-top: 7px; line-height: 1.6; position: relative; }
+    .form-email-note { display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.24); border-radius: 999px; padding: 7px 14px; font-size: 12px; font-weight: 800; position: relative; }
+
+    .form-body { padding: 32px; }
+    .form-fields { display: grid; gap: 16px; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field { display: grid; gap: 8px; }
+    .field label {
+      font-size: 11px; text-transform: uppercase; letter-spacing: .16em;
+      color: var(--faint); font-weight: 800;
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%; padding: 14px 16px;
+      border-radius: 14px; border: 1.5px solid var(--line);
+      background: var(--soft); color: var(--ink); font-family: inherit;
+      font-size: 15px; font-weight: 500; outline: none;
+      transition: border-color .2s, box-shadow .2s, background .2s;
+    }
+    .field input::placeholder,
+    .field textarea::placeholder { color: var(--faint); }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--pink); background: var(--white);
+      box-shadow: 0 0 0 4px rgba(232,86,126,.10);
+    }
+    .field textarea { min-height: 140px; resize: vertical; }
+    .field select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%237a6b76' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 42px; }
+
+    /* Form success / error states */
+    .form-success {
+      display: none; background: rgba(32,180,134,.08); border: 1.5px solid rgba(32,180,134,.25);
+      border-radius: 18px; padding: 20px 22px; margin-top: 16px;
+      color: #0b6b45; font-weight: 700; font-size: 15px;
+      align-items: center; gap: 12px;
+    }
+    .form-success i { font-size: 28px; color: var(--green); flex-shrink: 0; }
+    .form-error {
+      display: none; background: rgba(232,86,126,.08); border: 1.5px solid rgba(232,86,126,.25);
+      border-radius: 18px; padding: 16px 20px; margin-top: 12px;
+      color: var(--rose); font-weight: 700; font-size: 14px;
+    }
+
+    /* ── CONTACT SIDEBAR ─────────────────────────────────────────────── */
+    .contact-info { display: grid; gap: 16px; }
+    .info-card {
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 28px;
+      box-shadow: var(--shadow-card); transition: .22s;
+    }
+    .info-card:hover { box-shadow: var(--shadow); }
+    .info-card .ic-label { font-size: 10px; letter-spacing: .20em; text-transform: uppercase; color: var(--pink); font-weight: 800; margin-bottom: 14px; }
+    .contact-list { display: grid; gap: 12px; }
+    .contact-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 16px; border-radius: 18px;
+      background: var(--soft-2); border: 1px solid var(--line); transition: .20s;
+    }
+    .contact-item:hover { background: var(--pink-3); border-color: var(--line-2); }
+    .contact-item i { color: var(--pink); font-size: 24px; flex-shrink: 0; margin-top: 1px; }
+    .contact-item strong { display: block; margin-bottom: 5px; font-size: 15px; }
+    .contact-item span  { display: block; color: var(--muted); font-size: 13px; line-height: 1.65; }
+
+    /* Map card */
+    .map-card {
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+    .map-visual {
+      height: 240px; position: relative; overflow: hidden;
+      background:
+        radial-gradient(circle at 40% 45%, rgba(232,86,126,.22), transparent 30%),
+        linear-gradient(rgba(232,86,126,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232,86,126,.06) 1px, transparent 1px),
+        var(--soft-2);
+      background-size: auto, 36px 36px, 36px 36px, auto;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .map-visual::before {
+      content: ''; position: absolute;
+      width: 260px; height: 3px; background: var(--pink);
+      transform: rotate(-22deg); box-shadow: 80px 55px 0 var(--green), -60px -45px 0 rgba(247,184,75,.9);
+    }
+    .map-pin {
+      position: relative; z-index: 2; text-align: center;
+      background: var(--white); border: 1px solid var(--line);
+      box-shadow: 0 14px 48px rgba(0,0,0,.12);
+      border-radius: 22px; padding: 18px 22px;
+    }
+    .map-pin i { font-size: 34px; color: var(--pink); display: block; margin-bottom: 8px; }
+    .map-pin strong { font-size: 16px; display: block; }
+    .map-pin span { color: var(--muted); font-size: 12px; display: block; margin-top: 4px; }
+    .map-foot { padding: 16px 20px; display: flex; gap: 10px; }
+
+    /* Social card */
+    .social-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin-top: 16px; }
+    .soc-btn {
+      display: flex; align-items: center; gap: 10px; padding: 14px 16px;
+      border-radius: 16px; border: 1.5px solid var(--line); background: var(--soft-2);
+      font-weight: 800; font-size: 13px; color: var(--ink); transition: .2s; cursor: pointer;
+    }
+    .soc-btn i { font-size: 22px; color: var(--pink); }
+    .soc-btn:hover { background: var(--pink-3); border-color: var(--line-2); color: var(--rose); }
+    .soc-btn:hover i { color: var(--rose); }
+
+    /* ══ FAQ ══════════════════════════════════════════════════════════════ */
+    .faq-section { background: var(--soft); }
+    .faq-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 36px; }
+    .faq-item {
+      background: var(--white); border: 1px solid var(--line);
+      border-radius: 22px; padding: 24px; box-shadow: var(--shadow-card); transition: .22s;
+    }
+    .faq-item:hover { border-color: var(--line-2); transform: translateY(-3px); box-shadow: var(--shadow); }
+    .faq-item h3 { font-size: 17px; margin-bottom: 10px; font-weight: 800; }
+    .faq-item p  { color: var(--muted); font-size: 14px; line-height: 1.72; }
+
+    /* ══ CTA SECTION ══════════════════════════════════════════════════════ */
+    .cta-section {
+      background: linear-gradient(140deg, var(--pink), var(--rose));
+      text-align: center; padding: 96px 28px; position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='25' cy='25' r='1.3' fill='rgba(255,255,255,.12)'/%3E%3C/svg%3E") repeat;
+    }
+    .cta-inner { position: relative; }
+    .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 5.5vw, 66px); line-height: .92; letter-spacing: -.04em; color: #fff; }
+    .cta-section p  { max-width: 630px; margin: 18px auto 0; color: rgba(255,255,255,.84); line-height: 1.74; font-size: 17px; }
+
+    /* ══ FOOTER ══════════════════════════════════════════════════════════ */
+    footer { background: var(--ink); color: #fff; padding: 60px 0 28px; }
+    .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 30px; }
+    .footer-brand { font-family: 'Playfair Display', serif; color: var(--pink-2); font-size: 24px; font-weight: 900; margin-bottom: 12px; }
+    .footer-col h4 { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.38); margin-bottom: 16px; }
+    .footer-col a, .footer-col p { display: block; color: rgba(255,255,255,.58); font-size: 14px; line-height: 2.1; transition: .15s; }
+    .footer-col a:hover { color: var(--pink-2); }
+    .footer-bottom {
+      margin-top: 40px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.09);
+      display: flex; justify-content: space-between; color: rgba(255,255,255,.36);
+      font-size: 12px; flex-wrap: wrap; gap: 10px;
+    }
+
+    /* ══ SCROLL REVEAL ═══════════════════════════════════════════════════ */
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .58s ease, transform .58s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ══ TOAST ═══════════════════════════════════════════════════════════ */
+    .toast {
+      position: fixed; bottom: 28px; left: 50%;
+      transform: translateX(-50%) translateY(16px);
+      z-index: 2000; background: var(--ink); color: #fff;
+      padding: 14px 24px; border-radius: 999px; font-size: 14px; font-weight: 700;
+      display: flex; gap: 10px; align-items: center;
+      opacity: 0; transition: all .3s cubic-bezier(.34,1.2,.64,1); pointer-events: none; white-space: nowrap;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .toast i { color: var(--pink); font-size: 18px; }
+
+    /* ══ RESPONSIVE ══════════════════════════════════════════════════════ */
+    @media (max-width: 1100px) {
+      .nav-links { display: none; }
+      .menu-btn { display: flex; }
+      .hero-grid, .contact-grid { grid-template-columns: 1fr; }
+      .routes-grid { grid-template-columns: repeat(2,1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    }
+    @media (max-width: 680px) {
+      .nav { top: 8px; width: calc(100% - 14px); }
+      .hero { padding: 115px 0 60px; }
+      .section { padding: 62px 0; }
+      .routes-grid, .faq-grid, .two-col,
+      .social-grid, .footer-grid { grid-template-columns: 1fr; }
+      .cta-section { padding: 72px 18px; }
+      .btn-row .btn { width: 100%; justify-content: center; }
+      .lang-label-txt { display: none; }
+      .hero h1 { font-size: clamp(42px, 11vw, 64px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     TRANSLATIONS
+══════════════════════════════════════════════════════════════════════════ -->
+<script>
+const LANGS = {
+  en: {
+    nav_walk:"The Walk", nav_reg:"Register", nav_donate:"Donate",
+    nav_store:"Store", nav_sponsor:"Sponsors", nav_contact:"Contact",
+    nav_btn:"Donate",
+
+    hero_eye:"Contact Ulinzi Team",
+    hero_h1a:"Let's Build the", hero_h1em:"Movement Together.",
+    hero_desc:"Have a question about registration, donations, sponsorship, volunteering, media, or the Ulinzi Store? Reach out to the BCIEA team and we will guide you to the right support.",
+    hero_btn1:"Send Message", hero_btn2:"Volunteer", hero_btn3:"Sponsor Ulinzi",
+    q1_h:"General Ulinzi Support",     q1_p:"Questions about the walk, registration, teams, tickets, or event day.",
+    q2_h:"WhatsApp-Friendly Support",  q2_p:"Designed for fast mobile communication and community coordination.",
+    q3_h:"Media & Partnerships",       q3_p:"Press, sponsor, diaspora, and corporate partnership inquiries.",
+
+    route_eye:"Choose the Right Door",
+    route_h:"How Can We <em>Help?</em>",
+    route_desc:"Every message should quickly reach the right team. Choose the most relevant path below.",
+    r1_h:"Registration",  r1_p:"Participants, teams, family tickets, VIP tickets, QR tickets, and shirt sizes.",
+    r2_h:"Donations",     r2_p:"Support survivors, village ambassadors, community outreach, and memorial gifts.",
+    r3_h:"Sponsors",      r3_p:"Corporate packages, sponsorship deck, audience reach, and event visibility.",
+    r4_h:"Media",         r4_p:"Press releases, interview requests, logos, photos, videos, and fact sheets.",
+
+    form_eye:"Contact Form",
+    form_h:"Send Us a Message",
+    form_sub:"We reply within 24–48 hours. All messages go directly to the BCIEA team.",
+    form_email_note:"✓ Form connects directly to team email",
+    f_name:"Full Name", f_name_ph:"Your full name",
+    f_email:"Email Address", f_email_ph:"you@example.com",
+    f_phone:"Phone / WhatsApp", f_phone_ph:"+250 700 000 000",
+    f_type:"Inquiry Type",
+    ft_gen:"General Question", ft_reg:"Registration Support", ft_don:"Donation Support",
+    ft_spon:"Sponsorship", ft_vol:"Volunteer Signup", ft_med:"Media Request",
+    ft_store:"Store / Order Support", ft_iroza:"IROZA Partnership",
+    f_subject:"Subject", f_subject_ph:"How can we help?",
+    f_message:"Your Message", f_message_ph:"Write your message here...",
+    f_submit:"Send Message",
+    success_h:"Message sent successfully!",
+    success_p:"Thank you for reaching out. The BCIEA team will respond to you within 24–48 hours.",
+    err_msg:"Please fill in all required fields.",
+
+    ci_eye:"Direct Contacts",
+    ci_h:"Reach BCIEA",
+    ci_note:"These are placeholder contacts. Replace with official BCIEA details when confirmed.",
+    ci1_h:"Email", ci1_v:"info@ulinzi.org\npartnerships@ulinzi.org",
+    ci2_h:"Phone / WhatsApp", ci2_v:"+250 000 000 000\nAvailable Monday–Friday",
+    ci3_h:"Location", ci3_v:"Kigali, Rwanda\nBreast Cancer Initiative East Africa",
+    ci4_h:"Response Time", ci4_v:"Most inquiries answered within 24–48 hours.",
+    map_h:"Kigali, Rwanda", map_sub:"BCIEA / Ulinzi Office or Event Venue",
+    map_btn:"Get Directions",
+
+    social_eye:"Follow the Movement",
+    soc1:"Facebook", soc2:"Instagram", soc3:"Twitter / X", soc4:"WhatsApp",
+
+    faq_eye:"Common Questions",
+    faq_h:"Before You <em>Message Us</em>",
+    faq_desc:"Most answers are available on the platform pages. Here are the most frequent questions.",
+    faq1_h:"Can I register a team?", faq1_p:"Yes. Team and corporate registration pages allow multiple participants, shirt sizes, and a team leader contact.",
+    faq2_h:"Can diaspora supporters donate?", faq2_p:"Yes. The platform supports international donations, memorial gifts, merchandise purchases, and survivor sponsorship.",
+    faq3_h:"Can my company sponsor Ulinzi?", faq3_p:"Yes. Visit the sponsor page to review packages and submit interest for the sponsorship deck.",
+    faq4_h:"Can volunteers choose roles?", faq4_p:"Yes. Volunteers can select roles such as registration, social media, health education, logistics, photography, and more.",
+    faq5_h:"What payment methods are supported?", faq5_p:"MTN MoMo, Airtel Money, Visa/Mastercard, and PayPal for diaspora supporters.",
+    faq6_h:"Where is the event taking place?", faq6_p:"Kigali, Rwanda. Exact venue details will be confirmed and published on the event page and in registration confirmation emails.",
+
+    cta_h:"Every Message Can Move the Mission.",
+    cta_p:"Whether you walk, give, sponsor, volunteer, shop, or share — your action helps BCIEA build a stronger movement for early detection and survivor support.",
+    cta_btn:"Join Ulinzi 2026",
+
+    ft_more:"More than a walk — a year-round movement for awareness, fundraising, commerce, innovation, and community.",
+    ft_p1:"Platform", ft_p2:"Movement", ft_p3:"Contact",
+    ft_copy:"© 2026 Ulinzi · BCIEA", ft_note:"More Than a Walk. A Movement for Life.",
+  },
+
+  rw: {
+    nav_walk:"Kugenda", nav_reg:"Kwiyandikisha", nav_donate:"Gutunga",
+    nav_store:"Iduka", nav_sponsor:"Abatera Inkunga", nav_contact:"Twandikire",
+    nav_btn:"Tunga",
+
+    hero_eye:"Vugana na Ulinzi",
+    hero_h1a:"Reka Tubake", hero_h1em:"Icyimuka Hamwe.",
+    hero_desc:"Ufite ikibazo ku kwiyandikisha, gutunga, gutera inkunga, kora ubusabane, amakuru, cyangwa Iduka rya Ulinzi? Twandikire ikipe ya BCIEA kandi tuzakuyobora ku bufasha bwiza.",
+    hero_btn1:"Ohereza Ubutumwa", hero_btn2:"Kora Ubusabane", hero_btn3:"Tera Ulinzi Inkunga",
+    q1_h:"Inkunga Rusange ya Ulinzi",    q1_p:"Ibibazo ku kugenda, kwiyandikisha, amatsinda, ibiretso, cyangwa umunsi w'ibikorwa.",
+    q2_h:"Inkunga ya WhatsApp",          q2_p:"Yakozwe ku itumanaho rwa telefone ryihuse no guhuza umuryango.",
+    q3_h:"Amakuru & Inzira za Gukorana", q3_p:"Ibibazo bya presse, abatera inkunga, diaspora, n'amasosiyete.",
+
+    route_eye:"Hitamo Inzira Yiza",
+    route_h:"Twagufasha Nte? <em>Hitamo.</em>",
+    route_desc:"Ubutumwa bwose bukwiye kugera vuba ku ikipe ikwiye. Hitamo inzira ikuhuye hepfo.",
+    r1_h:"Kwiyandikisha", r1_p:"Abitabira, amatsinda, ibiretso by'imiryango, VIP, QR, n'ingano y'iposhi.",
+    r2_h:"Gutunga",       r2_p:"Gufasha abagira bira, intumwa z'imyryango, ibikorwa, n'inkunga y'iyibuka.",
+    r3_h:"Abatera Inkunga",r3_p:"Pake z'amasosiyete, dosiye ya sponsorship, abantu bagerwaho, n'aho bogaragara.",
+    r4_h:"Amakuru",       r4_p:"Inkuru za presse, ibiganiro, logos, amafoto, amavidewo, n'amakuru.",
+
+    form_eye:"Urupapuro rwo Kwandika",
+    form_h:"Ohereza Ubutumwa",
+    form_sub:"Dusubiza mu masaha 24–48. Ubutumwa bwose bugera vuba ku ikipe ya BCIEA.",
+    form_email_note:"✓ Urupapuro rufatanye n'imeyili y'ikipe",
+    f_name:"Amazina Yombi", f_name_ph:"Amazina yawe yombi",
+    f_email:"Imeyili", f_email_ph:"we@urugero.com",
+    f_phone:"Telefone / WhatsApp", f_phone_ph:"+250 700 000 000",
+    f_type:"Ubwoko bw'Ikibazo",
+    ft_gen:"Ikibazo Rusange", ft_reg:"Inkunga yo Kwiyandikisha", ft_don:"Inkunga yo Gutunga",
+    ft_spon:"Gutera Inkunga", ft_vol:"Kwiyandikisha nk'Umufashanyigisho", ft_med:"Icyifuzo cy'Amakuru",
+    ft_store:"Inkunga y'Iduka", ft_iroza:"Inzira ya IROZA",
+    f_subject:"Insanganyamatsiko", f_subject_ph:"Twagufasha nte?",
+    f_message:"Ubutumwa Bwawe", f_message_ph:"Andika ubutumwa bwawe hano...",
+    f_submit:"Ohereza Ubutumwa",
+    success_h:"Ubutumwa bwoherejwe neza!",
+    success_p:"Murakoze guhurira natwe. Ikipe ya BCIEA izagusubiza mu masaha 24–48.",
+    err_msg:"Uzuza imyanya yose irakenewe.",
+
+    ci_eye:"Aho Batugeraho Vuba",
+    ci_h:"Vugana na BCIEA",
+    ci_note:"Ibi ni ibyuzuzwa. Bishyire amakuru ya BCIEA/Ulinzi avunjwe igihe bizaba bwemejwe.",
+    ci1_h:"Imeyili", ci1_v:"info@ulinzi.org\npartnerships@ulinzi.org",
+    ci2_h:"Telefone / WhatsApp", ci2_v:"+250 000 000 000\nBaine Kuwa mbere – Kuwa gatanu",
+    ci3_h:"Aho Baherereye", ci3_v:"Kigali, Rwanda\nBreast Cancer Initiative East Africa",
+    ci4_h:"Igihe Basubiza", ci4_v:"Ibibazo byinshi bisubizwa mu masaha 24–48.",
+    map_h:"Kigali, Rwanda", map_sub:"Ibiro bya BCIEA / Ulinzi cyangwa aho bikorwa",
+    map_btn:"Shakira Inzira",
+
+    social_eye:"Kurikira Icyimuka",
+    soc1:"Facebook", soc2:"Instagram", soc3:"Twitter / X", soc4:"WhatsApp",
+
+    faq_eye:"Ibibazo Bikunzwe",
+    faq_h:"Mbere yo <em>Kutwandikira</em>",
+    faq_desc:"Ibisubizo byinshi bibabarwa ku bapaji z'urubuga. Hano harimo ibibazo bikunzwe cyane.",
+    faq1_h:"Nshobora kwiyandikisha itsinda?", faq1_p:"Yego. Amapaji yo kwiyandikisha y'amatsinda n'amasosiyete yerekana abitabira benshi, ingano z'iposhi, n'ababyeyi b'itsinda.",
+    faq2_h:"Abaharanye ubumwe batuye mahanga bashobora gutunga?", faq2_p:"Yego. Urubuga rw'ubusaza rushyigikira inkunga zo haganze, inkunga z'iyibuka, kugura ibicuruzwa, no gutera inkunga abagira bira.",
+    faq3_h:"Sosiyete yanjye ishobora gutera Ulinzi inkunga?", faq3_p:"Yego. Sura ipaji y'abatera inkunga kugirango wrebeho pake no gutanga icyifuzo.",
+    faq4_h:"Abafashanyigisho bashobora guhitamo imirimo?", faq4_p:"Yego. Abafashanyigisho bashobora guhitamo imirimo nka kwiyandikisha, amakuru, kwiga ubuzima, logistics, gutera amafoto, n'ibindi.",
+    faq5_h:"Ni izihe nzira zo kwishyura?", faq5_p:"MTN MoMo, Airtel Money, Visa/Mastercard, na PayPal ku baharanye ubumwe batuye mahanga.",
+    faq6_h:"Ni hehe bikorerwaho?", faq6_p:"Kigali, Rwanda. Amakuru y'aho bikorerwaho azashyirwa ku ipaji y'ibikorwa no mu meyili yo kwemeza kwiyandikisha.",
+
+    cta_h:"Ubutumwa Bwose Bushobora Gusunika Intego.",
+    cta_p:"Naba ugenda, utunga, utera inkunga, ukora ubusabane, ugura, cyangwa usangira inkuru — igikorwa cyawe gifasha BCIEA kubaka icyimuka gikomeye.",
+    cta_btn:"Injira muri Ulinzi 2026",
+
+    ft_more:"Benshi kuruta kugenda — icyimuka cya mwaka wose cyo kuzamura ubumenyi, gushyira inkunga, ubucuruzi, ikoranabuhanga, n'umuryango.",
+    ft_p1:"Urubuga", ft_p2:"Icyimuka", ft_p3:"Twandikire",
+    ft_copy:"© 2026 Ulinzi · BCIEA", ft_note:"Benshi Kuruta Kugenda. Icyimuka cy'Ubuzima.",
+  },
+
+  fr: {
+    nav_walk:"La Marche", nav_reg:"S'inscrire", nav_donate:"Donner",
+    nav_store:"Boutique", nav_sponsor:"Sponsors", nav_contact:"Contact",
+    nav_btn:"Faire un Don",
+
+    hero_eye:"Contacter l'Équipe Ulinzi",
+    hero_h1a:"Construisons le", hero_h1em:"Mouvement Ensemble.",
+    hero_desc:"Vous avez une question sur l'inscription, les dons, le parrainage, le bénévolat, les médias ou la boutique Ulinzi ? Contactez l'équipe BCIEA et nous vous orienterons vers le bon soutien.",
+    hero_btn1:"Envoyer un Message", hero_btn2:"Bénévolat", hero_btn3:"Sponsoriser Ulinzi",
+    q1_h:"Support Général Ulinzi",    q1_p:"Questions sur la marche, l'inscription, les équipes, les billets ou le jour de l'événement.",
+    q2_h:"Support via WhatsApp",      q2_p:"Conçu pour la communication mobile rapide et la coordination communautaire.",
+    q3_h:"Médias & Partenariats",    q3_p:"Demandes de presse, sponsors, diaspora et partenariats d'entreprises.",
+
+    route_eye:"Choisissez la Bonne Porte",
+    route_h:"Comment Pouvons-Nous <em>Vous Aider ?</em>",
+    route_desc:"Chaque message doit rapidement atteindre la bonne équipe. Choisissez le chemin le plus pertinent ci-dessous.",
+    r1_h:"Inscription",  r1_p:"Participants, équipes, billets famille, billets VIP, billets QR et tailles de chemise.",
+    r2_h:"Dons",         r2_p:"Soutenir les survivantes, ambassadeurs villageois, sensibilisation communautaire et dons mémoriaux.",
+    r3_h:"Sponsors",     r3_p:"Packages corporate, dossier parrainage, portée d'audience et visibilité événementielle.",
+    r4_h:"Médias",       r4_p:"Communiqués de presse, demandes d'interview, logos, photos, vidéos et fiches d'information.",
+
+    form_eye:"Formulaire de Contact",
+    form_h:"Envoyez-Nous un Message",
+    form_sub:"Nous répondons dans les 24–48 heures. Tous les messages vont directement à l'équipe BCIEA.",
+    form_email_note:"✓ Formulaire connecté à l'email de l'équipe",
+    f_name:"Nom Complet", f_name_ph:"Votre nom complet",
+    f_email:"Adresse Email", f_email_ph:"vous@exemple.com",
+    f_phone:"Téléphone / WhatsApp", f_phone_ph:"+250 700 000 000",
+    f_type:"Type de Demande",
+    ft_gen:"Question Générale", ft_reg:"Support Inscription", ft_don:"Support Don",
+    ft_spon:"Parrainage", ft_vol:"Inscription Bénévole", ft_med:"Demande Média",
+    ft_store:"Support Boutique", ft_iroza:"Partenariat IROZA",
+    f_subject:"Sujet", f_subject_ph:"Comment pouvons-nous vous aider ?",
+    f_message:"Votre Message", f_message_ph:"Écrivez votre message ici...",
+    f_submit:"Envoyer le Message",
+    success_h:"Message envoyé avec succès !",
+    success_p:"Merci de nous avoir contactés. L'équipe BCIEA vous répondra dans les 24–48 heures.",
+    err_msg:"Veuillez remplir tous les champs obligatoires.",
+
+    ci_eye:"Contacts Directs",
+    ci_h:"Joindre BCIEA",
+    ci_note:"Ce sont des contacts provisoires. Remplacez par les coordonnées officielles BCIEA lorsqu'elles sont confirmées.",
+    ci1_h:"Email", ci1_v:"info@ulinzi.org\npartnerships@ulinzi.org",
+    ci2_h:"Téléphone / WhatsApp", ci2_v:"+250 000 000 000\nDisponible lundi–vendredi",
+    ci3_h:"Localisation", ci3_v:"Kigali, Rwanda\nBreast Cancer Initiative East Africa",
+    ci4_h:"Temps de Réponse", ci4_v:"La plupart des demandes reçoivent une réponse dans les 24–48 heures.",
+    map_h:"Kigali, Rwanda", map_sub:"Bureau BCIEA / Ulinzi ou lieu de l'événement",
+    map_btn:"Obtenir l'Itinéraire",
+
+    social_eye:"Suivre le Mouvement",
+    soc1:"Facebook", soc2:"Instagram", soc3:"Twitter / X", soc4:"WhatsApp",
+
+    faq_eye:"Questions Fréquentes",
+    faq_h:"Avant de <em>Nous Contacter</em>",
+    faq_desc:"La plupart des réponses sont disponibles sur les pages de la plateforme. Voici les questions les plus fréquentes.",
+    faq1_h:"Puis-je inscrire une équipe ?", faq1_p:"Oui. Les pages d'inscription pour équipes et entreprises permettent plusieurs participants, tailles de chemise et un contact chef d'équipe.",
+    faq2_h:"Les supporters de la diaspora peuvent-ils faire un don ?", faq2_p:"Oui. La plateforme prend en charge les dons internationaux, dons mémoriaux, achats de merchandising et parrainage de survivantes.",
+    faq3_h:"Mon entreprise peut-elle parrainer Ulinzi ?", faq3_p:"Oui. Visitez la page sponsor pour consulter les packages et soumettre votre intérêt pour le dossier de parrainage.",
+    faq4_h:"Les bénévoles peuvent-ils choisir leurs rôles ?", faq4_p:"Oui. Les bénévoles peuvent sélectionner des rôles tels que l'inscription, les réseaux sociaux, l'éducation à la santé, la logistique, la photographie et plus.",
+    faq5_h:"Quels modes de paiement sont acceptés ?", faq5_p:"MTN MoMo, Airtel Money, Visa/Mastercard et PayPal pour les supporters de la diaspora.",
+    faq6_h:"Où se déroule l'événement ?", faq6_p:"Kigali, Rwanda. Les détails exacts du lieu seront confirmés et publiés sur la page de l'événement et dans les emails de confirmation d'inscription.",
+
+    cta_h:"Chaque Message Peut Faire Avancer la Mission.",
+    cta_p:"Que vous marchiez, donniez, parrainer, fassiez du bénévolat, achetiez ou partagiez — votre action aide BCIEA à construire un mouvement plus fort pour la détection précoce et le soutien aux survivantes.",
+    cta_btn:"Rejoindre Ulinzi 2026",
+
+    ft_more:"Plus qu'une marche — un mouvement annuel pour la sensibilisation, la collecte de fonds, le commerce, l'innovation et la communauté.",
+    ft_p1:"Plateforme", ft_p2:"Mouvement", ft_p3:"Contact",
+    ft_copy:"© 2026 Ulinzi · BCIEA", ft_note:"Plus Qu'une Marche. Un Mouvement pour la Vie.",
+  }
+};
+
+let lang = 'en';
+function t(k) { return LANGS[lang][k] || LANGS.en[k] || k; }
+
+function applyLang(l) {
+  if (!LANGS[l]) return;
+  lang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = t(el.dataset.i18n);
+    if (v !== undefined) el.innerHTML = v;
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    el.placeholder = t(el.dataset.i18nPh);
+  });
+  const flags  = { en:'🇬🇧', rw:'🇷🇼', fr:'🇫🇷' };
+  const labels = { en:'EN',   rw:'RW',   fr:'FR'   };
+  document.getElementById('langFlag').textContent  = flags[l];
+  document.getElementById('langLabel').textContent = labels[l];
+  document.querySelectorAll('.lang-opt').forEach(b  => b.classList.toggle('active', b.dataset.lang === l));
+  document.querySelectorAll('.mlb').forEach(b => b.classList.toggle('active', b.dataset.lang === l));
+  document.getElementById('langDrop').classList.remove('open');
+
+  // Re-build select options
+  const sel = document.getElementById('inquiryType');
+  if (sel) {
+    const keys = ['ft_gen','ft_reg','ft_don','ft_spon','ft_vol','ft_med','ft_store','ft_iroza'];
+    const cur = sel.selectedIndex;
+    sel.innerHTML = keys.map(k => `<option>${t(k)}</option>`).join('');
+    sel.selectedIndex = cur;
+  }
+  try { localStorage.setItem('ulinzi_lang', l); } catch(e) {}
+}
+</script>
+
+<!-- ══ MOBILE MENU ════════════════════════════════════════════════════════ -->
+<div class="mob-menu" id="mobMenu">
+  <a href="event.html"><i class="ti ti-route"></i><span data-i18n="nav_walk">The Walk</span></a>
+  <a href="register.html"><i class="ti ti-ticket"></i><span data-i18n="nav_reg">Register</span></a>
+  <a href="donate.html"><i class="ti ti-heart-dollar"></i><span data-i18n="nav_donate">Donate</span></a>
+  <a href="store.html"><i class="ti ti-shopping-bag"></i><span data-i18n="nav_store">Store</span></a>
+  <a href="sponsor.html"><i class="ti ti-building-skyscraper"></i><span data-i18n="nav_sponsor">Sponsors</span></a>
+  <a href="contact.html"><i class="ti ti-mail"></i><span data-i18n="nav_contact">Contact</span></a>
+  <div class="mob-lang">
+    <button class="mlb active" data-lang="en" onclick="applyLang('en')">🇬🇧 EN</button>
+    <button class="mlb" data-lang="rw" onclick="applyLang('rw')">🇷🇼 RW</button>
+    <button class="mlb" data-lang="fr" onclick="applyLang('fr')">🇫🇷 FR</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- ══ NAV ════════════════════════════════════════════════════════════════ -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <strong>ULINZI 2026</strong>
+      <span>BCIEA Movement Platform</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="event.html" data-i18n="nav_walk">The Walk</a>
+      <a href="register.html" data-i18n="nav_reg">Register</a>
+      <a href="donate.html" data-i18n="nav_donate">Donate</a>
+      <a href="store.html" data-i18n="nav_store">Store</a>
+      <a href="sponsor.html" data-i18n="nav_sponsor">Sponsors</a>
+      <a href="contact.html" class="active" data-i18n="nav_contact">Contact</a>
+    </div>
+
+    <div class="nav-right">
+      <!-- Lang Switcher -->
+      <div class="lang-wrap">
+        <button class="lang-btn" id="langToggle" aria-label="Change language">
+          <span id="langFlag">🇬🇧</span>
+          <span id="langLabel" class="lang-label-txt">EN</span>
+          <i class="ti ti-chevron-down" style="font-size:13px"></i>
+        </button>
+        <div class="lang-drop" id="langDrop" role="listbox">
+          <button class="lang-opt active" data-lang="en" role="option" onclick="applyLang('en')">🇬🇧 English</button>
+          <button class="lang-opt" data-lang="rw" role="option" onclick="applyLang('rw')">🇷🇼 Kinyarwanda</button>
+          <button class="lang-opt" data-lang="fr" role="option" onclick="applyLang('fr')">🇫🇷 Français</button>
+        </div>
+      </div>
+      <a class="btn btn-primary btn-sm" href="donate.html" data-i18n="nav_btn">Donate</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu"><i class="ti ti-menu-2"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ════════════════════════════════════════════════════════════════ -->
+<header class="hero" id="home">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-orb hero-orb-a"></div>
+  <div class="hero-orb hero-orb-b"></div>
+  <div class="hero-word">Contact</div>
+
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="eyebrow"><span class="pulse"></span> <span data-i18n="hero_eye">Contact Ulinzi Team</span></div>
+      <h1><span data-i18n="hero_h1a">Let's Build the</span><br><em data-i18n="hero_h1em">Movement Together.</em></h1>
+      <p class="desc" data-i18n="hero_desc">Have a question about registration, donations, sponsorship, volunteering, media, or the Ulinzi Store?</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#contact-form"><i class="ti ti-send"></i><span data-i18n="hero_btn1">Send Message</span></a>
+        <a class="btn btn-outline" href="volunteer.html"><i class="ti ti-users"></i><span data-i18n="hero_btn2">Volunteer</span></a>
+        <a class="btn btn-outline" href="sponsor.html"><i class="ti ti-building"></i><span data-i18n="hero_btn3">Sponsor Ulinzi</span></a>
+      </div>
+    </div>
+
+    <div class="hero-card reveal" style="transition-delay:.14s">
+      <div class="hero-card-header">
+        <h3 data-i18n="nav_contact">Contact</h3>
+        <p data-i18n="hero_desc">Reach the BCIEA team directly for any inquiry.</p>
+      </div>
+      <div class="quick-list">
+        <div class="quick"><i class="ti ti-heart-handshake"></i><div><strong data-i18n="q1_h">General Ulinzi Support</strong><span data-i18n="q1_p">Questions about the walk, registration, teams, tickets, or event day.</span></div></div>
+        <div class="quick"><i class="ti ti-brand-whatsapp"></i><div><strong data-i18n="q2_h">WhatsApp-Friendly Support</strong><span data-i18n="q2_p">Designed for fast mobile communication and community coordination.</span></div></div>
+        <div class="quick"><i class="ti ti-news"></i><div><strong data-i18n="q3_h">Media & Partnerships</strong><span data-i18n="q3_p">Press, sponsor, diaspora, and corporate partnership inquiries.</span></div></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══ ROUTE CARDS ════════════════════════════════════════════════════════ -->
+<section class="section routes-section">
+  <div class="container">
+    <span class="label" data-i18n="route_eye">Choose the Right Door</span>
+    <h2 class="sec-h reveal" data-i18n="route_h">How Can We <em>Help?</em></h2>
+    <p class="desc reveal" data-i18n="route_desc">Every message should quickly reach the right team. Choose the most relevant path below.</p>
+    <div class="routes-grid">
+      <a class="route-card reveal" href="register.html">
+        <div class="r-icon"><i class="ti ti-clipboard-list"></i></div>
+        <h3 data-i18n="r1_h">Registration</h3>
+        <p data-i18n="r1_p">Participants, teams, family tickets, VIP tickets, QR tickets, and shirt sizes.</p>
+        <i class="ti ti-arrow-right r-arrow"></i>
+      </a>
+      <a class="route-card reveal" href="donate.html" style="transition-delay:.07s">
+        <div class="r-icon"><i class="ti ti-heart-dollar"></i></div>
+        <h3 data-i18n="r2_h">Donations</h3>
+        <p data-i18n="r2_p">Support survivors, village ambassadors, community outreach, and memorial gifts.</p>
+        <i class="ti ti-arrow-right r-arrow"></i>
+      </a>
+      <a class="route-card reveal" href="sponsor.html" style="transition-delay:.14s">
+        <div class="r-icon"><i class="ti ti-building-skyscraper"></i></div>
+        <h3 data-i18n="r3_h">Sponsors</h3>
+        <p data-i18n="r3_p">Corporate packages, sponsorship deck, audience reach, and event visibility.</p>
+        <i class="ti ti-arrow-right r-arrow"></i>
+      </a>
+      <a class="route-card reveal" href="media.html" style="transition-delay:.21s">
+        <div class="r-icon"><i class="ti ti-camera"></i></div>
+        <h3 data-i18n="r4_h">Media</h3>
+        <p data-i18n="r4_p">Press releases, interview requests, logos, photos, videos, and fact sheets.</p>
+        <i class="ti ti-arrow-right r-arrow"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT FORM + SIDEBAR ════════════════════════════════════════════ -->
+<section class="section" id="contact-form">
+  <div class="container contact-grid">
+
+    <!-- ── FORM (connected to email via FormSubmit.co) ───────────────── -->
+    <div class="form-card reveal">
+      <div class="form-card-head">
+        <h2 data-i18n="form_h">Send Us a Message</h2>
+        <p data-i18n="form_sub">We reply within 24–48 hours. All messages go directly to the BCIEA team.</p>
+        <span class="form-email-note" data-i18n="form_email_note">✓ Form connects directly to team email</span>
+      </div>
+      <div class="form-body">
+        <!--
+          EMAIL INTEGRATION INSTRUCTIONS:
+          ══════════════════════════════════════════════════════════════════
+          Option A — FormSubmit.co (no backend needed, free):
+            Replace YOUR_EMAIL below with the actual BCIEA email address.
+            Example: action="https://formsubmit.co/info@ulinzi.org"
+            First submission sends a confirmation to activate the address.
+            Supports file attachments, honeypot spam protection, auto-reply.
+
+          Option B — Netlify Forms: add netlify attribute to the form tag.
+          Option C — EmailJS: call emailjs.sendForm() in the JS below.
+          Option D — Custom backend: POST to /api/contact endpoint.
+          ══════════════════════════════════════════════════════════════════
+        -->
+        <form
+          id="contactForm"
+          action="https://formsubmit.co/info@ulinzi.org"
+          method="POST"
+          class="form-fields"
+          novalidate
+        >
+          <!-- FormSubmit hidden fields -->
+          <input type="hidden" name="_subject" value="New Ulinzi Contact Form Message">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value=""><!-- set to thank-you page URL if desired -->
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="two-col">
+            <div class="field">
+              <label data-i18n="f_name">Full Name</label>
+              <input type="text" name="full_name" id="fName" required data-i18n-ph="f_name_ph" placeholder="Your full name">
+            </div>
+            <div class="field">
+              <label data-i18n="f_email">Email Address</label>
+              <input type="email" name="email" id="fEmail" required data-i18n-ph="f_email_ph" placeholder="you@example.com">
+            </div>
+          </div>
+          <div class="two-col">
+            <div class="field">
+              <label data-i18n="f_phone">Phone / WhatsApp</label>
+              <input type="tel" name="phone" data-i18n-ph="f_phone_ph" placeholder="+250 700 000 000">
+            </div>
+            <div class="field">
+              <label data-i18n="f_type">Inquiry Type</label>
+              <select name="inquiry_type" id="inquiryType">
+                <option>General Question</option>
+                <option>Registration Support</option>
+                <option>Donation Support</option>
+                <option>Sponsorship</option>
+                <option>Volunteer Signup</option>
+                <option>Media Request</option>
+                <option>Store / Order Support</option>
+                <option>IROZA Partnership</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label data-i18n="f_subject">Subject</label>
+            <input type="text" name="subject" data-i18n-ph="f_subject_ph" placeholder="How can we help?">
+          </div>
+          <div class="field">
+            <label data-i18n="f_message">Your Message</label>
+            <textarea name="message" id="fMessage" required data-i18n-ph="f_message_ph" placeholder="Write your message here..."></textarea>
+          </div>
+
+          <div class="form-error" id="formError" data-i18n="err_msg">Please fill in all required fields.</div>
+
+          <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+            <i class="ti ti-send"></i>
+            <span data-i18n="f_submit">Send Message</span>
+          </button>
+
+          <div class="form-success" id="formSuccess">
+            <i class="ti ti-circle-check-filled"></i>
+            <div>
+              <strong data-i18n="success_h">Message sent successfully!</strong>
+              <p data-i18n="success_p">Thank you for reaching out. The BCIEA team will respond to you within 24–48 hours.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ── SIDEBAR ────────────────────────────────────────────────────── -->
+    <div class="contact-info">
+      <!-- Direct Contacts -->
+      <div class="info-card reveal" style="transition-delay:.12s">
+        <span class="ic-label" data-i18n="ci_eye">Direct Contacts</span>
+        <h2 class="sec-h" style="font-size:28px" data-i18n="ci_h">Reach BCIEA</h2>
+        <p class="desc-s" style="margin-bottom:18px" data-i18n="ci_note">Replace these with official contacts when confirmed.</p>
+        <div class="contact-list">
+          <div class="contact-item">
+            <i class="ti ti-mail"></i>
+            <div><strong data-i18n="ci1_h">Email</strong><span>info@ulinzi.org<br>partnerships@ulinzi.org</span></div>
+          </div>
+          <div class="contact-item">
+            <i class="ti ti-phone"></i>
+            <div><strong data-i18n="ci2_h">Phone / WhatsApp</strong><span>+250 000 000 000<br><span data-i18n="ci2_v">Available Monday–Friday</span></span></div>
+          </div>
+          <div class="contact-item">
+            <i class="ti ti-map-pin"></i>
+            <div><strong data-i18n="ci3_h">Location</strong><span data-i18n="ci3_v">Kigali, Rwanda · Breast Cancer Initiative East Africa</span></div>
+          </div>
+          <div class="contact-item">
+            <i class="ti ti-clock"></i>
+            <div><strong data-i18n="ci4_h">Response Time</strong><span data-i18n="ci4_v">Most inquiries answered within 24–48 hours.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="map-card reveal" style="transition-delay:.18s">
+        <div class="map-visual">
+          <div class="map-pin">
+            <i class="ti ti-map-pin-heart"></i>
+            <strong data-i18n="map_h">Kigali, Rwanda</strong>
+            <span data-i18n="map_sub">BCIEA / Ulinzi Office or Event Venue</span>
+          </div>
+        </div>
+        <div class="map-foot">
+          <a class="btn btn-outline btn-sm" href="https://maps.google.com/?q=Kigali,Rwanda" target="_blank" rel="noopener">
+            <i class="ti ti-map-2"></i><span data-i18n="map_btn">Get Directions</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div class="info-card reveal" style="transition-delay:.24s">
+        <span class="ic-label" data-i18n="social_eye">Follow the Movement</span>
+        <div class="social-grid">
+          <a class="soc-btn" href="#"><i class="ti ti-brand-facebook"></i><span data-i18n="soc1">Facebook</span></a>
+          <a class="soc-btn" href="#"><i class="ti ti-brand-instagram"></i><span data-i18n="soc2">Instagram</span></a>
+          <a class="soc-btn" href="#"><i class="ti ti-brand-x"></i><span data-i18n="soc3">Twitter / X</span></a>
+          <a class="soc-btn" href="https://wa.me/250000000000" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i><span data-i18n="soc4">WhatsApp</span></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ FAQ ═════════════════════════════════════════════════════════════════ -->
+<section class="section faq-section">
+  <div class="container">
+    <span class="label" data-i18n="faq_eye">Common Questions</span>
+    <h2 class="sec-h reveal" data-i18n="faq_h">Before You <em>Message Us</em></h2>
+    <p class="desc reveal" data-i18n="faq_desc">Most answers are available on the platform pages. Here are the most frequent questions.</p>
+    <div class="faq-grid">
+      <div class="faq-item reveal"><h3 data-i18n="faq1_h">Can I register a team?</h3><p data-i18n="faq1_p">Yes. Team and corporate registration pages allow multiple participants, shirt sizes, and a team leader contact.</p></div>
+      <div class="faq-item reveal" style="transition-delay:.07s"><h3 data-i18n="faq2_h">Can diaspora supporters donate?</h3><p data-i18n="faq2_p">Yes. The platform supports international donations, memorial gifts, merchandise purchases, and survivor sponsorship.</p></div>
+      <div class="faq-item reveal" style="transition-delay:.14s"><h3 data-i18n="faq3_h">Can my company sponsor Ulinzi?</h3><p data-i18n="faq3_p">Yes. Visit the sponsor page to review packages and submit interest for the sponsorship deck.</p></div>
+      <div class="faq-item reveal" style="transition-delay:.21s"><h3 data-i18n="faq4_h">Can volunteers choose roles?</h3><p data-i18n="faq4_p">Yes. Volunteers can select roles such as registration, social media, health education, logistics, photography, and more.</p></div>
+      <div class="faq-item reveal"><h3 data-i18n="faq5_h">What payment methods are supported?</h3><p data-i18n="faq5_p">MTN MoMo, Airtel Money, Visa/Mastercard, and PayPal for diaspora supporters.</p></div>
+      <div class="faq-item reveal" style="transition-delay:.07s"><h3 data-i18n="faq6_h">Where is the event taking place?</h3><p data-i18n="faq6_p">Kigali, Rwanda. Exact venue details will be confirmed and published on the event page.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ═════════════════════════════════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="container cta-inner">
+    <h2 data-i18n="cta_h">Every Message Can Move the Mission.</h2>
+    <p data-i18n="cta_p">Whether you walk, give, sponsor, volunteer, shop, or share — your action helps BCIEA build a stronger movement for early detection and survivor support.</p>
+    <div class="btn-row" style="justify-content:center; margin-top:34px">
+      <a class="btn btn-white" href="register.html"><i class="ti ti-heart-plus"></i><span data-i18n="cta_btn">Join Ulinzi 2026</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">ULINZI 2026</div>
+        <p class="footer-col" data-i18n="ft_more">More than a walk — a year-round movement for awareness, fundraising, commerce, innovation, and community.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="ft_p1">Platform</h4>
+        <a href="register.html" data-i18n="nav_reg">Register</a>
+        <a href="donate.html" data-i18n="nav_donate">Donate</a>
+        <a href="store.html" data-i18n="nav_store">Store</a>
+        <a href="volunteer.html">Volunteer</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="ft_p2">Movement</h4>
+        <a href="about-ulinzi.html">About Ulinzi</a>
+        <a href="about-bciea.html">About BCIEA</a>
+        <a href="stories.html">Stories</a>
+        <a href="impact.html" data-i18n="nav_impact_f">Impact</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="ft_p3">Contact</h4>
+        <a href="contact.html" data-i18n="nav_contact">Contact Us</a>
+        <a href="media.html">Media Center</a>
+        <a href="sponsor.html" data-i18n="nav_sponsor">Sponsors</a>
+        <a href="diaspora.html">Diaspora</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="ft_copy">© 2026 Ulinzi · BCIEA</span>
+      <span data-i18n="ft_note">More Than a Walk. A Movement for Life.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ SCRIPTS ════════════════════════════════════════════════════════════ -->
+<script>
+  /* ── Nav scroll ─────────────────────────────────────────────────────── */
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  /* ── Language dropdown ───────────────────────────────────────────────── */
+  document.getElementById('langToggle').addEventListener('click', e => {
+    e.stopPropagation();
+    document.getElementById('langDrop').classList.toggle('open');
+  });
+  document.addEventListener('click', () => document.getElementById('langDrop').classList.remove('open'));
+  document.getElementById('langDrop').addEventListener('click', e => e.stopPropagation());
+
+  /* ── Mobile menu ────────────────────────────────────────────────────── */
+  const mobMenu = document.getElementById('mobMenu');
+  const menuBtn = document.getElementById('menuBtn');
+  menuBtn.addEventListener('click', () => {
+    const open = mobMenu.classList.toggle('open');
+    menuBtn.innerHTML = open ? '<i class="ti ti-x"></i>' : '<i class="ti ti-menu-2"></i>';
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  mobMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobMenu.classList.remove('open');
+    menuBtn.innerHTML = '<i class="ti ti-menu-2"></i>';
+    document.body.style.overflow = '';
+  }));
+
+  /* ── Toast helper ────────────────────────────────────────────────────── */
+  let toastTimer;
+  function showToast(html) {
+    const el = document.getElementById('toast');
+    el.innerHTML = html;
+    el.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => el.classList.remove('show'), 4000);
+  }
+
+  /* ── Contact Form — Email Connection ─────────────────────────────────
+     The form uses FormSubmit.co:
+       • action="https://formsubmit.co/info@ulinzi.org" on the <form> tag
+       • On first submission FormSubmit sends a one-time activation email
+       • After activation, all submissions are forwarded to that address
+       • No backend or API key required
+       • The JS below provides client-side validation before submission
+  ────────────────────────────────────────────────────────────────────── */
+  const form    = document.getElementById('contactForm');
+  const btnSub  = document.getElementById('submitBtn');
+  const errBox  = document.getElementById('formError');
+  const success = document.getElementById('formSuccess');
+
+  form.addEventListener('submit', function(e) {
+    // Client-side validation
+    const name  = document.getElementById('fName').value.trim();
+    const email = document.getElementById('fEmail').value.trim();
+    const msg   = document.getElementById('fMessage').value.trim();
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!name || !email || !msg || !emailOk) {
+      e.preventDefault();
+      errBox.style.display = 'block';
+      errBox.textContent = t('err_msg') + (email && !emailOk ? ' (valid email required)' : '');
+      errBox.scrollIntoView({ behavior:'smooth', block:'center' });
+      return;
+    }
+
+    errBox.style.display = 'none';
+
+    // Show loading state
+    btnSub.innerHTML = '<i class="ti ti-loader-2" style="animation:spin 1s linear infinite"></i> Sending...';
+    btnSub.disabled = true;
+
+    // If you want to intercept and use EmailJS / fetch instead of FormSubmit,
+    // call e.preventDefault() here and use your own send logic.
+    // Otherwise the native form POST to FormSubmit.co proceeds.
+
+    // Show optimistic success message (FormSubmit will redirect/confirm)
+    setTimeout(() => {
+      success.style.display = 'flex';
+      success.querySelector('strong').textContent = t('success_h');
+      success.querySelector('p').textContent = t('success_p');
+      showToast('<i class="ti ti-check"></i> ' + t('success_h'));
+      btnSub.innerHTML = '<i class="ti ti-circle-check"></i> Sent!';
+    }, 400);
+  });
+
+  /* ── Scroll Reveal ──────────────────────────────────────────────────── */
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
+  }, { threshold: 0.09, rootMargin: '0px 0px -28px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+  /* ── Spinner keyframe ────────────────────────────────────────────────── */
+  const spinStyle = document.createElement('style');
+  spinStyle.textContent = '@keyframes spin{to{transform:rotate(360deg)}}';
+  document.head.appendChild(spinStyle);
+
+  /* ── Init Language ──────────────────────────────────────────────────── */
+  (function () {
+    try {
+      const saved = localStorage.getItem('ulinzi_lang');
+      if (saved && LANGS[saved]) applyLang(saved);
+    } catch(e) {}
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media Center — Ulinzi 2026 | BCIEA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--pink:#e8567e;--pink-dark:#c93f69;--pink-soft:#ffedf4;--green:#35c79a;--gold:#f5a623;--black:#070707;--dark:#0d0d0f;--card:#141418;--card2:#19191f;--white:#fff;--text:#f7f2f4;--muted:rgba(247,242,244,.68);--faint:rgba(247,242,244,.42);--line:rgba(255,255,255,.1);--line2:rgba(232,86,126,.28)}
+    html{scroll-behavior:smooth} body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--text);overflow-x:hidden} a{text-decoration:none;color:inherit} .container{max-width:1180px;margin:auto;padding:0 24px}.section{padding:86px 0}.label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:14px}.title{font-family:'Playfair Display',serif;font-size:46px;line-height:1.05;font-weight:900;margin-bottom:18px}.desc{max-width:680px;color:var(--muted);font-size:16px;line-height:1.75}.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:14px 24px;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;font-weight:800;transition:.25s;border:1px solid transparent}.btn-primary{background:var(--pink);color:#fff}.btn-primary:hover{background:var(--pink-dark);transform:translateY(-2px)}.btn-outline{border-color:var(--line);color:var(--text);background:rgba(255,255,255,.03)}.btn-outline:hover{border-color:var(--pink);color:var(--pink);transform:translateY(-2px)}.btn-green{background:var(--green);color:#06120e}.grid{display:grid;gap:18px}.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1.3px}.card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 20px 50px rgba(0,0,0,.22)}
+    nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(7,7,7,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.nav-inner{max-width:1240px;margin:auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{line-height:1}.logo strong{font-family:'Playfair Display',serif;color:var(--pink);font-size:25px;letter-spacing:1px}.logo span{display:block;color:var(--faint);font-size:9px;text-transform:uppercase;letter-spacing:2.2px;margin-top:3px}.nav-links{display:flex;gap:20px;align-items:center}.nav-links a{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);font-weight:700}.nav-links a:hover,.nav-links a.active{color:var(--pink)}.hamb{display:none;background:none;border:0;color:white;font-size:26px}
+    .hero{min-height:88vh;display:flex;align-items:center;position:relative;padding-top:100px;overflow:hidden;background:radial-gradient(circle at 20% 10%,rgba(232,86,126,.25),transparent 32%),radial-gradient(circle at 86% 35%,rgba(53,199,154,.14),transparent 35%),linear-gradient(135deg,#070707 0%,#130811 54%,#070707 100%)}.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,#000,transparent 85%)}.hero-wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center}.hero h1{font-family:'Playfair Display',serif;font-size:76px;line-height:.96;font-weight:900;margin-bottom:22px}.hero h1 em{color:var(--pink);font-style:normal}.hero-card{border-radius:34px;padding:24px;background:rgba(255,255,255,.055);border:1px solid var(--line2);box-shadow:0 30px 90px rgba(232,86,126,.13)}.press-preview{border-radius:26px;background:linear-gradient(145deg,rgba(232,86,126,.18),rgba(255,255,255,.04));padding:26px;border:1px solid rgba(255,255,255,.12)}.press-preview .news{padding:18px;border-radius:18px;background:rgba(0,0,0,.25);border:1px solid var(--line);margin-top:14px}.news-date{color:var(--green);font-size:11px;letter-spacing:1.5px;text-transform:uppercase}.news-title{font-family:'Playfair Display',serif;font-size:23px;margin:8px 0}.news p{color:var(--muted);font-size:13px;line-height:1.6}.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}.stat{padding:18px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid var(--line)}.stat strong{font-family:'Playfair Display',serif;font-size:28px;color:var(--pink)}.stat span{display:block;color:var(--faint);font-size:10px;text-transform:uppercase;letter-spacing:1.4px;margin-top:5px}
+    .press-grid{grid-template-columns:repeat(4,1fr)}.press-card{min-height:250px;display:flex;flex-direction:column;justify-content:space-between}.date{font-size:11px;color:var(--green);text-transform:uppercase;letter-spacing:1.3px;font-weight:800}.card h3{font-family:'Playfair Display',serif;font-size:24px;margin:12px 0 10px}.card p{color:var(--muted);font-size:14px;line-height:1.65}.download{margin-top:18px;color:var(--pink);font-size:12px;text-transform:uppercase;letter-spacing:1.3px;font-weight:900;display:inline-flex;align-items:center;gap:8px}
+    .library{background:var(--dark)}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:30px 0}.tab{padding:11px 16px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px;font-weight:800}.tab.active,.tab:hover{background:rgba(232,86,126,.12);border-color:var(--pink);color:var(--pink)}.photo-grid{grid-template-columns:repeat(3,1fr)}.photo{height:220px;border-radius:22px;position:relative;overflow:hidden;border:1px solid var(--line);background:linear-gradient(135deg,rgba(232,86,126,.28),rgba(53,199,154,.15))}.photo:nth-child(2n){background:linear-gradient(135deg,rgba(53,199,154,.22),rgba(245,166,35,.12))}.photo:nth-child(3n){background:linear-gradient(135deg,rgba(232,86,126,.16),rgba(255,255,255,.07))}.photo .icon{font-size:54px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:.75}.photo .cap{position:absolute;left:0;right:0;bottom:0;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,.78));font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.78);display:flex;justify-content:space-between;align-items:center}
+    .video-grid{grid-template-columns:repeat(3,1fr)}.video-thumb{height:160px;border-radius:18px;background:linear-gradient(135deg,#2a0d1a,#0e221b);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:16px}.play{width:58px;height:58px;border-radius:50%;background:rgba(232,86,126,.25);border:2px solid rgba(232,86,126,.7);display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px}
+    .assets-grid{grid-template-columns:repeat(4,1fr)}.asset{text-align:center}.asset i{font-size:38px;color:var(--pink);margin-bottom:16px}.asset h3{font-size:17px}.formats{display:flex;justify-content:center;gap:6px;margin-top:15px}.formats span{font-size:10px;padding:5px 8px;background:rgba(255,255,255,.06);border-radius:6px;color:var(--muted)}
+    .toolkit{background:linear-gradient(135deg,rgba(232,86,126,.12),rgba(53,199,154,.08))}.toolkit-grid{grid-template-columns:1fr 1fr}.hashtags{display:flex;flex-wrap:wrap;gap:10px}.hashtags span{background:rgba(232,86,126,.12);border:1px solid rgba(232,86,126,.3);color:var(--pink);border-radius:999px;padding:10px 14px;font-weight:800}.sample-post{background:#080808;border:1px solid var(--line);border-radius:18px;padding:20px;color:var(--muted);line-height:1.7}
+    .contact-grid{grid-template-columns:.9fr 1.1fr;align-items:start}.contact-card{position:sticky;top:100px}.form{display:grid;gap:14px}.form input,.form select,.form textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:14px;padding:15px 16px;color:var(--text);font-family:inherit;outline:none}.form textarea{min-height:140px;resize:vertical}.form input:focus,.form select:focus,.form textarea:focus{border-color:var(--pink)}.form select option{background:#111}.coverage-grid{grid-template-columns:repeat(4,1fr)}.coverage{display:flex;gap:12px;align-items:center}.coverage i{font-size:28px;color:var(--green)}
+    footer{background:#050505;border-top:1px solid var(--line);padding:54px 0 28px}.footer-grid{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:34px}.footer-title{font-family:'Playfair Display',serif;color:var(--pink);font-size:24px}.footer p,.footer a{color:var(--muted);font-size:13px;line-height:1.8}.footer h4{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--faint);margin-bottom:12px}.footer a{display:block}.bottom{margin-top:34px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--faint);font-size:12px;gap:12px;flex-wrap:wrap}
+    @media(max-width:980px){.hero-wrap,.contact-grid,.toolkit-grid{grid-template-columns:1fr}.press-grid,.assets-grid,.coverage-grid{grid-template-columns:repeat(2,1fr)}.photo-grid,.video-grid{grid-template-columns:1fr 1fr}.nav-links{display:none}.hamb{display:block}.hero h1{font-size:56px}.stat-strip{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}.contact-card{position:static}}
+    @media(max-width:620px){.section{padding:62px 0}.title{font-size:34px}.hero h1{font-size:42px}.hero{min-height:auto;padding:120px 0 70px}.press-grid,.photo-grid,.video-grid,.assets-grid,.coverage-grid,.footer-grid{grid-template-columns:1fr}.btn{width:100%}.nav-inner{padding:14px 18px}.logo strong{font-size:20px}.container{padding:0 18px}}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><strong>ULINZI 2026</strong><span>Rwanda Breast Cancer Walk · BCIEA</span></a>
+      <div class="nav-links">
+        <a href="event.html">The Walk</a><a href="register.html">Register</a><a href="donate.html">Donate</a><a href="store.html">Store</a><a href="impact.html">Impact</a><a href="stories.html">Stories</a><a href="media.html" class="active">Media</a><a href="contact.html">Contact</a>
+      </div>
+      <a href="donate.html" class="btn btn-primary" style="padding:10px 16px">Donate</a>
+      <button class="hamb"><i class="ti ti-menu-2"></i></button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-wrap">
+      <div>
+        <span class="pill"><i class="ti ti-news"></i> Official Press & Partner Resources</span>
+        <h1>Media <em>Center</em></h1>
+        <p class="desc">Stories, photos, videos, facts, and official brand resources for journalists, partners, sponsors, creators, and supporters covering Ulinzi 2026 and BCIEA’s breast cancer awareness work.</p>
+        <div class="btn-row">
+          <a href="#assets" class="btn btn-primary"><i class="ti ti-download"></i> Download Media Kit</a>
+          <a href="#contact" class="btn btn-outline"><i class="ti ti-mail"></i> Contact Media Team</a>
+          <a href="#press" class="btn btn-outline"><i class="ti ti-file-text"></i> Press Releases</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="press-preview">
+          <span class="pill"><i class="ti ti-broadcast"></i> Latest Update</span>
+          <div class="news">
+            <div class="news-date">Press Release · Ulinzi 2026</div>
+            <div class="news-title">More Than a Walk. A Movement for Life.</div>
+            <p>Ulinzi 2026 brings communities, survivors, sponsors, volunteers, and diaspora supporters together to expand early detection education and survivor support across Rwanda.</p>
+          </div>
+          <div class="stat-strip">
+            <div class="stat"><strong>10K</strong><span>Walker Target</span></div>
+            <div class="stat"><strong>30+</strong><span>Villages</span></div>
+            <div class="stat"><strong>200+</strong><span>Survivors</span></div>
+            <div class="stat"><strong>4</strong><span>Languages</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="press" class="section">
+    <div class="container">
+      <div class="label">Press Releases</div>
+      <h2 class="title">Official Announcements</h2>
+      <p class="desc">Ready-to-use official updates for media coverage, partners, sponsors, and community leaders.</p>
+      <div class="grid press-grid" style="margin-top:34px">
+        <article class="card press-card"><div><div class="date">June 2026</div><h3>Ulinzi 2026 Launch</h3><p>BCIEA announces Ulinzi 2026 as a movement platform combining walking, fundraising, commerce, volunteers, and survivor stories.</p></div><a href="#" class="download"><i class="ti ti-download"></i> Download PDF</a></article>
+        <article class="card press-card"><div><div class="date">Impact Report</div><h3>BCIEA Community Impact</h3><p>A summary of outreach, education, survivor support, and rural community engagement across Rwanda.</p></div><a href="#" class="download"><i class="ti ti-download"></i> Download PDF</a></article>
+        <article class="card press-card"><div><div class="date">Innovation</div><h3>IROZA AI Announcement</h3><p>Introducing IROZA as a multilingual digital education assistant supporting awareness and early guidance.</p></div><a href="#" class="download"><i class="ti ti-download"></i> Download PDF</a></article>
+        <article class="card press-card"><div><div class="date">Sponsors</div><h3>Partner Recognition</h3><p>Official sponsor opportunities and recognition packages for companies supporting Ulinzi 2026.</p></div><a href="#" class="download"><i class="ti ti-download"></i> Download PDF</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section library" id="photos">
+    <div class="container">
+      <div class="label">Photo Library</div>
+      <h2 class="title">Images for Coverage</h2>
+      <p class="desc">Organized photo categories for journalists, social media teams, sponsors, and campaign partners.</p>
+      <div class="tabs"><a class="tab active">All</a><a class="tab">Ulinzi Walk</a><a class="tab">Survivors</a><a class="tab">Community Outreach</a><a class="tab">IROZA</a><a class="tab">Sponsors</a></div>
+      <div class="grid photo-grid">
+        <div class="photo"><div class="icon">📸</div><div class="cap"><span>Ulinzi Walk</span><i class="ti ti-download"></i></div></div>
+        <div class="photo"><div class="icon">🎗️</div><div class="cap"><span>Survivor Moments</span><i class="ti ti-download"></i></div></div>
+        <div class="photo"><div class="icon">🤝</div><div class="cap"><span>Volunteer Teams</span><i class="ti ti-download"></i></div></div>
+        <div class="photo"><div class="icon">🌍</div><div class="cap"><span>Community Outreach</span><i class="ti ti-download"></i></div></div>
+        <div class="photo"><div class="icon">🤖</div><div class="cap"><span>IROZA Demo</span><i class="ti ti-download"></i></div></div>
+        <div class="photo"><div class="icon">🏢</div><div class="cap"><span>Sponsor Village</span><i class="ti ti-download"></i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="videos" class="section">
+    <div class="container">
+      <div class="label">Video Center</div>
+      <h2 class="title">Watch the Movement</h2>
+      <div class="grid video-grid" style="margin-top:32px">
+        <div class="card"><div class="video-thumb"><span class="play"><i class="ti ti-player-play-filled"></i></span></div><h3>Ulinzi Event Highlights</h3><p>Short recap video for media and social sharing.</p></div>
+        <div class="card"><div class="video-thumb"><span class="play"><i class="ti ti-player-play-filled"></i></span></div><h3>Survivor Stories</h3><p>Human-centered interviews that explain why the walk matters.</p></div>
+        <div class="card"><div class="video-thumb"><span class="play"><i class="ti ti-player-play-filled"></i></span></div><h3>IROZA Demonstration</h3><p>Preview how IROZA supports education in multiple languages.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="assets" class="section library">
+    <div class="container">
+      <div class="label">Brand Assets</div>
+      <h2 class="title">Official Logos & Guidelines</h2>
+      <p class="desc">Use these assets when publishing, sponsoring, designing, or covering Ulinzi 2026.</p>
+      <div class="grid assets-grid" style="margin-top:32px">
+        <div class="card asset"><i class="ti ti-ribbon-health"></i><h3>Ulinzi Logo</h3><p>Primary walk campaign mark.</p><div class="formats"><span>PNG</span><span>SVG</span><span>PDF</span></div></div>
+        <div class="card asset"><i class="ti ti-heart-handshake"></i><h3>BCIEA Logo</h3><p>Official organization identity.</p><div class="formats"><span>PNG</span><span>SVG</span><span>PDF</span></div></div>
+        <div class="card asset"><i class="ti ti-robot"></i><h3>IROZA Logo</h3><p>Innovation center identity.</p><div class="formats"><span>PNG</span><span>SVG</span><span>PDF</span></div></div>
+        <div class="card asset"><i class="ti ti-palette"></i><h3>Brand Guide</h3><p>Colors, fonts, usage, and tone.</p><div class="formats"><span>PDF</span><span>DOC</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section toolkit">
+    <div class="container">
+      <div class="grid toolkit-grid">
+        <div>
+          <div class="label">Social Media Toolkit</div>
+          <h2 class="title">Share Ulinzi Online</h2>
+          <p class="desc">Use these hashtags and sample messages to help the campaign reach more families, donors, and community supporters.</p>
+          <div class="hashtags" style="margin-top:24px"><span>#Ulinzi2026</span><span>#WalkForLife</span><span>#BCIEA</span><span>#EveryStepCreatesHope</span><span>#BreastCancerAwareness</span></div>
+        </div>
+        <div class="sample-post">
+          <strong style="color:#fff">Sample Post</strong><br><br>
+          I’m joining Ulinzi 2026 because every step creates hope. Together, we can support survivors, expand rural awareness, and help more families learn about early detection. Join the movement: register, donate, volunteer, or sponsor.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="coverage" class="section">
+    <div class="container">
+      <div class="label">Coverage Gallery</div>
+      <h2 class="title">Media Mentions</h2>
+      <div class="grid coverage-grid" style="margin-top:30px">
+        <div class="card coverage"><i class="ti ti-device-tv"></i><div><h3>TV Features</h3><p>Broadcast interviews and event coverage.</p></div></div>
+        <div class="card coverage"><i class="ti ti-radio"></i><div><h3>Radio Interviews</h3><p>Community awareness discussions.</p></div></div>
+        <div class="card coverage"><i class="ti ti-news"></i><div><h3>Newspapers</h3><p>Print and digital press articles.</p></div></div>
+        <div class="card coverage"><i class="ti ti-world-www"></i><div><h3>Online Publications</h3><p>Partner and media stories.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section library">
+    <div class="container contact-grid grid">
+      <div class="card contact-card">
+        <div class="label">Media Contact</div>
+        <h2 class="title" style="font-size:34px">Need an Interview or Access?</h2>
+        <p class="desc">Send your request and the Ulinzi media team can help with interviews, photography, press access, partner information, or official campaign facts.</p>
+        <div class="btn-row"><a href="contact.html" class="btn btn-primary">General Contact</a><a href="sponsor.html" class="btn btn-outline">Sponsor Center</a></div>
+      </div>
+      <form class="card form">
+        <input type="text" placeholder="Full name" />
+        <input type="text" placeholder="Organization / Media House" />
+        <input type="email" placeholder="Email address" />
+        <select><option>Inquiry Type</option><option>Interview Request</option><option>Press Coverage</option><option>Event Access</option><option>Partnership Request</option><option>Brand Asset Request</option></select>
+        <textarea placeholder="Tell us what you need..."></textarea>
+        <button type="button" class="btn btn-primary"><i class="ti ti-send"></i> Send Media Request</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><div class="footer-title">ULINZI 2026</div><p>More Than a Walk. A Movement for Life. Built by BCIEA to raise funds, educate communities, honor survivors, and grow year-round support.</p></div>
+        <div><h4>Platform</h4><a href="event.html">The Walk</a><a href="register.html">Register</a><a href="donate.html">Donate</a><a href="store.html">Store</a></div>
+        <div><h4>Movement</h4><a href="stories.html">Why I Walk</a><a href="wall-of-honor.html">Wall of Honor</a><a href="volunteer.html">Volunteer</a><a href="impact.html">Impact</a></div>
+        <div><h4>Partners</h4><a href="sponsor.html">Sponsor Center</a><a href="media.html">Media Center</a><a href="iroza.html">IROZA</a><a href="contact.html">Contact</a></div>
+      </div>
+      <div class="bottom"><span>© 2026 Ulinzi · BCIEA</span><span>Every Step Creates Hope.</span></div>
+    </div>
+  </footer>
+</body>
+</html>
